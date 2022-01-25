@@ -1,0 +1,15 @@
+@mixin flex-set($type: def, $flow: row, $wrap: nowrap, $gap: 0, $align-items: stretch, $justify-content: flex-start, $align-content: normal) {
+    @if $type == def {
+        display: flex;
+    }
+
+    @if $type == inline {
+        display: inline-flex;
+    }
+
+    flex-flow: $flow $wrap;
+    align-items: $align-items;
+    align-content: $align-content;
+    justify-content: $justify-content;
+    gap: $gap;
+}

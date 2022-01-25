@@ -1,0 +1,23 @@
+﻿{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "noEmitHelpers": false,
+    "module": "CommonJS",
+    "target": "ES2021",
+    "esModuleInterop": true,
+    "lib": [
+      "DOM",
+      "ES2021",
+      "ESNext"
+    ],
+  },
+  "include": [
+    "./Resources/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "sourceMap": true
+}

@@ -1,0 +1,70 @@
+@import '../base/global';
+
+.footer {
+  padding: 8rem 0;
+  background-color: $color-footer-bg;
+  font-family: $font-text;
+  color: $color-footer;
+  > .container {
+    @include grid-columns(
+      def,
+      minmax($gap-l, 8fr) minmax($gap-l, 5fr),
+      $gap-xl,
+      stretch,
+      flex-start,
+      stretch
+    );
+  }
+
+  &__inner {
+    --grid-col-count: 2;
+    --align-content: flex-start;
+    @include grid-columns(def, repeat(var(--grid-col-count), minmax($gap-l, 1fr)), $gap-l, flex-start, flex-start, var(--align-content));
+      &--end{
+        --align-content: flex-end;
+      }
+
+    h4{   
+      font-family: inherit; 
+      letter-spacing: 1.5px;
+      &:not([class]){
+        margin-bottom: $gap-xl;
+        font-size: small;
+        text-transform: uppercase;   
+      }
+    }
+
+    address{
+      font-size: large;
+      line-height: 1.8;
+    }
+  }
+
+  &__social {
+    @include grid-columns(def, repeat(3, minmax($gap-l, auto)), $gap-xl);
+    >a{
+      width: $gap-xl;
+      aspect-ratio: 1 / 1;
+      background: darken($color-footer, 20%);
+      border-radius: 50%;
+      color: $color-footer-bg;
+    }
+
+    .icon{
+      --icon-size: #{$gap-l};
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    bottom: $gap-l;
+    left: 50%;
+    padding: 0 $gap-l;
+    text-align: center;
+    transform: translateX(-50%);
+
+    >small{
+      font-size: x-small;
+    }
+  }
+}

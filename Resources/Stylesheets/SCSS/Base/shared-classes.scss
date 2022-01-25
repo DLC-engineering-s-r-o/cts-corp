@@ -1,0 +1,92 @@
+@import "mixins";
+
+.element-to-middle {
+    @include center-item;
+}
+
+.text-to-center {
+    text-align: center;
+}
+
+.text-to-left {
+    text-align: left;
+}
+
+.text-to-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.base-space {
+    display: block;
+    width: 100%;
+    margin-bottom: 5rem;
+
+    @include res-max-desktop-s {
+        margin-bottom: 3rem;
+    }
+}
+
+.elipsis-text {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.relative {
+    position: relative;
+}
+
+.tablet-content {
+    display: none;
+
+    @include res-max-tablet {
+        display: block;
+    }
+}
+
+.no-tablet-content {
+    @include res-max-tablet {
+        display: none;
+    }
+}
+
+.mobile-content {
+    display: none;
+
+    @include res-max-mobile-l {
+        display: block;
+    }
+}
+
+.no-mobile-content {
+    @include res-max-mobile-l {
+        display: none;
+    }
+}
+
+*.overflow-hidden {
+    overflow: hidden;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.lower{
+    font-size: medium;
+    line-height: $gap-xl;
+    text-transform: lowercase;
+}

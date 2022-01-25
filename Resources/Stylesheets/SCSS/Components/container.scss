@@ -1,0 +1,81 @@
+@import "../base/global";
+
+.container {
+    width: 75%;
+    min-width: 115rem;
+    margin: 0 auto;
+
+    @include res-max-desktop-l {
+        width: 80%;
+    }
+
+    @include res-max-desktop-m {
+        width: 100%;
+        min-width: 0;
+        padding: 0 var(--pad-base);
+    }
+
+    &--no-padding {
+        @include res-max-desktop-m {
+            padding: 0;
+        }
+    }
+
+    &--small {
+        min-width: 0;
+        max-width: $width-tablet;
+
+        @include res-max-tablet {
+            width: 80%;
+        }
+
+        @include res-max-mobile-l {
+            width: 100%;
+        }
+    }
+
+    &__picture{
+        
+    }
+
+    &--smaller {
+        width: 100%;
+        min-width: 0;
+        max-width: $width-mobile-l;
+
+        @include res-max-tablet {
+            max-width: none;
+        }
+    }
+}
+
+.flex-container {
+  
+}
+
+.grid-container {
+    display: grid;
+    width: 80%;
+    min-width: 115rem;
+    max-width: $width-desktop-l;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+
+    &--items-center {
+        align-items: center;
+    }
+
+    @include res-max-desktop-l {
+        width: 80%;
+    }
+
+    @include res-max-desktop-m {
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+        padding: 0 var(--pad-base);
+        grid-gap: 3rem;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: max-content;
+    }
+}

@@ -1,0 +1,60 @@
+@mixin grid-col-span($columns: 1) {
+    grid-column-end: span $columns;
+}
+
+@mixin grid-row-span($rows: 1) {
+    grid-row-end: span $rows;
+}
+
+
+@mixin grid-columns($type: def, $template: repeat(1, minmax(1.6rem, 1fr)), $gap: 0, $align-items: flex-start, $justify-content: flex-start, $align-content: flex-start) {
+    @if $type == none {
+        display: none;
+    }
+
+    @if $type == def {
+        display: grid;
+    }
+
+    @if $type == inline {
+        display: inline-grid;
+    }
+
+    @if $gap != 0 {
+        gap: $gap;
+    }
+
+    align-items: $align-items;
+    align-content: $align-content;
+    justify-content: $justify-content;
+    grid-template-columns: $template;
+
+    @content;
+}
+
+
+@mixin grid-rows($type: def, $template: repeat(1, minmax(1.6rem, 1fr)), $gap: 0, $align-items: flex-start, $justify-content: flex-start, $align-content: flex-start) {
+
+    @if $type == none {
+        display: none;
+    }
+
+    @if $type == def {
+        display: grid;
+    }
+
+    @if $type == inline {
+        display: inline-grid;
+    }
+
+    @if $gap != 0 {
+        gap: $gap;
+    }
+
+    align-items: $align-items;
+    align-content: $align-content;
+    justify-content: $justify-content;
+    grid-template-rows: $template;
+
+    @content;
+}

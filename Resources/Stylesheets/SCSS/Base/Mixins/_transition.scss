@@ -1,0 +1,3 @@
+@mixin transition($property: all, $duration: var(--trans-time), $timing-fnc: var(--trans-fnc), $delay: 0s){
+    transition: $property $duration $timing-fnc $delay;
+}

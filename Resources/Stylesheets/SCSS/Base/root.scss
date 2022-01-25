@@ -1,0 +1,26 @@
+@import "variables";
+
+:root {
+    --color-black: #{$color-black};
+    --color-white: #{$color-white};
+    --color-border: var(--color-white);
+    --color-trans: #{$color-trans};
+    --color-nav: #{$color-nav};
+    --color-primary: #{$color-primary};
+    --color-primary--hover: #{$color-primary--hover};
+    --color-secondary: #{$color-secondary};
+    --trans-time: #{$trans-time};
+    --trans-fnc: ease-in-out;
+    --animate-all: #{$animate-all};
+    --pad-xxl: #{$gap-xxl};
+    --pad-xl: #{$gap-xl};
+    --pad-l: #{$gap-l};
+    --pad-m: #{$gap-m};
+    --pad-s: #{$gap-s};
+    --font-text: #{$font-text};
+    --font-highlight: #{$font-highlight};
+    --font-title: #{$font-title};
+    
+    --border-width: 1px;
+    --nav-height: 7rem;
+}
