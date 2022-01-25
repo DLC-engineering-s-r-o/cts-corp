@@ -1,0 +1,29 @@
+@import "../base/global";
+
+header{
+   
+}
+
+.header {    
+    &__container{
+        --col-count: 2;
+        --gap: 8rem;
+        @include grid-columns(def, repeat(var(--col-count), minmax($gap-l, 1fr)), var(--gap), stretch, center, stretch);
+        position: relative;
+        height: 100vh;
+        max-height: $width-4k;
+        z-index: 10;  
+    }
+
+    &__content{
+       
+    }
+
+    &__title{
+       
+    }
+
+    &__photo{
+        
+    }
+}
