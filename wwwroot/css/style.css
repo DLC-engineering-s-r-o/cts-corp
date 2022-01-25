@@ -17,6 +17,8 @@
   --gap: 0.8em;
   --gap-s: 0.4em;
   --gap-xs: 0.2em;
+  --radius: 1rem;
+  --radius-s: 0.5rem;
   --font-text: open-sans, sans-serif;
   --font-title: rama-gothic-e, sans-serif;
   --border-width: 1px;
@@ -91,34 +93,36 @@ p, span, small {
   line-height: 1.8; }
 
 .button {
-  --btn-color: var(--color-primary);
-  --btn-bg-color: var(--color-trans);
-  --btn-border-color: var(--color-white);
+  --btn-color: var(--color-white);
+  --btn-bg-color: var(--color-black);
+  --btn-border-color: var(--color-black);
+  --btn-trans-y: 0;
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
   align-content: center;
   justify-content: center;
-  gap: var(--gap);
-  transition: background-color var(--trans-time) var(--trans-fnc) 0s;
+  gap: var(--gap-s);
+  transition: transform var(--trans-time) var(--trans-fnc) 0s;
   border: var(--border-width) solid var(--btn-border-color);
-  min-width: 20rem;
-  padding: 1.6em 2.4em;
+  min-width: 15rem;
+  padding: var(--gap);
   background-color: var(--btn-bg-color);
-  font-family: var(--font-highlight);
-  font-size: large;
+  border-radius: var(--radius-s);
+  font-family: var(--font-title);
+  font-size: x-large;
   font-weight: 400;
   line-height: 1;
   color: var(--btn-color);
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transform: translateY(var(--btn-trans-y));
+  cursor: pointer; }
   .button:hover {
-    --btn-bg-color: rgba(255, 255, 255, 0.7); }
+    --btn-trans-y: -5%; }
   .button--secondary {
     --btn-color: var(--color-black);
-    --btn-border-color: var(--color-black); }
-    .button--secondary:hover {
-      --btn-bg-color: var(--color-primary); }
+    --btn-bg-color: var(--color-trans); }
 
 .burger {
   width: 80px;
@@ -222,7 +226,7 @@ p, span, small {
       padding: 0 var(--pad-base); } }
 
 .icon {
-  --icon-size: 1.6em;
+  --icon-size: 0.8em;
   display: block;
   width: var(--icon-size);
   aspect-ratio: 1 / 1;
@@ -255,7 +259,6 @@ p, span, small {
 
 .header__container {
   --col-count: 2;
-  --gap: 8rem;
   display: grid;
   gap: var(--gap);
   align-items: stretch;

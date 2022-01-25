@@ -1,34 +1,33 @@
 @import "../base/global";
 
 .button{
-    --btn-color: var(--color-primary);
-    --btn-bg-color: var(--color-trans);
-    --btn-border-color: var(--color-white);
-    @include flex-set(inline, row, nowrap, var(--gap), center, center, center);
-    @include transition(background-color);
+    --btn-color: var(--color-white);
+    --btn-bg-color: var(--color-black);
+    --btn-border-color: var(--color-black);
+    --btn-trans-y: 0;
+    @include flex-set(inline, row, nowrap, var(--gap-s), center, center, center);
+    @include transition(transform);
     @include border('def', var(--border-width), var(--btn-border-color));
-    min-width: 20rem;
-    padding: $gap-l $gap-xl;
+    min-width: 15rem;
+    padding: var(--gap);
     background-color: var(--btn-bg-color);
-    font-family: var(--font-highlight);
-    font-size: large;
+    border-radius: var(--radius-s);
+    font-family: var(--font-title);
+    font-size: x-large;
     font-weight: 400;
     line-height: 1;
     color: var(--btn-color);
     text-decoration: none;
     text-transform: uppercase;
+    transform: translateY(var(--btn-trans-y));
+    cursor: pointer;
 
-    &:hover{
-        --btn-bg-color: #{$color-white--trans};
-    }
+        &:hover{
+            --btn-trans-y: -5%;
+        }
 
     &--secondary{
         --btn-color: var(--color-black);
-        --btn-border-color: var(--color-black);
-        
-        &:hover{
-            --btn-bg-color: var(--color-primary);
-
-        }
+        --btn-bg-color: var(--color-trans);
     }
 }

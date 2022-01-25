@@ -1,7 +1,7 @@
 @import "../base/global";
 
 .icon{  
-    --icon-size: #{$gap-l};
+    --icon-size: #{$gap};
    display: block;
    width: var(--icon-size);
    aspect-ratio: 1 / 1;  
