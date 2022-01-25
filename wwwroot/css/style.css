@@ -238,6 +238,12 @@ p, span, small {
   letter-spacing: 1.5px;
   color: white; }
 
+.logo {
+  max-width: 8rem; }
+  .logo > img {
+    display: block;
+    width: 100%; }
+
 ::-webkit-scrollbar {
   width: 0.8em; }
 

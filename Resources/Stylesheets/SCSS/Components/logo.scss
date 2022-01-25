@@ -1,0 +1,10 @@
+@import "../base/global";
+
+.logo{
+    max-width: 8rem;
+
+    >img{
+        display: block;
+        width: 100%;
+    }
+}
