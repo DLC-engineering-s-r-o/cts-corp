@@ -16,7 +16,7 @@ header{
     }
 
     &__content{
-       
+        @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);     
     }
 
     &__title{

@@ -4,7 +4,7 @@
     --btn-color: var(--color-primary);
     --btn-bg-color: var(--color-trans);
     --btn-border-color: var(--color-white);
-    @include flex-set(inline, row, nowrap, $gap-m, center, center, center);
+    @include flex-set(inline, row, nowrap, var(--gap), center, center, center);
     @include transition(background-color);
     @include border('def', var(--border-width), var(--btn-border-color));
     min-width: 20rem;

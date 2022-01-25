@@ -2,27 +2,23 @@
 $color-black: hsla(0, 0%, 0%, 1);
 $color-black--trans: hsla(0, 0%, 0%, .1);
 $color-white: hsla(0, 0%, 100%, 1);
-$color-white--trans: hsla(0, 0%, 100%, .1);
+$color-white--darken: hsl(0, 0%, 99%);
+$color-white--trans: hsla(0, 0%, 100%, .7);
 $color-trans: hsla(0, 0%, 0%, 0);
-$color-nav: hsla(0, 0%, 100%, .9);
-$color-primary: hsl(28, 30%, 79%);
-$color-primary--hover: darken($color-primary, 10%);
-$color-primary--lighten: lighten($color-primary, 15%);
-$color-secondary: hsla(120, 2%, 17%, 1);
-$color-bg: hsla(0, 0%, 0%, .85);
-$color-bg--light: hsla(0, 0%, 100%, .7);
-$color-footer-bg: hsl(0, 0%, 11%);
-$color-footer: hsl(0, 0%, 84%);
+$color-primary: hsl(43, 98%, 53%);
+$color-primary--darken: hsl(27, 91%, 54%);
+$color-secondary: hsl(240, 1%, 26%);
 
 $trans-time: .25s;
-$gap-m: .8rem;
-$gap-s: ($gap-m / 2);
-$gap-l: ($gap-m * 2);
-$gap-xl: ($gap-m * 3);
-$gap-xxl: ($gap-m * 4);
-$font-text: 'segoe-ui-light', sans-serif;
-$font-highlight: 'times-new-roman';
-$font-title: 'times-new-roman-bold';
+$gap: .8em;
+$gap-xs: ($gap / 4);
+$gap-s: ($gap / 2);
+$gap-l: ($gap * 2);
+$gap-xl: ($gap * 3);
+$gap-xxl: ($gap * 4);
+$gap-multiplier: 1;
+$font-text: 'open-sans', sans-serif;
+$font-title: 'rama-gothic-e', sans-serif;
 
 // All devices width for MediaQuery
 $width-mobile-s: 320px;
