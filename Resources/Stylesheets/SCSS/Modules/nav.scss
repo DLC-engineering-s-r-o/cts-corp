@@ -73,6 +73,9 @@
   small {
     position: absolute;
     bottom: var(--gap-xl);
+    > a {
+      color: var(--color-white);
+    }
   }
 }
 

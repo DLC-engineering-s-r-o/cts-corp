@@ -354,6 +354,8 @@ p, span, small {
   .nav small {
     position: absolute;
     bottom: var(--gap-xl); }
+    .nav small > a {
+      color: var(--color-white); }
 
 @keyframes showMenu {
   from {
