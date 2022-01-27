@@ -1,23 +1,23 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 $alignTypes: (
-  'sb': space-between,
-  'sa': space-around,
-  'c': center,
-  'fe': flex-end,
-  'fs': flex-start,
-  'st': stretch,
+  "sb": space-between,
+  "sa": space-around,
+  "c": center,
+  "fe": flex-end,
+  "fs": flex-start,
+  "st": stretch,
 );
 $gapTypes: (
-  'xs': calc(0.2em * var(--gap-multiplier)),
-  's': calc(0.4em * var(--gap-multiplier)),
-  'm': calc(0.8em * var(--gap-multiplier)),
-  'l': calc(1.6em * var(--gap-multiplier)),
-  'xl': calc(2.4em * var(--gap-multiplier)),
-  'xxl': calc(3.2em * var(--gap-multiplier)),
-  'xxxl': calc(4em * var(--gap-multiplier)),
-  'no': 0,
+  "xs": calc(0.2em * var(--gap-multiplier)),
+  "s": calc(0.4em * var(--gap-multiplier)),
+  "m": calc(0.8em * var(--gap-multiplier)),
+  "l": calc(1.6em * var(--gap-multiplier)),
+  "xl": calc(2.4em * var(--gap-multiplier)),
+  "xxl": calc(3.2em * var(--gap-multiplier)),
+  "xxxl": calc(4em * var(--gap-multiplier)),
+  "no": 0,
 );
 
 @mixin createClasses {
@@ -179,40 +179,40 @@ $gapTypes: (
   .center-item {
     @include center-item;
   }
+}
 
-  .text-to-center {
-    text-align: center;
-  }
+.text-to-center {
+  text-align: center;
+}
 
-  .text-to-left {
-    text-align: left;
-  }
+.text-to-left {
+  text-align: left;
+}
 
-  .text-to-right {
-    text-align: right;
-  }
+.text-to-right {
+  text-align: right;
+}
 
-  .text-justify {
-    text-align: justify;
-  }
+.text-justify {
+  text-align: justify;
+}
 
-  .uppercase {
-    text-transform: uppercase;
-  }
+.uppercase {
+  text-transform: uppercase;
+}
 
-  .relative {
-    position: relative;
-  }
+.relative {
+  position: relative;
+}
 
-  .overflow-hidden {
-    overflow: hidden;
-  }
+.overflow-hidden {
+  overflow: hidden;
+}
 
-  .inline-flex {
-    display: inline-flex;
-  }
+.inline-flex {
+  display: inline-flex;
+}
 
-  .inline-block {
-    display: inline-block;
-  }
+.inline-block {
+  display: inline-block;
 }
