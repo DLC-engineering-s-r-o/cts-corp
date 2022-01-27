@@ -1,34 +1,35 @@
 @import "../base/global";
 
-.button{
-    --btn-color: var(--color-white);
-    --btn-bg-color: var(--color-black);
-    --btn-border-color: var(--color-black);
-    --btn-trans-y: 0;
-    @include flex-set(inline, row, nowrap, var(--gap-s), center, center, center);
-    @include border('def', var(--border-width), var(--btn-border-color));
-    @include box-shadow(0, $gap-s, $gap);
-    min-width: 15rem;
-    padding: var(--gap);
-    background-color: var(--btn-bg-color);
-    border-radius: var(--radius-s);
-    font-family: var(--font-title);
-    font-size: x-large;
-    font-weight: 400;
-    line-height: 1;
-    color: var(--btn-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    transform: translateY(var(--btn-trans-y));
-    transition: transform var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease-in-out;
-    cursor: pointer;
+.button {
+  --btn-color: var(--color-white);
+  --btn-bg-color: var(--color-black);
+  --btn-border-color: var(--color-black);
+  --btn-trans-y: 0;
+  @include flex-set(inline, row, nowrap, var(--gap-s), center, center, center);
+  @include border("def", var(--border-width), var(--btn-border-color));
+  @include box-shadow(0, $gap-s, $gap);
+  min-width: 15rem;
+  padding: var(--gap);
+  background-color: var(--btn-bg-color);
+  border-radius: var(--radius-s);
+  font-family: var(--font-title);
+  font-size: x-large;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--btn-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: translateY(var(--btn-trans-y));
+  transition: transform var(--trans-time) ease-in-out,
+    box-shadow var(--trans-time) ease-in-out;
+  cursor: pointer;
 
-        &:hover{
-            --btn-trans-y: -5%;
-        }
+  &:hover {
+    --btn-trans-y: -5%;
+  }
 
-    &--secondary{
-        --btn-color: var(--color-black);
-        --btn-bg-color: var(--color-trans);
-    }
+  &--secondary {
+    --btn-color: var(--color-black);
+    --btn-bg-color: var(--color-trans);
+  }
 }
