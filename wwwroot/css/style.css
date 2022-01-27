@@ -9,6 +9,7 @@
   --color-primary: #fdba12;
   --color-primary--darken: #f47f1f;
   --color-secondary: #424243;
+  --color-box-shadow: white;
   --trans-time: 0.25s;
   --trans-fnc: ease-in-out;
   --gap-xxl: 3.2em;
@@ -103,8 +104,8 @@ p, span, small {
   align-content: center;
   justify-content: center;
   gap: var(--gap-s);
-  transition: transform var(--trans-time) var(--trans-fnc) 0s;
   border: var(--border-width) solid var(--btn-border-color);
+  box-shadow: 0 0.4em 0.8em 0 var(--color-box-shadow);
   min-width: 15rem;
   padding: var(--gap);
   background-color: var(--btn-bg-color);
@@ -117,7 +118,10 @@ p, span, small {
   text-decoration: none;
   text-transform: uppercase;
   transform: translateY(var(--btn-trans-y));
+  transition: transform var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease-in-out;
   cursor: pointer; }
+  .button:hover {
+    --color-box-shadow: hsla(0, 0%, 0%, .17); }
   .button:hover {
     --btn-trans-y: -5%; }
   .button--secondary {

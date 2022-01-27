@@ -1,0 +1,7 @@
+@mixin box-shadow($x: 30px, $y: 30px, $radius: 75px){
+    box-shadow: $x $y $radius 0 var(--color-box-shadow);
+
+    &:hover{
+        --color-box-shadow: hsla(0, 0%, 0%, .17);
+    }
+}
