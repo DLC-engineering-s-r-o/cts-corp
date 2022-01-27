@@ -50,7 +50,7 @@
     "bundle:css": "npm run stylelint && npm run compile:scss && postcss wwwroot/css/style.css --config ./postcss.config.js | cleancss -o wwwroot/css/style.min.css",
     "compile:scss": "node-sass --source-map=true Resources/Stylesheets/Scss/style.scss wwwroot/css/style.css",
     "compile:ts": "tsc -p Resources",
-    "stylelint": "stylelint --fix Resources/Stylesheets/Scss/**/*.scss --custom-syntax postcss-scss",
+    "stylelint": "stylelint --fix Resources/Stylesheets/SCSS/**/*.scss --custom-syntax postcss-scss",
     "watch:scss": "npm run bundle:css & watch \"npm run bundle:css\" Resources/Stylesheets/Scss"
   }
 }

@@ -6,8 +6,8 @@
     --btn-border-color: var(--color-black);
     --btn-trans-y: 0;
     @include flex-set(inline, row, nowrap, var(--gap-s), center, center, center);
-    @include transition(transform);
     @include border('def', var(--border-width), var(--btn-border-color));
+    @include box-shadow(0, $gap-s, $gap);
     min-width: 15rem;
     padding: var(--gap);
     background-color: var(--btn-bg-color);
@@ -20,6 +20,7 @@
     text-decoration: none;
     text-transform: uppercase;
     transform: translateY(var(--btn-trans-y));
+    transition: transform var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease-in-out;
     cursor: pointer;
 
         &:hover{
