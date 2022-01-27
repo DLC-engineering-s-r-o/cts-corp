@@ -240,9 +240,10 @@ p, span, small {
 
 .logo {
   max-width: 8rem; }
-  .logo > img {
+  .logo > svg {
     display: block;
-    width: 100%; }
+    width: 100%;
+    fill: var(--nav-color); }
 
 ::-webkit-scrollbar {
   width: 0.8em; }
@@ -285,7 +286,7 @@ p, span, small {
   gap: 3.2em; }
 
 .nav {
-  --nav-color: var(--color-black);
+  --nav-color: var(--color-secondary);
   --nav__menu-display: none;
   display: flex;
   flex-flow: row nowrap;
@@ -301,6 +302,8 @@ p, span, small {
   padding: 0 2.4em;
   color: var(--nav-color);
   z-index: 999; }
+  .nav--open {
+    --nav-color: var(--color-primary); }
   .nav__menu {
     display: flex;
     flex-flow: column nowrap;
@@ -317,8 +320,8 @@ p, span, small {
     z-index: -1; }
     .nav__menu--open {
       --nav__menu-display: flex;
-      animation: showMenu .5s forwards;
-      animation-delay: .1s; }
+      animation: showMenu 0.5s forwards;
+      animation-delay: 0.1s; }
   .nav__item > a {
     --text-width: 50%;
     position: relative;

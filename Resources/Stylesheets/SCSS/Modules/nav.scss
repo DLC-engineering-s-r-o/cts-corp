@@ -1,57 +1,58 @@
 @import "../Base/global";
 
+.nav {
+  --nav-color: var(--color-secondary);
+  --nav__menu-display: none;
+  @include flex-set(def, row, nowrap, $gap-xl, center, space-between);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  padding: 0 $gap-xl;
+  color: var(--nav-color);
+  z-index: 999;
 
-.nav{  
-    --nav-color: var(--color-black);
-    --nav__menu-display: none;
-    @include flex-set(def, row, nowrap, $gap-xl, center, space-between);
+  &--open {
+    --nav-color: var(--color-primary);
+  }
+
+  &__menu {
+    @include flex-set(def, column, nowrap, 0, center, center, center);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: var(--nav-height);
-    padding: 0 $gap-xl;
-    color: var(--nav-color);
-    z-index: 999;
+    display: var(--nav__menu-display);
+    width: 100vw;
+    opacity: 0;
+    z-index: -1;
 
-    &__menu{ 
-        @include flex-set(def, column, nowrap, 0, center, center, center);
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: var(--nav__menu-display);    
-        width: 100vw;
-        opacity: 0;     
-        z-index: -1;
-
-        &--open{
-            --nav__menu-display: flex;
-            animation: showMenu .5s forwards;
-            animation-delay: .1s;  
-        }
+    &--open {
+      --nav__menu-display: flex;
+      animation: showMenu 0.5s forwards;
+      animation-delay: 0.1s;
     }
+  }
 
-    &__item {
-        
-        > a{
-            --text-width: 50%;       
-            position: relative;
-            display: block;
-            height: 100%;
-            color: currentColor;
-            text-decoration: none;    
-            z-index: 10;
-        }
-
+  &__item {
+    > a {
+      --text-width: 50%;
+      position: relative;
+      display: block;
+      height: 100%;
+      color: currentColor;
+      text-decoration: none;
+      z-index: 10;
     }
+  }
 }
 
-@keyframes showMenu{
-    from{
-        opacity: 0;
-    }
+@keyframes showMenu {
+  from {
+    opacity: 0;
+  }
 
-    to{
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
