@@ -70,6 +70,11 @@
     }
   }
 
+  picture {
+    position: absolute;
+    bottom: var(--gap-xl);
+    left: var(--gap-xl);
+  }
   small {
     position: absolute;
     bottom: var(--gap-xl);
