@@ -318,7 +318,7 @@ p, span, small {
   gap: 3.2em; }
 
 .nav {
-  --nav-color: var(--color-secondary);
+  --nav-color: var(--color-black);
   --nav__menu-display: none;
   display: flex;
   flex-flow: row nowrap;
