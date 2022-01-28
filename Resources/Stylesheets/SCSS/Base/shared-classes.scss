@@ -20,165 +20,164 @@ $gapTypes: (
   "no": 0,
 );
 
-@mixin createClasses {
-  // display
-  .d {
-    &-f {
-      display: flex;
-    }
+// display
+.d {
+  &-f {
+    display: flex;
+  }
 
-    &-if {
-      display: inline-flex;
-    }
+  &-if {
+    display: inline-flex;
+  }
 
-    &-n {
-      display: none;
+  &-n {
+    display: none;
+  }
+}
+// flex direction
+.fd {
+  &-r {
+    flex-direction: row;
+  }
+
+  &-c {
+    flex-direction: column;
+  }
+}
+
+//paddings
+.p {
+  --pad: #{$gap};
+  padding: var(--pad);
+
+  @include res-max-desktop-s {
+    --gap-multiplier: 0.5;
+  }
+
+  @include res-max-mobile-l {
+    --gap-multiplier: 0.25;
+  }
+
+  @each $type, $val in $gapTypes {
+    &--#{$type} {
+      --pad: #{$val} !important;
     }
   }
-  // flex direction
-  .fd {
-    &-r {
-      flex-direction: row;
-    }
 
-    &-c {
-      flex-direction: column;
-    }
-  }
-  //paddings
-  .p {
-    --pad: #{$gap};
-    padding: var(--pad);
-
-    @include res-max-desktop-s {
-      --gap-multiplier: 0.5;
-    }
-
-    @include res-max-mobile-l {
-      --gap-multiplier: 0.25;
-    }
+  &-x {
+    --pad-h: #{gap};
+    padding-right: var(--pad-h);
+    padding-left: var(--pad-h);
 
     @each $type, $val in $gapTypes {
       &--#{$type} {
-        --pad: #{$val} !important;
-      }
-    }
-
-    &-x {
-      --pad-h: #{gap};
-      padding-right: var(--pad-h);
-      padding-left: var(--pad-h);
-
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --pad-h: #{$val} !important;
-        }
-      }
-    }
-
-    &-y {
-      --pad-v: #{-gap};
-      padding-top: var(--pad-v);
-      padding-bottom: var(--pad-v);
-
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --pad-v: #{$val} !important;
-        }
+        --pad-h: #{$val} !important;
       }
     }
   }
-  //margins
-  .m {
-    --mg: #{$gap};
-    margin: var(--mg);
 
-    @include res-max-desktop-s {
-      --gap-multiplier: 0.5;
-    }
-
-    @include res-max-mobile-l {
-      --gap-multiplier: 0.25;
-    }
+  &-y {
+    --pad-v: #{-gap};
+    padding-top: var(--pad-v);
+    padding-bottom: var(--pad-v);
 
     @each $type, $val in $gapTypes {
       &--#{$type} {
-        --mg: #{$val} !important;
+        --pad-v: #{$val} !important;
       }
     }
+  }
+}
+//margins
+.m {
+  --mg: #{$gap};
+  margin: var(--mg);
 
-    &-y {
-      --mg-v: #{gap};
-      margin-top: var(--mg-v);
-      margin-bottom: var(--mg-v);
+  @include res-max-desktop-s {
+    --gap-multiplier: 0.5;
+  }
 
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --mg-v: #{$val} !important;
-        }
-      }
-    }
+  @include res-max-mobile-l {
+    --gap-multiplier: 0.25;
+  }
 
-    &-x {
-      --mg-h: #{gap};
-      margin-right: var(--mg-h);
-      margin-left: var(--mg-h);
-
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --mg-h: #{$val} !important;
-        }
-      }
-    }
-
-    &-la {
-      margin-left: auto;
-    }
-
-    &-ra {
-      margin-right: auto;
-    }
-
-    &-a {
-      margin: auto;
+  @each $type, $val in $gapTypes {
+    &--#{$type} {
+      --mg: #{$val} !important;
     }
   }
 
-  //gaps
-  .gap {
-    --gap: #{gap};
-    gap: var(--gap) !important;
+  &-y {
+    --mg-v: #{gap};
+    margin-top: var(--mg-v);
+    margin-bottom: var(--mg-v);
 
     @each $type, $val in $gapTypes {
       &--#{$type} {
-        --gap: #{$val} !important;
-      }
-    }
-  }
-  // justifi content
-  .jc {
-    @each $type, $val in $alignTypes {
-      &-#{$type} {
-        justify-content: $val;
-      }
-    }
-  }
-  // align items
-  .ai {
-    @each $type, $val in $alignTypes {
-      &-#{$type} {
-        align-items: $val;
+        --mg-v: #{$val} !important;
       }
     }
   }
 
-  .elipsis {
-    @include elipsis;
+  &-x {
+    --mg-h: #{gap};
+    margin-right: var(--mg-h);
+    margin-left: var(--mg-h);
+
+    @each $type, $val in $gapTypes {
+      &--#{$type} {
+        --mg-h: #{$val} !important;
+      }
+    }
   }
 
-  .center-item {
-    @include center-item;
+  &-la {
+    margin-left: auto;
   }
+
+  &-ra {
+    margin-right: auto;
+  }
+
+  &-a {
+    margin: auto;
+  }
+}
+
+//gaps
+.gap {
+  --gap: #{gap};
+  gap: var(--gap) !important;
+
+  @each $type, $val in $gapTypes {
+    &--#{$type} {
+      --gap: #{$val} !important;
+    }
+  }
+}
+// justifi content
+.jc {
+  @each $type, $val in $alignTypes {
+    &-#{$type} {
+      justify-content: $val;
+    }
+  }
+}
+// align items
+.ai {
+  @each $type, $val in $alignTypes {
+    &-#{$type} {
+      align-items: $val;
+    }
+  }
+}
+
+.elipsis {
+  @include elipsis;
+}
+
+.center-item {
+  @include center-item;
 }
 
 .text-to-center {

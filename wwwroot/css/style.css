@@ -65,33 +65,6 @@ body {
     flex: 0 0 auto;
     width: 100%; }
 
-.text-to-center {
-  text-align: center; }
-
-.text-to-left {
-  text-align: left; }
-
-.text-to-right {
-  text-align: right; }
-
-.text-justify {
-  text-align: justify; }
-
-.uppercase {
-  text-transform: uppercase; }
-
-.relative {
-  position: relative; }
-
-.overflow-hidden {
-  overflow: hidden; }
-
-.inline-flex {
-  display: inline-flex; }
-
-.inline-block {
-  display: inline-block; }
-
 h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0; }
 
