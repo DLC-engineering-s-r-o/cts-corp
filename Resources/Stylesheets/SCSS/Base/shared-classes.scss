@@ -1,218 +1,217 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 $alignTypes: (
-  'sb': space-between,
-  'sa': space-around,
-  'c': center,
-  'fe': flex-end,
-  'fs': flex-start,
-  'st': stretch,
+  "sb": space-between,
+  "sa": space-around,
+  "c": center,
+  "fe": flex-end,
+  "fs": flex-start,
+  "st": stretch,
 );
 $gapTypes: (
-  'xs': calc(0.2em * var(--gap-multiplier)),
-  's': calc(0.4em * var(--gap-multiplier)),
-  'm': calc(0.8em * var(--gap-multiplier)),
-  'l': calc(1.6em * var(--gap-multiplier)),
-  'xl': calc(2.4em * var(--gap-multiplier)),
-  'xxl': calc(3.2em * var(--gap-multiplier)),
-  'xxxl': calc(4em * var(--gap-multiplier)),
-  'no': 0,
+  "xs": calc(0.2em * var(--gap-multiplier)),
+  "s": calc(0.4em * var(--gap-multiplier)),
+  "m": calc(0.8em * var(--gap-multiplier)),
+  "l": calc(1.6em * var(--gap-multiplier)),
+  "xl": calc(2.4em * var(--gap-multiplier)),
+  "xxl": calc(3.2em * var(--gap-multiplier)),
+  "xxxl": calc(4em * var(--gap-multiplier)),
+  "no": 0,
 );
 
-@mixin createClasses {
-  // display
-  .d {
-    &-f {
-      display: flex;
-    }
-
-    &-if {
-      display: inline-flex;
-    }
-
-    &-n {
-      display: none;
-    }
-  }
-  // flex direction
-  .fd {
-    &-r {
-      flex-direction: row;
-    }
-
-    &-c {
-      flex-direction: column;
-    }
-  }
-  //paddings
-  .p {
-    --pad: #{$gap};
-    padding: var(--pad);
-
-    @include res-max-desktop-s {
-      --gap-multiplier: 0.5;
-    }
-
-    @include res-max-mobile-l {
-      --gap-multiplier: 0.25;
-    }
-
-    @each $type, $val in $gapTypes {
-      &--#{$type} {
-        --pad: #{$val} !important;
-      }
-    }
-
-    &-x {
-      --pad-h: #{gap};
-      padding-right: var(--pad-h);
-      padding-left: var(--pad-h);
-
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --pad-h: #{$val} !important;
-        }
-      }
-    }
-
-    &-y {
-      --pad-v: #{-gap};
-      padding-top: var(--pad-v);
-      padding-bottom: var(--pad-v);
-
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --pad-v: #{$val} !important;
-        }
-      }
-    }
-  }
-  //margins
-  .m {
-    --mg: #{$gap};
-    margin: var(--mg);
-
-    @include res-max-desktop-s {
-      --gap-multiplier: 0.5;
-    }
-
-    @include res-max-mobile-l {
-      --gap-multiplier: 0.25;
-    }
-
-    @each $type, $val in $gapTypes {
-      &--#{$type} {
-        --mg: #{$val} !important;
-      }
-    }
-
-    &-y {
-      --mg-v: #{gap};
-      margin-top: var(--mg-v);
-      margin-bottom: var(--mg-v);
-
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --mg-v: #{$val} !important;
-        }
-      }
-    }
-
-    &-x {
-      --mg-h: #{gap};
-      margin-right: var(--mg-h);
-      margin-left: var(--mg-h);
-
-      @each $type, $val in $gapTypes {
-        &--#{$type} {
-          --mg-h: #{$val} !important;
-        }
-      }
-    }
-
-    &-la {
-      margin-left: auto;
-    }
-
-    &-ra {
-      margin-right: auto;
-    }
-
-    &-a {
-      margin: auto;
-    }
+// display
+.d {
+  &-f {
+    display: flex;
   }
 
-  //gaps
-  .gap {
-    --gap: #{gap};
-    gap: var(--gap) !important;
-
-    @each $type, $val in $gapTypes {
-      &--#{$type} {
-        --gap: #{$val} !important;
-      }
-    }
-  }
-  // justifi content
-  .jc {
-    @each $type, $val in $alignTypes {
-      &-#{$type} {
-        justify-content: $val;
-      }
-    }
-  }
-  // align items
-  .ai {
-    @each $type, $val in $alignTypes {
-      &-#{$type} {
-        align-items: $val;
-      }
-    }
-  }
-
-  .elipsis {
-    @include elipsis;
-  }
-
-  .center-item {
-    @include center-item;
-  }
-
-  .text-to-center {
-    text-align: center;
-  }
-
-  .text-to-left {
-    text-align: left;
-  }
-
-  .text-to-right {
-    text-align: right;
-  }
-
-  .text-justify {
-    text-align: justify;
-  }
-
-  .uppercase {
-    text-transform: uppercase;
-  }
-
-  .relative {
-    position: relative;
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
-  }
-
-  .inline-flex {
+  &-if {
     display: inline-flex;
   }
 
-  .inline-block {
-    display: inline-block;
+  &-n {
+    display: none;
   }
+}
+// flex direction
+.fd {
+  &-r {
+    flex-direction: row;
+  }
+
+  &-c {
+    flex-direction: column;
+  }
+}
+
+//paddings
+.p {
+  --pad: #{$gap};
+  padding: var(--pad);
+
+  @include res-max-desktop-s {
+    --gap-multiplier: 0.5;
+  }
+
+  @include res-max-mobile-l {
+    --gap-multiplier: 0.25;
+  }
+
+  @each $type, $val in $gapTypes {
+    &--#{$type} {
+      --pad: #{$val} !important;
+    }
+  }
+
+  &-x {
+    --pad-h: #{gap};
+    padding-right: var(--pad-h);
+    padding-left: var(--pad-h);
+
+    @each $type, $val in $gapTypes {
+      &--#{$type} {
+        --pad-h: #{$val} !important;
+      }
+    }
+  }
+
+  &-y {
+    --pad-v: #{-gap};
+    padding-top: var(--pad-v);
+    padding-bottom: var(--pad-v);
+
+    @each $type, $val in $gapTypes {
+      &--#{$type} {
+        --pad-v: #{$val} !important;
+      }
+    }
+  }
+}
+//margins
+.m {
+  --mg: #{$gap};
+  margin: var(--mg);
+
+  @include res-max-desktop-s {
+    --gap-multiplier: 0.5;
+  }
+
+  @include res-max-mobile-l {
+    --gap-multiplier: 0.25;
+  }
+
+  @each $type, $val in $gapTypes {
+    &--#{$type} {
+      --mg: #{$val} !important;
+    }
+  }
+
+  &-y {
+    --mg-v: #{gap};
+    margin-top: var(--mg-v);
+    margin-bottom: var(--mg-v);
+
+    @each $type, $val in $gapTypes {
+      &--#{$type} {
+        --mg-v: #{$val} !important;
+      }
+    }
+  }
+
+  &-x {
+    --mg-h: #{gap};
+    margin-right: var(--mg-h);
+    margin-left: var(--mg-h);
+
+    @each $type, $val in $gapTypes {
+      &--#{$type} {
+        --mg-h: #{$val} !important;
+      }
+    }
+  }
+
+  &-la {
+    margin-left: auto;
+  }
+
+  &-ra {
+    margin-right: auto;
+  }
+
+  &-a {
+    margin: auto;
+  }
+}
+
+//gaps
+.gap {
+  --gap: #{gap};
+  gap: var(--gap) !important;
+
+  @each $type, $val in $gapTypes {
+    &--#{$type} {
+      --gap: #{$val} !important;
+    }
+  }
+}
+// justifi content
+.jc {
+  @each $type, $val in $alignTypes {
+    &-#{$type} {
+      justify-content: $val;
+    }
+  }
+}
+// align items
+.ai {
+  @each $type, $val in $alignTypes {
+    &-#{$type} {
+      align-items: $val;
+    }
+  }
+}
+
+// .elipsis {
+//   @include elipsis;
+// }
+
+.center-item {
+  @include center-item;
+}
+
+.text-to-center {
+  text-align: center;
+}
+
+.text-to-left {
+  text-align: left;
+}
+
+.text-to-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.inline-block {
+  display: inline-block;
 }

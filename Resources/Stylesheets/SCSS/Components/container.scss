@@ -1,17 +1,22 @@
 @import "../base/global";
 
 .container {
-    width: 70%;
-    min-width: 1200px;
-    margin: 0 auto;
+  --pad-base: var(--gap-l);
+  width: 70%;
+  min-width: 1200px;
+  margin: 0 auto;
 
-    @include res-max-desktop-l {
-        width: 80%;
-    }
+  @include res-max-desktop-l {
+    width: 80%;
+  }
 
-    @include res-max-desktop-m {
-        width: 100%;
-        min-width: 0;
-        padding: 0 var(--pad-base);
-    }
+  @include res-max-desktop-m {
+    width: 100%;
+    min-width: 0;
+    padding: 0 var(--pad-base);
+  }
+
+  @include res-max-mobile-l {
+    padding: 0 1rem;
+  }
 }

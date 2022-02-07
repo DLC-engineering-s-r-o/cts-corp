@@ -3,8 +3,9 @@
 .logo{
     max-width: 8rem;
 
-    >img{
+    >svg{
         display: block;
         width: 100%;
+        fill: var(--nav-color);
     }
 }

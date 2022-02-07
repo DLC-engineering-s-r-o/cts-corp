@@ -1,28 +1,58 @@
 @import "../base/global";
 
-header{
-   
+header {
 }
 
-.header {    
-    &__container{
-        --col-count: 2;
-        @include grid-columns(def, repeat(var(--col-count), minmax($gap-l, 1fr)), var(--gap), stretch, center, stretch);
-        position: relative;
-        height: 100vh;
-        max-height: $width-4k;
-        z-index: 10;  
-    }
+.header {
+  &__container {
+    --col-count: 1;
+    @include grid-columns(
+      def,
+      repeat(var(--col-count), minmax($gap-l, 1fr)),
+      var(--gap),
+      stretch,
+      center,
+      stretch
+    );
+    position: relative;
+    height: 100vh;
+    max-height: $width-4k;
+    z-index: 10;
+  }
 
-    &__content{
-        @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);     
-    }
+  &__content {
+    @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
 
-    &__title{
-       
-    }
+    background-image: image-set(
+      "../images/backgrounds/header-bg_120.png" 1x,
+      "../images/backgrounds/header-bg_240.png" 2x
+    );
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+  }
 
-    &__photo{
-        
-    }
+  h1 {
+    font-size: 8rem;
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  &__title {
+  }
+
+  &__photo {
+    background-image: image-set(
+      "../images/backgrounds/header-bg_120.png" 1x,
+      "../images/backgrounds/header-bg_240.png" 2x
+    );
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+  }
 }
+
+// "../images/backgrounds/header-bg_240.png" 240w,
+// "../images/backgrounds/header-bg_480.png" 480w,
+// "../images/backgrounds/header-bg_960.png" 960w,
+// "../images/backgrounds/header-bg_1920.png" 1620w

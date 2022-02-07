@@ -1,57 +1,107 @@
 @import "../Base/global";
 
+.nav {
+  --nav-color: var(--color-black);
+  --nav__menu-display: none;
+  @include flex-set(def, row, nowrap, $gap-xl, center, space-between);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  padding: 0 var(--gap-xl);
+  color: var(--nav-color);
+  z-index: 999;
 
-.nav{  
-    --nav-color: var(--color-black);
-    --nav__menu-display: none;
-    @include flex-set(def, row, nowrap, $gap-xl, center, space-between);
+  &--open {
+    --nav-color: var(--color-white);
+  }
+
+  &__menu {
+    --bg-image: url("../images/circles/header-dots.svg");
+    @include flex-set(def, column, nowrap, 0, center, center, center);
     position: fixed;
     top: 0;
     left: 0;
+    display: var(--nav__menu-display);
     width: 100%;
-    height: var(--nav-height);
-    padding: 0 $gap-xl;
+    height: 100%;
+    background: radial-gradient(
+      ellipse at center,
+      $color-primary,
+      $color-primary--darken
+    );
+    opacity: 0;
     color: var(--nav-color);
-    z-index: 999;
+    z-index: -1;
 
-    &__menu{ 
-        @include flex-set(def, column, nowrap, 0, center, center, center);
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: var(--nav__menu-display);    
-        width: 100vw;
-        opacity: 0;     
-        z-index: -1;
-
-        &--open{
-            --nav__menu-display: flex;
-            animation: showMenu .5s forwards;
-            animation-delay: .1s;  
-        }
+    @include res-min-tablet {
+      background: var(--bg-image),
+        radial-gradient(
+          ellipse at center,
+          $color-primary,
+          $color-primary--darken
+        );
+      background-repeat: no-repeat;
+      background-position: left bottom;
     }
 
-    &__item {
-        
-        > a{
-            --text-width: 50%;       
-            position: relative;
-            display: block;
-            height: 100%;
-            color: currentColor;
-            text-decoration: none;    
-            z-index: 10;
-        }
-
+    &--open {
+      --nav__menu-display: flex;
+      animation: showMenu 0.5s forwards;
+      animation-delay: 0.1s;
     }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    > a {
+      --text-width: 50%;
+      position: relative;
+      display: block;
+      height: 100%;
+      font-family: var(--font-title);
+      font-size: var(--gap-xl);
+      line-height: 2;
+      color: currentColor;
+      text-decoration: none;
+      text-transform: uppercase;
+      z-index: 10;
+
+      &:hover {
+        color: var(--color-black);
+        text-decoration: underline;
+        @include transition(all, var(--trans-time), var(--trans-fnc));
+      }
+    }
+  }
+
+  picture {
+    position: absolute;
+    bottom: var(--gap-xl);
+    left: var(--gap-xl);
+  }
+
+  small {
+    position: absolute;
+    bottom: var(--gap-xl);
+    > a {
+      color: var(--color-white);
+    }
+  }
 }
 
-@keyframes showMenu{
-    from{
-        opacity: 0;
-    }
+@keyframes showMenu {
+  from {
+    opacity: 0;
+  }
 
-    to{
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
