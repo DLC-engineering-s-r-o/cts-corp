@@ -368,7 +368,8 @@ p, span, small {
     --btn-trans-y: -5%; }
   .button--secondary {
     --btn-color: var(--color-black);
-    --btn-bg-color: var(--color-trans); }
+    --btn-bg-color: var(--color-trans);
+    text-align: center; }
 
 .burger {
   width: 80px;
