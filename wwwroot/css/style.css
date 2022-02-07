@@ -535,21 +535,18 @@ p, span, small {
   align-content: normal;
   justify-content: center;
   gap: 3.2em;
-  background-image: image-set("../images/backgrounds/header-bg_120.png" 1x, "../images/backgrounds/header-bg_240.png" 2x);
+  background-image: image-set("../images/backgrounds/header-bg_480.png" 1x, "../images/backgrounds/header-bg_960.png" 2x);
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain; }
+  @media only screen and (min-width: 769px) {
+    .header__content {
+      background-image: image-set("../images/backgrounds/header-bg_960.png" 1x, "../images/backgrounds/header-bg_1920.png" 2x); } }
 
 .header h1 {
   font-size: 8rem;
   font-weight: 500;
   color: #fdba12; }
-
-.header__photo {
-  background-image: image-set("../images/backgrounds/header-bg_120.png" 1x, "../images/backgrounds/header-bg_240.png" 2x);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: cover; }
 
 .nav {
   --nav-color: var(--color-black);

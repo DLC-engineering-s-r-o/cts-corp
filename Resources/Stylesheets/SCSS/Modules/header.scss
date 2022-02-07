@@ -24,12 +24,19 @@ header {
     @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
 
     background-image: image-set(
-      "../images/backgrounds/header-bg_120.png" 1x,
-      "../images/backgrounds/header-bg_240.png" 2x
+      "../images/backgrounds/header-bg_480.png" 1x,
+      "../images/backgrounds/header-bg_960.png" 2x
     );
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
+
+    @include res-min-tablet {
+      background-image: image-set(
+        "../images/backgrounds/header-bg_960.png" 1x,
+        "../images/backgrounds/header-bg_1920.png" 2x
+      );
+    }
   }
 
   h1 {
@@ -42,17 +49,5 @@ header {
   }
 
   &__photo {
-    background-image: image-set(
-      "../images/backgrounds/header-bg_120.png" 1x,
-      "../images/backgrounds/header-bg_240.png" 2x
-    );
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: cover;
   }
 }
-
-// "../images/backgrounds/header-bg_240.png" 240w,
-// "../images/backgrounds/header-bg_480.png" 480w,
-// "../images/backgrounds/header-bg_960.png" 960w,
-// "../images/backgrounds/header-bg_1920.png" 1620w
