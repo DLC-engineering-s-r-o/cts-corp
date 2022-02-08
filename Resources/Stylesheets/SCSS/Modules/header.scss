@@ -1,8 +1,5 @@
 @import "../base/global";
 
-header {
-}
-
 .header {
   &__container {
     --col-count: 1;
@@ -22,7 +19,6 @@ header {
 
   &__content {
     @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
-
     background-image: image-set(
       "../images/backgrounds/header-bg_480.png" 1x,
       "../images/backgrounds/header-bg_960.png" 2x
@@ -37,17 +33,22 @@ header {
         "../images/backgrounds/header-bg_1920.png" 2x
       );
     }
-  }
 
-  h1 {
-    font-size: 8rem;
-    font-weight: 500;
-    color: $color-primary;
-  }
+    h1 {
+      font-size: 7rem;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
 
-  &__title {
-  }
+    p {
+      font-family: var(--font-title);
+      font-size: $gap-xl;
+      font-weight: 400;
+      line-height: 1.4;
+    }
 
-  &__photo {
+    button {
+      margin-top: $gap-l;
+    }
   }
 }
