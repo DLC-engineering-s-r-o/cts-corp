@@ -1,0 +1,17 @@
+@import "../base/global";
+
+.about {
+  &__content {
+    @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
+  }
+  p {
+    margin-bottom: $gap-l;
+    font-size: $gap-l;
+    color: $color-secondary;
+
+    strong {
+      font-family: inherit;
+      font-weight: bold;
+    }
+  }
+}

@@ -637,4 +637,20 @@ p, span, small {
   to {
     opacity: 1; } }
 
+.about__content {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: normal;
+  justify-content: center;
+  gap: 3.2em; }
+
+.about p {
+  margin-bottom: 1.6em;
+  font-size: 1.6em;
+  color: #424243; }
+  .about p strong {
+    font-family: inherit;
+    font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */
