@@ -1,5 +1,8 @@
 @import "../base/global";
 
+header {
+  margin-bottom: var(--gap-xxl);
+}
 .header {
   &__container {
     --col-count: 1;

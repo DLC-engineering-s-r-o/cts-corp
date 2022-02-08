@@ -1,17 +1,65 @@
 @import "../base/global";
 
 .about {
+  &__container {
+    --col-count: 2;
+    @include grid-columns(def, 2fr 1fr, var(--gap), stretch, center, stretch);
+  }
   &__content {
     @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
-  }
-  p {
-    margin-bottom: $gap-l;
-    font-size: $gap-l;
-    color: $color-secondary;
+    p {
+      margin-bottom: var(--gap-l);
+      font-size: 1.5rem;
+      color: var(--color-secondary);
 
-    strong {
-      font-family: inherit;
-      font-weight: bold;
+      strong {
+        font-family: inherit;
+        font-weight: bold;
+      }
+    }
+  }
+  &__numbers {
+    figure {
+      --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+      @include box-shadow();
+      position: relative;
+      padding: 7rem 1.6rem 1.2rem 1.6rem;
+      margin-bottom: var(--gap-l);
+      border-radius: var(--gap);
+
+      div {
+        position: absolute;
+        top: 1.6rem;
+        right: 1.6rem;
+        width: 92px;
+        height: 92px;
+        background: var(--color-primary);
+        border-radius: 50%;
+
+        .icon {
+          --icon-size: var(--gap-xxl);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          fill: var(--color-white);
+        }
+      }
+
+      p {
+        font-family: var(--font-title);
+        font-size: 2.1875rem;
+        line-height: 1;
+        color: var(--color-secondary);
+
+        span {
+          font-family: inherit;
+          font-size: 5rem;
+          font-weight: 600;
+          line-height: inherit;
+          color: var(--color-black);
+        }
+      }
     }
   }
 }

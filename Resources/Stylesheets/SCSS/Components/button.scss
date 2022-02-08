@@ -1,7 +1,7 @@
 @import "../base/global";
 
 .button {
-  --pad: 0.8em;
+  --pad: #{$gap};
   --btn-color: var(--color-white);
   --btn-bg-color: var(--color-black);
   --btn-border-color: var(--color-black);
