@@ -525,8 +525,9 @@ p, span, small {
   justify-content: center;
   grid-template-columns: repeat(var(--col-count), minmax(1.6em, 1fr));
   position: relative;
-  height: 100vh;
+  height: calc(100vh - var(--nav-height));
   max-height: 2560px;
+  margin-top: var(--nav-height);
   z-index: 10; }
 
 .header__content {
