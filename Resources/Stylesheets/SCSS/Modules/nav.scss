@@ -10,11 +10,15 @@
   width: 100%;
   height: var(--nav-height);
   padding: 0 var(--gap-xl);
+  background-color: hsla(0, 0%, 100%, 0.5);
   color: var(--nav-color);
   z-index: 999;
+  backdrop-filter: saturate(180%) blur(5px);
 
   &--open {
     --nav-color: var(--color-white);
+    background-color: none;
+    backdrop-filter: none;
   }
 
   &__menu {

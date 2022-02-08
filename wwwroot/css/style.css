@@ -570,10 +570,14 @@ p, span, small {
   width: 100%;
   height: var(--nav-height);
   padding: 0 var(--gap-xl);
+  background-color: rgba(255, 255, 255, 0.5);
   color: var(--nav-color);
-  z-index: 999; }
+  z-index: 999;
+  backdrop-filter: saturate(180%) blur(5px); }
   .nav--open {
-    --nav-color: var(--color-white); }
+    --nav-color: var(--color-white);
+    background-color: none;
+    backdrop-filter: none; }
   .nav__menu {
     --bg-image: url("../images/circles/header-dots.svg");
     display: flex;
