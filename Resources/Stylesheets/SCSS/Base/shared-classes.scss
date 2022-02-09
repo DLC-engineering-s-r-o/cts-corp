@@ -215,3 +215,8 @@ $gapTypes: (
 .inline-block {
   display: inline-block;
 }
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}

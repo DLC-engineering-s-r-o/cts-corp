@@ -3,7 +3,7 @@
 .about {
   &__container {
     --col-count: 2;
-    @include grid-columns(def, 2fr 1fr, var(--gap), stretch, center, stretch);
+    @include grid-columns(def, 2fr 1fr, $gap, stretch, center, stretch);
   }
   &__content {
     @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);

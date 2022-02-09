@@ -307,6 +307,10 @@ body {
 .inline-block {
   display: inline-block; }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto; }
+
 h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0; }
 
@@ -516,9 +520,6 @@ p, span, small {
 .footer {
   text-align: center; }
 
-header {
-  margin-bottom: var(--gap-xxl); }
-
 .header__container {
   --col-count: 1;
   display: grid;
@@ -648,7 +649,7 @@ header {
 .about__container {
   --col-count: 2;
   display: grid;
-  gap: var(--gap);
+  gap: 0.8em;
   align-items: stretch;
   align-content: stretch;
   justify-content: center;
@@ -704,5 +705,53 @@ header {
       font-weight: 600;
       line-height: inherit;
       color: var(--color-black); }
+
+.services__content {
+  display: grid;
+  gap: 1.6em;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+  grid-template-columns: 1fr; }
+  @media only screen and (min-width: 769px) {
+    .services__content {
+      display: grid;
+      gap: 2.4em;
+      align-items: stretch;
+      align-content: stretch;
+      justify-content: center;
+      grid-template-columns: 2fr 1fr; } }
+  .services__content h3 {
+    margin-bottom: var(--gap);
+    font-size: 2rem;
+    text-transform: uppercase; }
+  .services__content p {
+    margin-bottom: var(--gap-l);
+    font-size: 1.5rem;
+    color: var(--color-secondary); }
+    .services__content p strong {
+      font-family: inherit;
+      font-weight: bold; }
+    .services__content p a {
+      font-weight: bold;
+      color: inherit; }
+  .services__content--reverse {
+    display: grid;
+    gap: 1.6em;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: center;
+    grid-template-columns: 1fr; }
+    @media only screen and (min-width: 769px) {
+      .services__content--reverse {
+        display: grid;
+        gap: 2.4em;
+        align-items: stretch;
+        align-content: stretch;
+        justify-content: center;
+        grid-template-columns: 1fr 2fr; } }
+    @media only screen and (max-width: 768px) {
+      .services__content--reverse > picture {
+        grid-row: end; } }
 
 /*# sourceMappingURL=style.css.map */

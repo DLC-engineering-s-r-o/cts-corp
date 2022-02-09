@@ -1,0 +1,50 @@
+@import "../base/global";
+
+.services {
+  &__container {
+  }
+
+  &__content {
+    @include grid-columns(def, 1fr, $gap-l, stretch, center, stretch);
+
+    @include res-min-tablet {
+      @include grid-columns(def, 2fr 1fr, $gap-xl, stretch, center, stretch);
+    }
+
+    h3 {
+      margin-bottom: var(--gap);
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: var(--gap-l);
+      font-size: 1.5rem;
+      color: var(--color-secondary);
+
+      strong {
+        font-family: inherit;
+        font-weight: bold;
+      }
+
+      a {
+        font-weight: bold;
+        color: inherit;
+      }
+    }
+
+    &--reverse {
+      @include grid-columns(def, 1fr, $gap-l, stretch, center, stretch);
+
+      @include res-min-tablet {
+        @include grid-columns(def, 1fr 2fr, $gap-xl, stretch, center, stretch);
+      }
+
+      > picture {
+        @include res-max-tablet {
+          grid-row: end;
+        }
+      }
+    }
+  }
+}
