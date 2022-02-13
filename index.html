@@ -332,7 +332,7 @@
                                     <use xlink:href="#icon-mail"></use>
                                 </svg>
                                 <a href="mailto:dvorak@dlc.cz">dvorak@dlc.cz</a>
-                            </div>                            
+                            </div>
                             <div class="inline-flex">
                                 <svg class="icon icon-phone">
                                     <use xlink:href="#icon-phone"></use>
@@ -520,17 +520,83 @@
                                 <a href="tel:272 650 820">272 650 820</a>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="kontakt" class="contact">
-            <div class="container">
-                <h2 class="title">
-                    <strong>Kontaktní informace</strong>
-                    CTS corp., s.r.o.
-                </h2>
+            <div class="container contact__container">                
+                <div class="contact__form">
+                    <div>
+                        <h3>Kontaktujte nás</h3>
+                        <p>Vyplňte formulář a náš tým se vám ozve zpět do 24 hodin.</p>
+                    </div>
+                    <form>
+                        <div class="form__element">
+                            <label for="name">Jméno</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="form__element">
+                            <label for="surname">Příjmení</label>
+                            <input type="text" id="surname">
+                        </div>
+                        <div class="form__element">
+                            <label for="email">Email</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="form__element">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form__element form__element--full">
+                            <label for="msg">Vaše zpráva:</label>
+                            <textarea id="msg" name="mesage" rows="5" cols="33"></textarea>
+                        </div>
+                        <button type="submit" class="button">Odeslat</button>
+                    </form>
+                </div>
+                <div class="contact__title">
+                    <h2 class="title">
+                        <strong>Kontaktní informace</strong>
+                        CTS corp., s.r.o.
+                    </h2>
+                    <div class="contact__title contact__title--address">
+                        <div class="">
+                            <p><span>IČ: </span>27099873</p>
+                            <p><span>DIČ: </span>CZ27099873</p>
+                        </div>
+                        <div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-address">
+                                    <use xlink:href="#icon-address"></use>
+                                </svg>
+                                <span>sídlo společnosti</span>
+                            </div>
+                            <address>
+                                Bubenská 421/3, 170 00 Praha 7
+                            </address>
+                        </div>
+                        <div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <span>email</span>
+                            </div>
+                            <a href="mailto:info@dlc.cz">info@dlc.cz</a>
+                        </div>
+                        <div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <span>telefon</span>
+                            </div>
+                            <a href="tel:+420272650820">+420 272 650 820</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

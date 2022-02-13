@@ -3,4 +3,116 @@
 .contact {
   --gap-section: 7rem;
   margin-top: var(--gap-section);
+
+  &__container {
+    --col-count: 2;
+    @include grid-columns(
+      def,
+      repeat(var(--col-count), minmax($gap-l, 1fr)),
+      var(--gap),
+      stretch,
+      center,
+      stretch
+    );
+  }
+
+  &__title {
+    h2 {
+      margin-bottom: var(--gap-xxl);
+    }
+
+    &--address {
+      --col-count: 1;
+      @include grid-columns(
+        def,
+        repeat(var(--col-count), minmax($gap-l, 1fr)),
+        var(--gap-l),
+        stretch,
+        center,
+        stretch
+      );
+
+      > div:first-of-type {
+        @include flex-set(
+          def,
+          row,
+          wrap,
+          $gap-xxl,
+          flex-start,
+          flex-start,
+          normal
+        );
+      }
+
+      > div {
+        @include flex-set(
+          def,
+          column,
+          wrap,
+          $gap-xs,
+          flex-start,
+          flex-start,
+          normal
+        );
+      }
+
+      p {
+        font-size: 1rem;
+        span {
+          color: var(--color-primary);
+        }
+      }
+      span {
+        font-family: var(--font-title);
+        font-size: 1.125rem;
+      }
+      svg {
+        margin-right: var(--gap-s);
+        fill: var(--color-primary);
+      }
+      address,
+      a {
+        margin-left: 1.2rem;
+        font-family: var(--font-text);
+        font-size: 1rem;
+        color: var(--color-secondary);
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__form {
+    --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+    @include box-shadow();
+    padding: var(--gap-xl) var(--gap-xxl);
+    background-color: var(--color-white);
+    border-radius: var(--gap);
+
+    > div {
+      margin-bottom: var(--gap-xxl);
+
+      h3 {
+        margin-bottom: var(--gap);
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--color-secondary);
+      }
+    }
+
+    form {
+      --col-count: 2;
+      @include grid-columns(
+        def,
+        repeat(var(--col-count), minmax($gap-l, 1fr)),
+        var(--gap-l),
+        stretch,
+        center,
+        stretch
+      );
+    }
+  }
 }

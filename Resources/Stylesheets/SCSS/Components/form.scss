@@ -1,0 +1,33 @@
+@import "../base/global";
+
+.form {
+  &__element {
+    --gap-form: 0.4rem;
+    @include grid-columns(def, 1fr, var(--gap-form), stretch, center, stretch);
+
+    &--full {
+      grid-column: span 2;
+    }
+
+    label {
+      font-family: var(--font-title);
+      font-size: 1.375rem;
+    }
+
+    input,
+    textarea {
+      @include border(def, 0, var(--color-black));
+      @include border(bottom, var(--border-width), var(--color-black));
+      font-family: var(--font-text);
+      font-size: 1rem;
+
+      &:focus {
+        border-color: var(--color-primary);
+      }
+
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+  }
+}
