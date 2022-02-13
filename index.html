@@ -153,7 +153,7 @@
 
     <header class="header gap gap--xxl">
         <div class="container header__container">
-            <div class="header__content gap gap--l">
+            <div class="header__title gap gap--l">
                 <h1>CTS Corp.</h1>
                 <p>Financování projektů z veřejných zdrojů</p>
                 <div class="inline-flex">
@@ -219,13 +219,15 @@
         </section>
 
         <section id="sluzby" class="services">
-            <div class="container">
-                <h2 class="title">
-                    <strong>Naše služby</strong>
-                    Čím se zabýváme?
-                </h2>
-                <p>Společnost CTS corp. se zabývá financováním projektů z veřejných zdrojů
-                    a poradenstvím při zavádění GDPR.</p>
+            <div class="container services__container">
+                <div class="services__title">
+                    <h2 class="title">
+                        <strong>Naše služby</strong>
+                        Čím se zabýváme?
+                    </h2>
+                    <p>Společnost CTS corp. se zabývá financováním projektů z veřejných zdrojů
+                        a poradenstvím při zavádění GDPR.</p>
+                </div>
                 <div class="services__content">
                     <div>
                         <h3>Dotace</h3>
@@ -264,6 +266,7 @@
                 </div>
             </div>
         </section>
+
         <section id="reference">
             <div class="container">
                 <h2 class="title">
@@ -272,15 +275,257 @@
                 </h2>
             </div>
         </section>
-        <section id="tym">
-            <div class="container">
-                <h2 class="title">
-                    <strong>Náš tým</strong>
-                    Poradíme vám
-                </h2>
+
+        <section id="tym" class="team">
+            <div class="container team__container">
+                <div class="team__title">
+                    <h2 class="title">
+                        <strong>Náš tým</strong>
+                        Poradíme vám
+                    </h2>
+                    <p>Máte problém se kterým si nevíte rady? Máme tým zkušených profesionálů na kterých se můžete
+                        spolehnout.</p>
+                </div>
+                <div class="team__content">
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/lad_new.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/lad_new.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/lad_new.jpg"
+                                srcset="wwwroot/images/team/lad_new.jpg">
+                        </picture>
+                        <div>
+                            <p>Ing. Jiří Lád, Ph.D.</p>
+                            <i>Ředitel společnosti</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:lad@dlc.cz">lad@dlc.cz</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mobile">
+                                    <use xlink:href="#icon-mobile"></use>
+                                </svg>
+                                <a href="tel:+420 775 074 125">+420 775 074 125</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:272 650 707">272 650 707</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/dvorak.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/dvorak.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/dvorak.jpg"
+                                srcset="wwwroot/images/team/dvorak.jpg">
+                        </picture>
+                        <div>
+                            <p>Ing. Petr Dvořák</p>
+                            <i>Jednatel společnosti</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:dvorak@dlc.cz">dvorak@dlc.cz</a>
+                            </div>                            
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:272 650 820">272 650 820</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/jana_h_b.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/jana_h_b.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/jana_h_b.jpg"
+                                srcset="wwwroot/images/team/jana_h_b.jpg">
+                        </picture>
+                        <div>
+                            <p>Jana Haselmannová</p>
+                            <i>Asistentka vedení společnosti</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:haselmannova@dlc.cz">haselmannova@dlc.cz</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mobile">
+                                    <use xlink:href="#icon-mobile"></use>
+                                </svg>
+                                <a href="tel:+420 775 074 124">+420 775 074 124</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:272 650 820">272 650 820</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/duskova.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/duskova.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/duskova.jpg"
+                                srcset="wwwroot/images/team/duskova.jpg">
+                        </picture>
+                        <div>
+                            <p>Mgr. Alena Dušková</p>
+                            <i>Senior Project Manager</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:duskova@dlc.cz">duskova@dlc.cz</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mobile">
+                                    <use xlink:href="#icon-mobile"></use>
+                                </svg>
+                                <a href="tel:+420 774 075 452">+420 774 075 452</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:272 660 806">272 660 806</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/nigriova.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/nigriova.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/nigriova.jpg"
+                                srcset="wwwroot/images/team/nigriova.jpg">
+                        </picture>
+                        <div>
+                            <p>Petra Nigrinová</p>
+                            <i>Senior Project Manager</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:nigrinova@dlc.cz">nigrinova@dlc.cz</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mobile">
+                                    <use xlink:href="#icon-mobile"></use>
+                                </svg>
+                                <a href="tel:+420 606 759 134">+420 606 759 134</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:283 841 414">283 841 414</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/vondrackova.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/vondrackova.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/vondrackova.jpg"
+                                srcset="wwwroot/images/team/vondrackova.jpg">
+                        </picture>
+                        <div>
+                            <p>Mgr. Lenka Vondráčková</p>
+                            <i>Právník společnosti</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:vondrackova@dlc.cz">vondrackova@dlc.cz</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mobile">
+                                    <use xlink:href="#icon-mobile"></use>
+                                </svg>
+                                <a href="tel:+420 283 841 414">+420 283 841 414</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:775 704 491">775 704 491</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/zunova.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/zunova.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/zunova.jpg"
+                                srcset="wwwroot/images/team/zunova.jpg">
+                        </picture>
+                        <div>
+                            <p>Ing. Karolína Zunová</p>
+                            <i>Project Manager</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:zunova@dlc.cz">zunova@dlc.cz</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mobile">
+                                    <use xlink:href="#icon-mobile"></use>
+                                </svg>
+                                <a href="tel:+420 775 704 492">+420 775 704 492</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:283 841 414">283 841 414</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__card">
+                        <picture>
+                            <source type="image/webp" sizes="" srcset="wwwroot/images/team/vlkova.webp">
+                            <source type="image/jpg" sizes="" srcset="wwwroot/images/team/vlkova.jpg">
+                            <img class="img-fluid" alt="grant" sizes="" src="wwwroot/images/team/vlkova.jpg"
+                                srcset="wwwroot/images/team/vlkova.jpg">
+                        </picture>
+                        <div>
+                            <p>Ing. Silvie Vlková</p>
+                            <i>Project Manager</i>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mail">
+                                    <use xlink:href="#icon-mail"></use>
+                                </svg>
+                                <a href="mailto:vlkova@dlc.cz">vlkova@dlc.cz</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-mobile">
+                                    <use xlink:href="#icon-mobile"></use>
+                                </svg>
+                                <a href="tel:+420 605 789 210">+420 605 789 210</a>
+                            </div>
+                            <div class="inline-flex">
+                                <svg class="icon icon-phone">
+                                    <use xlink:href="#icon-phone"></use>
+                                </svg>
+                                <a href="tel:272 650 820">272 650 820</a>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
             </div>
         </section>
-        <section id="kontakt">
+
+        <section id="kontakt" class="contact">
             <div class="container">
                 <h2 class="title">
                     <strong>Kontaktní informace</strong>

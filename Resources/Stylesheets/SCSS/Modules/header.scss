@@ -18,7 +18,7 @@
     z-index: 10;
   }
 
-  &__content {
+  &__title {
     @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
     background-image: image-set(
       "../images/backgrounds/header-bg_480.png" 1x,

@@ -1,7 +1,33 @@
 @import "../base/global";
 
 .services {
+  --gap-section: 7rem;
+  margin-top: var(--gap-section);
+
   &__container {
+    --gap-container: 3rem;
+    @include grid-columns(
+      def,
+      1fr,
+      var(--gap-container),
+      stretch,
+      center,
+      stretch
+    );
+
+    @include res-min-tablet {
+      --gap-container: 4rem;
+    }
+
+    @include res-min-desktop-s {
+      --gap-container: 5rem;
+    }
+  }
+
+  &__title {
+    p {
+      font-size: 1.5rem;
+    }
   }
 
   &__content {

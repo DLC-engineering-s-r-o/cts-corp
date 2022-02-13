@@ -1,6 +1,6 @@
-@import '../base/global';
+@import "../base/global";
 
-.contact{
-    
-   
+.contact {
+  --gap-section: 7rem;
+  margin-top: var(--gap-section);
 }

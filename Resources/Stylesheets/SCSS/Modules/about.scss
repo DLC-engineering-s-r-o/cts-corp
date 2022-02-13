@@ -1,12 +1,16 @@
 @import "../base/global";
 
 .about {
+  --gap-section: 7rem;
+  margin-top: var(--gap-section);
+
   &__container {
-    --col-count: 2;
     @include grid-columns(def, 2fr 1fr, $gap, stretch, center, stretch);
   }
+
   &__content {
     @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
+
     p {
       margin-bottom: var(--gap-l);
       font-size: 1.5rem;
@@ -18,6 +22,7 @@
       }
     }
   }
+
   &__numbers {
     figure {
       --color-box-shadow: hsla(0, 0%, 0%, 0.17);
