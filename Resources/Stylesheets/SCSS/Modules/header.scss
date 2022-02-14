@@ -41,7 +41,7 @@
       color: var(--color-primary);
     }
 
-    p {
+    span {
       font-family: var(--font-title);
       font-size: $gap-xl;
       font-weight: 400;
@@ -50,6 +50,81 @@
 
     button {
       margin-top: $gap-l;
+    }
+  }
+}
+
+.anim {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-transform: translate3d(0, 0, 0);
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+
+  &--a {
+    animation: showup 7s infinite;
+  }
+
+  &--b {
+    width: 0px;
+    animation: reveal 7s infinite;
+
+    span {
+      margin-left: -350px;
+      animation: slidein 7s infinite;
+    }
+  }
+
+  @keyframes showup {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slidein {
+    0% {
+      margin-left: -800px;
+    }
+    20% {
+      margin-left: -800px;
+    }
+    35% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: 0px;
+    }
+  }
+
+  @keyframes reveal {
+    0% {
+      width: 0px;
+      opacity: 0;
+    }
+    20% {
+      width: 0px;
+      opacity: 1;
+    }
+    30% {
+      width: 350px;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      width: 350px;
+      opacity: 0;
     }
   }
 }
