@@ -546,27 +546,6 @@ p, span, small {
     .form__element textarea:focus-visible {
       outline: 0; }
 
-.shape {
-  --shape-radius: 6rem;
-  position: absolute;
-  top: 80px;
-  left: -42%;
-  width: 100vw;
-  height: 740px;
-  background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
-  border-radius: 80px;
-  border-radius: var(--shape-radius);
-  z-index: -1; }
-  @media only screen and (max-width: 1024px) {
-    .shape {
-      top: 46%; } }
-  @media only screen and (min-width: 769px) {
-    .shape {
-      height: 625px; } }
-  @media only screen and (min-width: 1025px) {
-    .shape {
-      height: 760px; } }
-
 .contact {
   --gap-section: 7rem;
   position: relative;
@@ -578,6 +557,26 @@ p, span, small {
       background: var(--bg-image);
       background-repeat: no-repeat;
       background-position: bottom 0 left 14%; } }
+  .contact .shape {
+    --shape-radius: 6rem;
+    position: absolute;
+    top: 80px;
+    left: -42%;
+    width: 100vw;
+    height: 740px;
+    background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
+    border-radius: 80px;
+    border-radius: var(--shape-radius);
+    z-index: -1; }
+    @media only screen and (max-width: 1024px) {
+      .contact .shape {
+        top: 46%; } }
+    @media only screen and (min-width: 769px) {
+      .contact .shape {
+        height: 625px; } }
+    @media only screen and (min-width: 1025px) {
+      .contact .shape {
+        height: 760px; } }
   .contact__container {
     --column: 1fr;
     --gap-container: 2rem;
@@ -807,7 +806,39 @@ p, span, small {
 
 .about {
   --gap-section: 7rem;
+  position: relative;
   margin-top: var(--gap-section); }
+  @media only screen and (min-width: 1025px) {
+    .about {
+      --bg-image: url("../images/circles/about-dots.svg");
+      padding-bottom: var(--gap-section);
+      background: var(--bg-image);
+      background-repeat: no-repeat;
+      background-position: bottom 0 right 18%; } }
+  .about .shape {
+    --shape-radius: 6rem;
+    position: absolute;
+    right: -67%;
+    bottom: -90px;
+    width: 100vw;
+    height: 740px;
+    background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
+    border-radius: 80px;
+    border-radius: var(--shape-radius);
+    z-index: -1; }
+    @media only screen and (max-width: 1024px) {
+      .about .shape {
+        bottom: -46px; } }
+    @media only screen and (min-width: 769px) {
+      .about .shape {
+        height: 790px; } }
+    @media only screen and (min-width: 1025px) {
+      .about .shape {
+        right: -80%;
+        height: 950px; } }
+    @media only screen and (min-width: 1361px) {
+      .about .shape {
+        right: -70%; } }
   .about__container {
     --column: 1fr;
     display: grid;
@@ -842,6 +873,7 @@ p, span, small {
     position: relative;
     padding: 7rem 1.6rem 1.2rem 1.6rem;
     margin-bottom: var(--gap-l);
+    background-color: var(--color-white);
     border-radius: var(--gap); }
     .about__numbers figure:hover {
       --color-box-shadow: hsla(0, 0%, 0%, .17); }

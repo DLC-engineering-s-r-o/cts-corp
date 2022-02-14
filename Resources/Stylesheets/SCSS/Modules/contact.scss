@@ -1,32 +1,5 @@
 @import "../base/global";
 
-.shape {
-  --shape-radius: 6rem;
-  position: absolute;
-  top: 80px;
-  left: -42%;
-  width: 100vw;
-  height: 740px;
-  background: radial-gradient(
-    ellipse at center,
-    $color-primary,
-    $color-primary--darken
-  );
-  border-radius: 80px;
-  border-radius: var(--shape-radius);
-  z-index: -1;
-
-  @include res-max-desktop-s {
-    top: 46%;
-  }
-  @include res-min-tablet {
-    height: 625px;
-  }
-  @include res-min-desktop-s {
-    height: 760px;
-  }
-}
-
 .contact {
   --gap-section: 7rem;
   position: relative;
@@ -38,6 +11,33 @@
     background: var(--bg-image);
     background-repeat: no-repeat;
     background-position: bottom 0 left 14%;
+  }
+
+  .shape {
+    --shape-radius: 6rem;
+    position: absolute;
+    top: 80px;
+    left: -42%;
+    width: 100vw;
+    height: 740px;
+    background: radial-gradient(
+      ellipse at center,
+      $color-primary,
+      $color-primary--darken
+    );
+    border-radius: 80px;
+    border-radius: var(--shape-radius);
+    z-index: -1;
+
+    @include res-max-desktop-s {
+      top: 46%;
+    }
+    @include res-min-tablet {
+      height: 625px;
+    }
+    @include res-min-desktop-s {
+      height: 760px;
+    }
   }
 
   &__container {

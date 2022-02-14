@@ -2,7 +2,47 @@
 
 .about {
   --gap-section: 7rem;
+  position: relative;
   margin-top: var(--gap-section);
+
+  @include res-min-desktop-s {
+    --bg-image: url("../images/circles/about-dots.svg");
+    padding-bottom: var(--gap-section);
+    background: var(--bg-image);
+    background-repeat: no-repeat;
+    background-position: bottom 0 right 18%;
+  }
+
+  .shape {
+    --shape-radius: 6rem;
+    position: absolute;
+    right: -67%;
+    bottom: -90px;
+    width: 100vw;
+    height: 740px;
+    background: radial-gradient(
+      ellipse at center,
+      $color-primary,
+      $color-primary--darken
+    );
+    border-radius: 80px;
+    border-radius: var(--shape-radius);
+    z-index: -1;
+
+    @include res-max-desktop-s {
+      bottom: -46px;
+    }
+    @include res-min-tablet {
+      height: 790px;
+    }
+    @include res-min-desktop-s {
+      right: -80%;
+      height: 950px;
+    }
+    @include res-min-desktop-m {
+      right: -70%;
+    }
+  }
 
   &__container {
     --column: 1fr;
@@ -39,6 +79,7 @@
       position: relative;
       padding: 7rem 1.6rem 1.2rem 1.6rem;
       margin-bottom: var(--gap-l);
+      background-color: var(--color-white);
       border-radius: var(--gap);
 
       div {
