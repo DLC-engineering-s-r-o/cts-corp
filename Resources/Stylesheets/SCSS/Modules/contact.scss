@@ -1,11 +1,32 @@
 @import "../base/global";
 
+.shape {
+  --shape-radius: 6rem;
+  position: absolute;
+  top: 10%;
+  left: -40%;
+  width: 100vw;
+  height: 75vh;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  background: radial-gradient(
+    ellipse at center,
+    $color-primary,
+    $color-primary--darken
+  );
+  border-radius: 80px;
+  border-radius: var(--shape-radius);
+  z-index: -1;
+}
+
 .contact {
   --gap-section: 7rem;
+  position: relative;
   margin-top: var(--gap-section);
 
   &__container {
-    --col-count: 2;
+    --col-count: 1;
     @include grid-columns(
       def,
       repeat(var(--col-count), minmax($gap-l, 1fr)),
@@ -14,6 +35,10 @@
       center,
       stretch
     );
+
+    @include res-min-desktop-s {
+      --col-count: 2;
+    }
   }
 
   &__title {

@@ -543,17 +543,36 @@ p, span, small {
     .form__element textarea:focus-visible {
       outline: 0; }
 
+.shape {
+  --shape-radius: 6rem;
+  position: absolute;
+  top: 10%;
+  left: -40%;
+  width: 100vw;
+  height: 75vh;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
+  border-radius: 80px;
+  border-radius: var(--shape-radius);
+  z-index: -1; }
+
 .contact {
   --gap-section: 7rem;
+  position: relative;
   margin-top: var(--gap-section); }
   .contact__container {
-    --col-count: 2;
+    --col-count: 1;
     display: grid;
     gap: var(--gap);
     align-items: stretch;
     align-content: stretch;
     justify-content: center;
     grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
+    @media only screen and (min-width: 1025px) {
+      .contact__container {
+        --col-count: 2; } }
   .contact__title h2 {
     margin-bottom: var(--gap-xxl); }
   .contact__title--address {
