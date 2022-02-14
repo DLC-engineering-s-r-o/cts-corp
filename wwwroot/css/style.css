@@ -622,7 +622,11 @@ p, span, small {
       grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
 
 .footer {
+  color: var(--color-black);
   text-align: center; }
+  .footer a {
+    padding-bottom: var(--gap-xxl);
+    color: var(--color-black); }
 
 .header__container {
   --col-count: 1;
