@@ -47,7 +47,7 @@ address {
 textarea {
   font-family: inherit; }
 
-section {
+header {
   min-height: 100vh; }
 
 body {
@@ -525,6 +525,9 @@ p, span, small {
   align-content: stretch;
   justify-content: center;
   grid-template-columns: 1fr; }
+  @media only screen and (max-width: 768px) {
+    .form__element {
+      grid-column: span 2; } }
   .form__element--full {
     grid-column: span 2; }
   .form__element label {
@@ -546,33 +549,52 @@ p, span, small {
 .shape {
   --shape-radius: 6rem;
   position: absolute;
-  top: 10%;
-  left: -40%;
+  top: 80px;
+  left: -42%;
   width: 100vw;
-  height: 75vh;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 30px;
+  height: 740px;
   background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
   border-radius: 80px;
   border-radius: var(--shape-radius);
   z-index: -1; }
+  @media only screen and (max-width: 1024px) {
+    .shape {
+      top: 46%; } }
+  @media only screen and (min-width: 769px) {
+    .shape {
+      height: 625px; } }
+  @media only screen and (min-width: 1025px) {
+    .shape {
+      height: 760px; } }
 
 .contact {
   --gap-section: 7rem;
   position: relative;
   margin-top: var(--gap-section); }
+  @media only screen and (min-width: 1025px) {
+    .contact {
+      --bg-image: url("../images/circles/contact-dots.svg");
+      padding-bottom: var(--gap-section);
+      background: var(--bg-image);
+      background-repeat: no-repeat;
+      background-position: bottom 0 left 14%; } }
   .contact__container {
-    --col-count: 1;
+    --column: 1fr;
+    --gap-container: 2rem;
     display: grid;
-    gap: var(--gap);
-    align-items: stretch;
+    gap: var(--gap-container);
+    align-items: center;
     align-content: stretch;
     justify-content: center;
-    grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
+    grid-template-columns: var(--column); }
     @media only screen and (min-width: 1025px) {
       .contact__container {
-        --col-count: 2; } }
+        --column: 1fr 1fr;
+        --gap-container: 4rem;
+        justify-items: end; } }
+    @media only screen and (min-width: 1921px) {
+      .contact__container {
+        justify-items: center; } }
   .contact__title h2 {
     margin-bottom: var(--gap-xxl); }
   .contact__title--address {
@@ -617,11 +639,16 @@ p, span, small {
   .contact__form {
     --color-box-shadow: hsla(0, 0%, 0%, 0.17);
     box-shadow: 30px 30px 75px 0 var(--color-box-shadow);
-    padding: var(--gap-xl) var(--gap-xxl);
+    padding: 5rem var(--gap-xxl) var(--gap-xl) var(--gap-xxl);
     background-color: var(--color-white);
     border-radius: var(--gap); }
     .contact__form:hover {
       --color-box-shadow: hsla(0, 0%, 0%, .17); }
+    @media only screen and (max-width: 1024px) {
+      .contact__form {
+        grid-row: end; } }
+    .contact__form button {
+      text-align: center; }
     .contact__form > div {
       margin-bottom: var(--gap-xxl); }
       .contact__form > div h3 {
@@ -641,10 +668,15 @@ p, span, small {
       grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
 
 .footer {
+  --gap-section: 7rem;
+  margin-top: var(--gap-section);
+  margin-bottom: var(--gap-xxl);
   color: var(--color-black);
   text-align: center; }
+  @media only screen and (min-width: 1025px) {
+    .footer {
+      --gap-section: 10rem; } }
   .footer a {
-    padding-bottom: var(--gap-xxl);
     color: var(--color-black); }
 
 .header__container {
@@ -777,12 +809,19 @@ p, span, small {
   --gap-section: 7rem;
   margin-top: var(--gap-section); }
   .about__container {
+    --column: 1fr;
     display: grid;
     gap: 0.8rem;
     align-items: stretch;
     align-content: stretch;
     justify-content: center;
-    grid-template-columns: 2fr 1fr; }
+    grid-template-columns: var(--column); }
+    @media only screen and (min-width: 769px) {
+      .about__container {
+        --column: 1fr 1fr; } }
+    @media only screen and (min-width: 1025px) {
+      .about__container {
+        --column: 2fr 1fr; } }
   .about__content {
     display: flex;
     flex-flow: column wrap;

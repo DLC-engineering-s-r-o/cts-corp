@@ -5,7 +5,16 @@
   margin-top: var(--gap-section);
 
   &__container {
-    @include grid-columns(def, 2fr 1fr, $gap, stretch, center, stretch);
+    --column: 1fr;
+    @include grid-columns(def, var(--column), $gap, stretch, center, stretch);
+
+    @include res-min-tablet {
+      --column: 1fr 1fr;
+    }
+
+    @include res-min-desktop-s {
+      --column: 2fr 1fr;
+    }
   }
 
   &__content {

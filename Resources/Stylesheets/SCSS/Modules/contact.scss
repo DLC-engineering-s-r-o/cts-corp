@@ -3,13 +3,10 @@
 .shape {
   --shape-radius: 6rem;
   position: absolute;
-  top: 10%;
-  left: -40%;
+  top: 80px;
+  left: -42%;
   width: 100vw;
-  height: 75vh;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 30px;
+  height: 740px;
   background: radial-gradient(
     ellipse at center,
     $color-primary,
@@ -18,6 +15,16 @@
   border-radius: 80px;
   border-radius: var(--shape-radius);
   z-index: -1;
+
+  @include res-max-desktop-s {
+    top: 46%;
+  }
+  @include res-min-tablet {
+    height: 625px;
+  }
+  @include res-min-desktop-s {
+    height: 760px;
+  }
 }
 
 .contact {
@@ -25,19 +32,33 @@
   position: relative;
   margin-top: var(--gap-section);
 
+  @include res-min-desktop-s {
+    --bg-image: url("../images/circles/contact-dots.svg");
+    padding-bottom: var(--gap-section);
+    background: var(--bg-image);
+    background-repeat: no-repeat;
+    background-position: bottom 0 left 14%;
+  }
+
   &__container {
-    --col-count: 1;
+    --column: 1fr;
+    --gap-container: 2rem;
     @include grid-columns(
       def,
-      repeat(var(--col-count), minmax($gap-l, 1fr)),
-      var(--gap),
-      stretch,
+      var(--column),
+      var(--gap-container),
+      center,
       center,
       stretch
     );
 
     @include res-min-desktop-s {
-      --col-count: 2;
+      --column: 1fr 1fr;
+      --gap-container: 4rem;
+      justify-items: end;
+    }
+    @include res-min-desktop-xxl {
+      justify-items: center;
     }
   }
 
@@ -109,9 +130,17 @@
   &__form {
     --color-box-shadow: hsla(0, 0%, 0%, 0.17);
     @include box-shadow();
-    padding: var(--gap-xl) var(--gap-xxl);
+    padding: 5rem var(--gap-xxl) var(--gap-xl) var(--gap-xxl);
     background-color: var(--color-white);
     border-radius: var(--gap);
+
+    @include res-max-desktop-s {
+      grid-row: end;
+    }
+
+    button {
+      text-align: center;
+    }
 
     > div {
       margin-bottom: var(--gap-xxl);
