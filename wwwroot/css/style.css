@@ -60,7 +60,8 @@ body {
     width: 100%; }
   body main {
     flex: 1 1 auto;
-    width: 100%; }
+    width: 100%;
+    overflow: hidden; }
   body footer {
     flex: 0 0 auto;
     width: 100%; }
@@ -377,6 +378,7 @@ p, span, small {
 
 .burger {
   width: 80px;
+  padding: 0.4rem;
   background-color: var(--color-trans);
   border-width: 0;
   transform: scale(0.5) translateX(50%);
@@ -785,14 +787,29 @@ p, span, small {
   width: 100%;
   height: var(--nav-height);
   padding: 0 var(--gap-xl);
-  background-color: rgba(255, 255, 255, 0.5);
   color: var(--nav-color);
-  z-index: 999;
-  backdrop-filter: saturate(180%) blur(5px); }
+  z-index: 999; }
+  .nav .fuzzy {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.4rem;
+    backdrop-filter: saturate(180%) blur(5px); }
+    .nav .fuzzy--logo {
+      padding: 0.4rem; }
+    .nav .fuzzy--burger {
+      position: relative;
+      width: 45px;
+      height: 40px; }
+      .nav .fuzzy--burger .burger {
+        position: absolute;
+        top: -9px;
+        right: 2px; }
   .nav--open {
     --nav-color: var(--color-white);
     background-color: none;
     backdrop-filter: none; }
+    .nav--open .fuzzy {
+      background-color: transparent;
+      backdrop-filter: none; }
   .nav__menu {
     --bg-image: url("../images/circles/header-dots.svg");
     display: flex;
