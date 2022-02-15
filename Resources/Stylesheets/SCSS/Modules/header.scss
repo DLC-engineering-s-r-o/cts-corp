@@ -72,7 +72,7 @@
     animation: reveal 7s infinite;
 
     span {
-      margin-left: -350px;
+      margin-left: -330px;
       animation: slidein 7s infinite;
     }
   }
@@ -117,13 +117,13 @@
       opacity: 1;
     }
     30% {
-      width: 350px;
+      width: 330px;
     }
     80% {
       opacity: 1;
     }
     100% {
-      width: 350px;
+      width: 330px;
       opacity: 0;
     }
   }

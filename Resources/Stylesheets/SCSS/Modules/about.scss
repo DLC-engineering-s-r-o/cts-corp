@@ -116,5 +116,26 @@
         }
       }
     }
+
+    figure {
+      &:first-child {
+        animation: move 2.5s;
+      }
+      &:nth-child(2) {
+        animation: move 3s;
+      }
+      &:last-child {
+        animation: move 3.5s;
+      }
+    }
+
+    @keyframes move {
+      from {
+        left: 2000px;
+      }
+      to {
+        left: 0px;
+      }
+    }
   }
 }

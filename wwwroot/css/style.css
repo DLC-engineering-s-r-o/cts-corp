@@ -732,7 +732,7 @@ p, span, small {
     width: 0px;
     animation: reveal 7s infinite; }
     .anim--b span {
-      margin-left: -350px;
+      margin-left: -330px;
       animation: slidein 7s infinite; }
 
 @keyframes showup {
@@ -763,11 +763,11 @@ p, span, small {
     width: 0px;
     opacity: 1; }
   30% {
-    width: 350px; }
+    width: 330px; }
   80% {
     opacity: 1; }
   100% {
-    width: 350px;
+    width: 330px;
     opacity: 0; } }
 
 .nav {
@@ -955,6 +955,18 @@ p, span, small {
         font-weight: 600;
         line-height: inherit;
         color: var(--color-black); }
+  .about__numbers figure:first-child {
+    animation: move 2.5s; }
+  .about__numbers figure:nth-child(2) {
+    animation: move 3s; }
+  .about__numbers figure:last-child {
+    animation: move 3.5s; }
+
+@keyframes move {
+  from {
+    left: 2000px; }
+  to {
+    left: 0px; } }
 
 .services {
   --gap-section: 7rem;
