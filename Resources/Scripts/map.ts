@@ -43,7 +43,11 @@ export function initMap(): void {
         return marker
     })
 
-    const markerCluster = new MarkerClusterer({
+    var options = {
+        imagePath: 'images/m'
+    };
+
+    new MarkerClusterer({
         map,
         markers,
     })

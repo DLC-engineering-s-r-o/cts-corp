@@ -638,10 +638,10 @@ p, span, small {
   height: 100vh; }
   #map div > img[src*="data:image/svg+xml"] {
     display: none; }
-  #map div[aria-label="Map"] div[style*="z-index: 1;"] div[class]:not([style*="color: rgb(0, 0, 0);"]) {
+  #map div[aria-label="Map"] div[style*="z-index: 1;"] div[class] {
     position: relative;
     color: black !important; }
-  #map div[aria-label="Map"] div[style*="z-index: 1;"] div[class]:not([style*="color: rgb(0, 0, 0);"]):before {
+  #map div[aria-label="Map"] div[style*="z-index: 1;"] div[class]:before {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -653,5 +653,7 @@ p, span, small {
     background-image: radial-gradient(rgba(253, 186, 18, 0.8) 50%, rgba(253, 186, 18, 0.5) 50%, rgba(253, 186, 18, 0.5) 75%, rgba(253, 186, 18, 0.3) 75%, rgba(253, 186, 18, 0.3) 100%);
     border-radius: 50%;
     z-index: -1; }
+  #map div[aria-label="Map"] div[style*="z-index: 1;"] div[style*="color: rgb(0, 0, 0);"]:before {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */

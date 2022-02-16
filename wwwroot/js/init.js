@@ -2984,7 +2984,10 @@ function initMap() {
         });
         return marker;
     });
-    const markerCluster = new markerclusterer_1.MarkerClusterer({
+    var options = {
+        imagePath: 'images/m'
+    };
+    new markerclusterer_1.MarkerClusterer({
         map,
         markers,
     });
