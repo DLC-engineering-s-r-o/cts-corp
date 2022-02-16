@@ -28,6 +28,26 @@ p, span, small{
         color: var(--color-primary);
         text-transform: uppercase;
     }
+
+    &--absolute{
+        --title-left: 15%;
+        position: absolute;
+        top: 3.2rem;
+        left: 15%;
+        z-index: 50;
+
+        @include res-max-desktop-l {
+            --title-left: 10%;
+          }
+        
+          @include res-max-desktop-m {
+            --title-left: var(--pad-base);
+          }
+        
+          @include res-max-mobile-l {
+            --title-left: 1rem;
+          }
+    }
 }
 
 .desc{ 

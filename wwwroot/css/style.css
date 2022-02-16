@@ -329,6 +329,21 @@ p, span, small {
     font-weight: 400;
     color: var(--color-primary);
     text-transform: uppercase; }
+  .title--absolute {
+    --title-left: 15%;
+    position: absolute;
+    top: 3.2rem;
+    left: 15%;
+    z-index: 50; }
+    @media only screen and (max-width: 1440px) {
+      .title--absolute {
+        --title-left: 10%; } }
+    @media only screen and (max-width: 1360px) {
+      .title--absolute {
+        --title-left: var(--pad-base); } }
+    @media only screen and (max-width: 425px) {
+      .title--absolute {
+        --title-left: 1rem; } }
 
 .desc {
   font-size: large;
