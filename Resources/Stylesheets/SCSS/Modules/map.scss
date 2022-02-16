@@ -1,0 +1,28 @@
+@import "../base/global";
+
+#map {
+    width: 100vw;
+    height: 100vh;
+
+    div > img[src*="data:image/svg+xml"]{
+        display: none;
+      }
+    
+      div[aria-label="Map"]  div[style*="z-index: 1;"] div[class]:not([style*="color: rgb(0, 0, 0);"]){
+        position: relative;
+        color: black !important;
+         }
+    
+      div[aria-label="Map"]  div[style*="z-index: 1;"] div[class]:not([style*="color: rgb(0, 0, 0);"]):before{
+        @include center-item;
+        display: block;
+        content: ""; 
+        width: 40px;
+        aspect-ratio: 1 / 1;  
+        background-image: radial-gradient(hsla(43, 98%, 53%, .8) 50%, hsla(43, 98%, 53%, .5) 50%, hsla(43, 98%, 53%, .5) 75%, hsla(43, 98%, 53%, .3) 75%, hsla(43, 98%, 53%, .3) 100%);
+        border-radius: 50%;
+        z-index: -1;
+      }
+  }
+
+  
