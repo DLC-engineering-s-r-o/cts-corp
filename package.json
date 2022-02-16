@@ -8,7 +8,7 @@
   "license": "ISC",
   "devDependencies": {
     "@googlemaps/markerclusterer": "^1.0.24",
-    "@types/google.maps": "^3.47.4",
+    "@types/googlemaps": "^3.43.3",
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.7",
     "clean-css-cli": "^5.5.0",
@@ -54,8 +54,5 @@
     "compile:ts": "tsc -p Resources",
     "stylelint": "stylelint --fix Resources/Stylesheets/SCSS/**/*.scss --custom-syntax postcss-scss",
     "watch:scss": "npm run bundle:css & watch \"npm run bundle:css\" Resources/Stylesheets/Scss"
-  },
-  "dependencies": {
-    "build-dev": "^0.2.2"
   }
 }

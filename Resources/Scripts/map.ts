@@ -1,8 +1,10 @@
 
+/// <reference path="../../node_modules/@types/googlemaps/index.d.ts" />
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 
+
 let map: google.maps.Map;
-const middleOfCzechia: google.maps.LatLngLiteral = {lat: 49.74378, lng: 15.33865};
+const middleOfCzechia: google.maps.LatLngLiteral = { lat: 49.74378, lng: 15.33865 };
 
 
 export function initMap(): void {

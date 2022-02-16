@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\node_modules",
+    "\\node_modules\\@types",
+    "\\node_modules\\@types\\googlemaps",
+    "\\node_modules\\@types\\node",
+    "\\Resources",
+    "\\Resources\\Scripts"
+  ],
+  "SelectedNode": "\\Resources\\Scripts\\map.ts",
+  "PreviewInSolutionExplorer": false
+}
