@@ -3,7 +3,6 @@ import {initMap} from './map'
 
 document.addEventListener("DOMContentLoaded", function () {
     initNav()
-    
+    initMap()
 });
 
-initMap()
