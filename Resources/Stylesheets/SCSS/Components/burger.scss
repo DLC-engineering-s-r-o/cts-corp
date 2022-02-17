@@ -1,6 +1,7 @@
 @import "../base/global";
 .burger {
   width: 80px;
+  padding: 0.4rem;
   background-color: var(--color-trans);
   border-width: 0;
   transform: scale(0.5) translateX(50%);

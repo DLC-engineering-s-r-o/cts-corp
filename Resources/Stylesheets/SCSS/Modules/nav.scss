@@ -9,12 +9,45 @@
   left: 0;
   width: 100%;
   height: var(--nav-height);
-  padding: 0 var(--gap-xl);
+  padding: 0 1rem;
   color: var(--nav-color);
   z-index: 999;
 
+  @include res-min-desktop-m {
+    padding: 0 var(--gap-xl);
+  }
+
+  .fuzzy {
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border-radius: 0.4rem;
+    backdrop-filter: saturate(180%) blur(5px);
+
+    &--logo {
+      padding: 0.4rem;
+    }
+
+    &--burger {
+      position: relative;
+      width: 45px;
+      height: 40px;
+
+      .burger {
+        position: absolute;
+        top: -9px;
+        right: 2px;
+      }
+    }
+  }
+
   &--open {
     --nav-color: var(--color-white);
+    background-color: none;
+    backdrop-filter: none;
+
+    .fuzzy {
+      background-color: transparent;
+      backdrop-filter: none;
+    }
   }
 
   &__menu {
