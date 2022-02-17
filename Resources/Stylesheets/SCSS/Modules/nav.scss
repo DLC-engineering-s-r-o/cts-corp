@@ -9,9 +9,13 @@
   left: 0;
   width: 100%;
   height: var(--nav-height);
-  padding: 0 var(--gap-xl);
+  padding: 0 1rem;
   color: var(--nav-color);
   z-index: 999;
+
+  @include res-min-desktop-m {
+    padding: 0 var(--gap-xl);
+  }
 
   .fuzzy {
     background-color: hsla(0, 0%, 100%, 0.5);

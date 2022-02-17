@@ -550,7 +550,7 @@ p, span, small {
 .contact {
   --gap-section: 7rem;
   position: relative;
-  margin-top: var(--gap-section); }
+  padding-top: var(--gap-section); }
   @media only screen and (min-width: 1025px) {
     .contact {
       --bg-image: url("../images/circles/contact-dots.svg");
@@ -815,9 +815,12 @@ p, span, small {
   left: 0;
   width: 100%;
   height: var(--nav-height);
-  padding: 0 var(--gap-xl);
+  padding: 0 1rem;
   color: var(--nav-color);
   z-index: 999; }
+  @media only screen and (min-width: 1361px) {
+    .nav {
+      padding: 0 var(--gap-xl); } }
   .nav .fuzzy {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 0.4rem;
@@ -905,7 +908,7 @@ p, span, small {
 .about {
   --gap-section: 7rem;
   position: relative;
-  margin-top: var(--gap-section); }
+  padding-top: var(--gap-section); }
   @media only screen and (min-width: 1025px) {
     .about {
       --bg-image: url("../images/circles/about-dots.svg");
@@ -1016,7 +1019,7 @@ p, span, small {
 
 .services {
   --gap-section: 7rem;
-  margin-top: var(--gap-section); }
+  padding-top: var(--gap-section); }
   .services__container {
     --gap-container: 3rem;
     display: grid;
@@ -1083,7 +1086,7 @@ p, span, small {
 
 .team {
   --gap-section: 7rem;
-  margin-top: var(--gap-section); }
+  padding-top: var(--gap-section); }
   .team__container {
     --gap-container: 3rem;
     display: grid;
@@ -1151,5 +1154,9 @@ p, span, small {
       font-size: 0.875rem;
       color: var(--color-secondary);
       text-decoration: none; }
+
+.reference {
+  --gap-section: 7rem;
+  padding-top: var(--gap-section); }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,7 +3,7 @@
 .about {
   --gap-section: 7rem;
   position: relative;
-  margin-top: var(--gap-section);
+  padding-top: var(--gap-section);
 
   @include res-min-desktop-s {
     --bg-image: url("../images/circles/about-dots.svg");
