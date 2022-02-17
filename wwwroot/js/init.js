@@ -2943,6 +2943,38 @@ function getY(p) {
 
 /***/ }),
 
+/***/ "./Resources/Scripts/animationsAbout.ts":
+/*!**********************************************!*\
+  !*** ./Resources/Scripts/animationsAbout.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.initAboutBox = void 0;
+function initAboutBox() {
+    const header = document.querySelector('header');
+    let scrollPosition = window.scrollY;
+    const aboutCards = document.querySelectorAll('.about__card');
+    function addClassToAboutCards() {
+        aboutCards.forEach(card => {
+            card.classList.add('about__card--visible');
+        });
+    }
+    document.addEventListener('scroll', () => {
+        scrollPosition = window.scrollY;
+        if (scrollPosition >= header.offsetTop + (window.innerHeight / 2)) {
+            addClassToAboutCards();
+        }
+        console.log(scrollPosition);
+    });
+}
+exports.initAboutBox = initAboutBox;
+
+
+/***/ }),
+
 /***/ "./Resources/Scripts/map.ts":
 /*!**********************************!*\
   !*** ./Resources/Scripts/map.ts ***!
@@ -10601,8 +10633,10 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const navigation_1 = __webpack_require__(/*! ./navigation */ "./Resources/Scripts/navigation.ts");
 const map_1 = __webpack_require__(/*! ./map */ "./Resources/Scripts/map.ts");
+const animationsAbout_1 = __webpack_require__(/*! ./animationsAbout */ "./Resources/Scripts/animationsAbout.ts");
 document.addEventListener("DOMContentLoaded", function () {
     (0, navigation_1.initNav)();
+    (0, animationsAbout_1.initAboutBox)();
     (0, map_1.initMap)();
 });
 

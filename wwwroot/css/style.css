@@ -722,7 +722,7 @@ p, span, small {
     background-image: image-set("../images/backgrounds/header-bg_480.png" 1x, "../images/backgrounds/header-bg_960.png" 2x);
     background-repeat: no-repeat;
     background-position: right bottom;
-    animation: show 4s;
+    animation: show 6s;
     background-size: contain; }
     @media only screen and (min-width: 769px) {
       .header__title--bg {
@@ -1030,17 +1030,30 @@ p, span, small {
       .about__content p strong {
         font-family: inherit;
         font-weight: bold; }
-  .about__numbers figure {
+  .about__card {
+    --card-opacity: 0;
+    --trans-time: 0.5s;
     --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+    --trans-y: -1rem;
     box-shadow: 30px 30px 75px 0 var(--color-box-shadow);
     position: relative;
     padding: 7rem 1.6rem 1.2rem 1.6rem;
     margin-bottom: var(--gap-l);
     background-color: var(--color-white);
-    border-radius: var(--gap); }
-    .about__numbers figure:hover {
+    opacity: var(--card-opacity);
+    border-radius: var(--gap);
+    transform: translateY(var(--trans-y));
+    transition: opacity var(--trans-time) var(--trans-fnc), transform var(--trans-time) var(--trans-fnc); }
+    .about__card:hover {
       --color-box-shadow: hsla(0, 0%, 0%, .17); }
-    .about__numbers figure div {
+    .about__card--visible {
+      --card-opacity: 1;
+      --trans-y: 0; }
+      .about__card--visible:nth-child(2) {
+        transition-delay: 0.25s; }
+      .about__card--visible:last-child {
+        transition-delay: 0.5s; }
+    .about__card div {
       position: absolute;
       top: 1.6rem;
       right: 1.6rem;
@@ -1048,36 +1061,24 @@ p, span, small {
       height: 92px;
       background: var(--color-primary);
       border-radius: 50%; }
-      .about__numbers figure div .icon {
+      .about__card div .icon {
         --icon-size: var(--gap-xxl);
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         fill: var(--color-white); }
-    .about__numbers figure p {
+    .about__card p {
       font-family: var(--font-title);
       font-size: 2.1875rem;
       line-height: 1;
       color: var(--color-secondary); }
-      .about__numbers figure p span {
+      .about__card p span {
         font-family: inherit;
         font-size: 5rem;
         font-weight: 600;
         line-height: inherit;
         color: var(--color-black); }
-  .about__numbers figure:first-child {
-    animation: move 2.5s; }
-  .about__numbers figure:nth-child(2) {
-    animation: move 3s; }
-  .about__numbers figure:last-child {
-    animation: move 3.5s; }
-
-@keyframes move {
-  from {
-    left: 2000px; }
-  to {
-    left: 0px; } }
 
 .services {
   --gap-section: 7rem;
