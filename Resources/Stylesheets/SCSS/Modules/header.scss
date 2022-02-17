@@ -20,19 +20,26 @@
 
   &__title {
     @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
-    background-image: image-set(
-      "../images/backgrounds/header-bg_480.png" 1x,
-      "../images/backgrounds/header-bg_960.png" 2x
-    );
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: contain;
 
-    @include res-min-tablet {
+    &--bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       background-image: image-set(
-        "../images/backgrounds/header-bg_960.png" 1x,
-        "../images/backgrounds/header-bg_1920.png" 2x
+        "../images/backgrounds/header-bg_480.png" 1x,
+        "../images/backgrounds/header-bg_960.png" 2x
       );
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      animation: show 4s;
+      background-size: contain;
+
+      @include res-min-tablet {
+        background-image: image-set(
+          "../images/backgrounds/header-bg_960.png" 1x,
+          "../images/backgrounds/header-bg_1920.png" 2x
+        );
+      }
     }
 
     h1,
@@ -40,6 +47,7 @@
       font-size: 7rem;
       font-weight: 500;
       color: var(--color-primary);
+      z-index: 1;
     }
 
     span {
@@ -107,6 +115,15 @@
         animation: slidein 7s;
       }
     }
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
