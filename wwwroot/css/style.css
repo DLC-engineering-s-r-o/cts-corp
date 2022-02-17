@@ -655,7 +655,9 @@ p, span, small {
     display: none; }
   #map div[aria-label="Map"] div[style*="z-index: 1;"] div[class] {
     position: relative;
-    color: black !important; }
+    font-size: medium !important;
+    font-weight: 500;
+    color: white !important; }
   #map div[aria-label="Map"] div[style*="z-index: 1;"] div[class]:before {
     position: absolute;
     top: 50%;
@@ -670,5 +672,15 @@ p, span, small {
     z-index: -1; }
   #map div[aria-label="Map"] div[style*="z-index: 1;"] div[style*="color: rgb(0, 0, 0);"]:before {
     display: none; }
+  #map div[role="dialog"] {
+    max-width: 300px; }
+
+.map__pop-up {
+  max-width: 250px; }
+  .map__pop-up strong {
+    font-size: large;
+    color: #fdba12; }
+  .map__pop-up p {
+    margin: 0.2em 0; }
 
 /*# sourceMappingURL=style.css.map */

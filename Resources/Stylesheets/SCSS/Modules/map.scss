@@ -10,7 +10,9 @@
     
       div[aria-label="Map"]  div[style*="z-index: 1;"] div[class]{
         position: relative;
-        color: black !important;
+        font-size: medium !important;
+        font-weight: 500;
+        color: $color-white !important;
          }
     
       div[aria-label="Map"]  div[style*="z-index: 1;"] div[class]:before{
@@ -23,11 +25,29 @@
         border-radius: 50%;
         z-index: -1;
       }
-
       
       div[aria-label="Map"]  div[style*="z-index: 1;"] div[style*="color: rgb(0, 0, 0);"]:before{
        display: none;
       }
+
+      div[role="dialog"]{
+        max-width: 300px;
+      }
+  }
+
+
+  .map{
+    &__pop-up{
+      max-width: 250px;
+      strong{
+        font-size: large;
+        color: $color-primary;
+      }
+
+      p{
+        margin: $gap-xs 0;
+      }
+    }
   }
 
   

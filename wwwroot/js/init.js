@@ -2967,6 +2967,9 @@ function initMap() {
         dragabble: false,
         disableDefaultUI: true,
     };
+    const markerIcon = {
+        url: 'wwwroot/images/icons/marker.png',
+    };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     const infoWindow = new google.maps.InfoWindow({
         content: '',
@@ -2977,16 +2980,15 @@ function initMap() {
         const marker = new google.maps.Marker({
             position,
             label,
+            icon: markerIcon,
+            title: position.name
         });
         marker.addListener('click', () => {
-            infoWindow.setContent(`<div class='contact__map-pop-up'><strong>${position.name}</strong><br><span>${position.date}</span><p>${position.desc}</p><b>${position.price} Kč</b></div>`);
+            infoWindow.setContent(`<div class='map__pop-up'><strong>${position.name}</strong><br><span>${position.date}</span><p>${position.desc}</p><b>${position.price} Kč</b></div>`);
             infoWindow.open(map, marker);
         });
         return marker;
     });
-    var options = {
-        imagePath: 'images/m'
-    };
     new markerclusterer_1.MarkerClusterer({
         map,
         markers,
