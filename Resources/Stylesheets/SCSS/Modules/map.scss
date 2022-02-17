@@ -33,6 +33,10 @@
       div[role="dialog"]{
         max-width: 300px;
       }
+
+      img[alt="Google"], .gmnoprint, .gmnoscreen, .gm-style-cc{
+        display: none;
+      }
   }
 
 
