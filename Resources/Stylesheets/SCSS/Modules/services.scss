@@ -1,0 +1,76 @@
+@import "../base/global";
+
+.services {
+  --gap-section: 7rem;
+  padding-top: var(--gap-section);
+
+  &__container {
+    --gap-container: 3rem;
+    @include grid-columns(
+      def,
+      1fr,
+      var(--gap-container),
+      stretch,
+      center,
+      stretch
+    );
+
+    @include res-min-tablet {
+      --gap-container: 4rem;
+    }
+
+    @include res-min-desktop-s {
+      --gap-container: 5rem;
+    }
+  }
+
+  &__title {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__content {
+    @include grid-columns(def, 1fr, $gap-l, stretch, center, stretch);
+
+    @include res-min-tablet {
+      @include grid-columns(def, 2fr 1fr, $gap-xl, stretch, center, stretch);
+    }
+
+    h3 {
+      margin-bottom: var(--gap);
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: var(--gap-l);
+      font-size: 1.5rem;
+      color: var(--color-secondary);
+
+      strong {
+        font-family: inherit;
+        font-weight: bold;
+      }
+
+      a {
+        font-weight: bold;
+        color: inherit;
+      }
+    }
+
+    &--reverse {
+      @include grid-columns(def, 1fr, $gap-l, stretch, center, stretch);
+
+      @include res-min-tablet {
+        @include grid-columns(def, 1fr 2fr, $gap-xl, stretch, center, stretch);
+      }
+
+      > picture {
+        @include res-max-tablet {
+          grid-row: end;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import "../base/global";
+
+.team {
+  --gap-section: 7rem;
+  padding-top: var(--gap-section);
+
+  &__container {
+    --gap-container: 3rem;
+    @include grid-columns(
+      def,
+      1fr,
+      var(--gap-container),
+      stretch,
+      center,
+      stretch
+    );
+
+    @include res-min-tablet {
+      --gap-container: 4rem;
+    }
+
+    @include res-min-desktop-s {
+      --gap-container: 5rem;
+    }
+  }
+
+  &__title {
+    p {
+      font-size: 1.5rem;
+      color: var(--color-secondary);
+    }
+  }
+
+  &__content {
+    --col-count: 1;
+    @include grid-columns(
+      def,
+      repeat(var(--col-count), minmax($gap-l, 1fr)),
+      var(--gap-xxl),
+      stretch,
+      center,
+      stretch
+    );
+
+    @include res-min-tablet {
+      --col-count: 2;
+    }
+
+    @include res-min-desktop-s {
+      --col-count: 3;
+    }
+  }
+
+  &__card {
+    @include grid-columns(def, 1fr 1fr, $gap-l, stretch, center, stretch);
+
+    img {
+      --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+      @include box-shadow(0, 0, 20px);
+      border-radius: var(--gap);
+    }
+
+    > div {
+      @include flex-set(def, column, wrap, $gap, flex-start, flex-start);
+    }
+
+    p {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+    }
+
+    i {
+      margin-bottom: var(--gap);
+      font-family: var(--font-text);
+      font-size: 1rem;
+      color: var(--color-secondary);
+    }
+
+    svg {
+      fill: var(--color-primary);
+    }
+
+    a {
+      margin-left: var(--gap);
+      font-family: var(--font-text);
+      font-size: 0.875rem;
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+  }
+}

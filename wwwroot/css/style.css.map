@@ -38,6 +38,7 @@
 		"../../Resources/Stylesheets/Scss/components/link.scss",
 		"../../Resources/Stylesheets/Scss/components/logo.scss",
 		"../../Resources/Stylesheets/Scss/components/scrollbar.scss",
+		"../../Resources/Stylesheets/Scss/components/form.scss",
 		"../../Resources/Stylesheets/Scss/modules/contact.scss",
 		"../../Resources/Stylesheets/Scss/modules/footer.scss",
 		"../../Resources/Stylesheets/Scss/Modules/header.scss",

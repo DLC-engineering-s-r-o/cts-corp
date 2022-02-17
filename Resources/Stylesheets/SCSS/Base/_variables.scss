@@ -11,7 +11,7 @@ $color-secondary: hsl(240, 1%, 26%);
 $color-box-shadow: $color-trans;
 
 $trans-time: 0.25s;
-$gap: 0.8em;
+$gap: 0.8rem;
 $gap-xs: ($gap / 4);
 $gap-s: ($gap / 2);
 $gap-l: ($gap * 2);
@@ -31,5 +31,6 @@ $width-tablet: 768px;
 $width-desktop-s: 1024px;
 $width-desktop-m: 1360px;
 $width-desktop-l: 1440px;
-$width-desktop-xl: 1920px;
+$width-desktop-xl: 1660px;
+$width-desktop-xxl: 1920px;
 $width-4k: 2560px;

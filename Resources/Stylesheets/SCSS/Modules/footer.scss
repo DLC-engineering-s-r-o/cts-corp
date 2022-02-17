@@ -1,6 +1,17 @@
-@import '../base/global';
+@import "../base/global";
 
 .footer {
- text-align: center;
-  
+  --gap-section: 7rem;
+  margin-top: var(--gap-section);
+  margin-bottom: var(--gap-xxl);
+  color: var(--color-black);
+  text-align: center;
+
+  @include res-min-desktop-s {
+    --gap-section: 10rem;
+  }
+
+  a {
+    color: var(--color-black);
+  }
 }
