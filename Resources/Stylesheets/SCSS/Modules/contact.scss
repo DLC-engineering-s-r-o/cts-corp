@@ -3,7 +3,7 @@
 .contact {
   --gap-section: 7rem;
   position: relative;
-  padding-top: var(--gap-section);
+  margin-top: var(--gap-section);
 
   @include res-min-desktop-s {
     --bg-image: url("../images/circles/contact-dots.svg");

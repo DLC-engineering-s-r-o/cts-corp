@@ -550,7 +550,7 @@ p, span, small {
 .contact {
   --gap-section: 7rem;
   position: relative;
-  padding-top: var(--gap-section); }
+  margin-top: var(--gap-section); }
   @media only screen and (min-width: 1025px) {
     .contact {
       --bg-image: url("../images/circles/contact-dots.svg");
