@@ -336,7 +336,7 @@ p, span, small {
   .title--absolute {
     --title-left: 15%;
     position: absolute;
-    top: 3.2rem;
+    top: var(--gap-section);
     left: 15%;
     z-index: 50; }
     @media only screen and (max-width: 1440px) {
@@ -958,6 +958,8 @@ p, span, small {
     display: none; }
   #map div[role="dialog"] {
     max-width: 300px; }
+  #map img[alt="Google"], #map .gmnoprint, #map .gmnoscreen, #map .gm-style-cc {
+    display: none; }
 
 .map__pop-up {
   max-width: 250px; }
