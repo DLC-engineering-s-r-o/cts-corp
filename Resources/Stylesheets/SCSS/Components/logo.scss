@@ -1,11 +1,14 @@
 @import "../base/global";
 
-.logo{
-    max-width: 8rem;
+.logo {
+  max-width: 8rem;
 
-    >svg{
-        display: block;
-        width: 100%;
-        fill: var(--nav-color);
+  > svg {
+    display: block;
+    width: 100%;
+    fill: var(--nav-color);
+    @include res-max-desktop-s {
+      height: 40px;
     }
+  }
 }

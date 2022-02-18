@@ -9,19 +9,25 @@
   left: 0;
   width: 100%;
   height: var(--nav-height);
-  padding: 0 1rem;
+  padding: 0 var(--gap-xl);
   color: var(--nav-color);
   z-index: 999;
-
-  @include res-min-desktop-m {
-    padding: 0 var(--gap-xl);
+  @include res-max-desktop-s {
+    --nav-height: #{$gap-xxl};
+    background-color: hsla(0, 0%, 100%, 0.5);
+    backdrop-filter: saturate(180%) blur(5px);
+    box-shadow: inset 0 -1px 0 0 hsla(0, 0%, 67%, 0.226);
+  }
+  @include res-max-desktop-m {
+    padding: 0 1rem;
   }
 
   .fuzzy {
-    background-color: hsla(0, 0%, 100%, 0.5);
-    border-radius: 0.4rem;
-    backdrop-filter: saturate(180%) blur(5px);
-
+    @include res-min-desktop-s {
+      background-color: hsla(0, 0%, 100%, 0.5);
+      border-radius: 0.4rem;
+      backdrop-filter: saturate(180%) blur(5px);
+    }
     &--logo {
       padding: 0.4rem;
     }

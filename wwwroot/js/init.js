@@ -3298,7 +3298,6 @@ function initAboutBox() {
         if (scrollPosition >= header.offsetTop + (window.innerHeight / 2)) {
             addClassToAboutCards();
         }
-        console.log(scrollPosition);
     });
 }
 exports.initAboutBox = initAboutBox;

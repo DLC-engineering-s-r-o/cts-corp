@@ -16,6 +16,5 @@ document.addEventListener('scroll', () => {
      if (scrollPosition >= header.offsetTop + (window.innerHeight / 2)) {
         addClassToAboutCards()
      }
-     console.log(scrollPosition);
   });
 }
