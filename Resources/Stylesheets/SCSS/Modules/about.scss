@@ -165,16 +165,16 @@
       @include res-min-desktop-s {
         font-size: 2.1875rem;
       }
+    }
 
-      span {
-        font-family: inherit;
-        font-size: 3.2rem;
-        font-weight: 600;
-        line-height: inherit;
-        color: var(--color-black);
-        @include res-min-desktop-s {
-          font-size: 5rem;
-        }
+    span {
+      font-family: var(--font-title);
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--color-black);
+      @include res-min-desktop-s {
+        font-size: 5rem;
       }
     }
   }

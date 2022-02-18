@@ -1044,15 +1044,15 @@ p, span, small {
       @media only screen and (min-width: 1025px) {
         .about__card p {
           font-size: 2.1875rem; } }
-      .about__card p span {
-        font-family: inherit;
-        font-size: 3.2rem;
-        font-weight: 600;
-        line-height: inherit;
-        color: var(--color-black); }
-        @media only screen and (min-width: 1025px) {
-          .about__card p span {
-            font-size: 5rem; } }
+    .about__card span {
+      font-family: var(--font-title);
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--color-black); }
+      @media only screen and (min-width: 1025px) {
+        .about__card span {
+          font-size: 5rem; } }
 
 .services {
   --gap-section: 7rem;
