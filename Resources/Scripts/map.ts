@@ -25,7 +25,10 @@ const mapOptions = {
     minZoom: defaultZoomLevel,
     maxZoom: 17,
     dragabble: false,
-    disableDefaultUI: true,
+    disableDefaultUI: false,
+    scrollwheel: false, 
+    disableDoubleClickZoom: true,
+    zoomControl: false,
 }
 
 const markerIcon = {
@@ -46,11 +49,11 @@ export function initMap() {
             disableAutoPan: true,
         })
 
-        const europeRectangle = [
-            new google.maps.LatLng(54, -23),
-            new google.maps.LatLng(34, -8),
-            new google.maps.LatLng(34, 34),
-            new google.maps.LatLng(54, 36)];
+        var europeCoords = [
+            new google.maps.LatLng(29.68224948021748, -23.676965750000022),
+            new google.maps.LatLng(29.68224948021748, 44.87772174999998),
+            new google.maps.LatLng(71.82725578445813, 44.87772174999998),
+            new google.maps.LatLng(71.82725578445813, -23.676965750000022)];
 
         const czechRepublicCoords = [
             new google.maps.LatLng(50.32021682764627, 12.111525535583496),
@@ -6390,7 +6393,7 @@ export function initMap() {
         ];
 
         const polygon = new google.maps.Polygon({
-            paths: [europeRectangle, czechRepublicCoords],
+            paths: [europeCoords, czechRepublicCoords],
             strokeColor: '#fff',
             strokeOpacity: 0,
             strokeWeight: 1,
@@ -6405,7 +6408,7 @@ export function initMap() {
             const marker = new google.maps.Marker({
                 position,
                 label,
-                icon: markerIcon,
+                // icon: markerIcon,
                 title: position.name
             })
 
