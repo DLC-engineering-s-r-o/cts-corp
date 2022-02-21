@@ -36,7 +36,7 @@ export function initAboutBox() {
 
         counterAnim("#number-years", 1, 20, 1500);
         counterAnim("#number-projects", 100, 1000, 1500);
-        counterAnim("#number-money", 1, 3, 1000);
+        counterAnim("#number-money", 1, 3, 800);
     });
 }
 
