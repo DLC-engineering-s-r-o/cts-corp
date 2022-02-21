@@ -4,34 +4,24 @@
   --gap-section: 7rem;
   position: relative;
   padding-top: var(--gap-section);
-
   @include res-min-desktop-s {
-    --bg-image: url("../images/circles/about-dots.svg");
     padding-bottom: var(--gap-section);
-    background: var(--bg-image);
-    background-repeat: no-repeat;
-    background-position: bottom 0 right -6vh;
-  }
-  @include res-min-desktop-l {
-    background-position: bottom 0 right -6vh;
-  }
-  @include res-min-desktop-xl {
-    background-position: bottom 0 right 13vh;
   }
 
   &__container {
     --column: 1fr;
-    --gap-container: #{$gap-xxl};
-    @include grid-columns(
-      def,
-      var(--column),
-      var(--gap-container),
-      stretch,
-      center,
-      stretch
-    );
+    --gap-row-container: #{$gap-xxl};
+    --gap-column-container: #{$gap-xxl};
+    @include grid-columns(def, var(--column), 0, stretch, center, stretch);
+    column-gap: var(--gap-column-container);
+    row-gap: var(--gap-row-container);
     @include res-min-tablet {
       --column: 8fr 5fr;
+      --gap-row-container: #{$gap-l};
+      --gap-column-container: 6.4rem;
+    }
+    @include res-min-desktop-s {
+      --gap-row-container: 0;
     }
   }
 
@@ -39,15 +29,12 @@
   }
 
   &__content {
-    @include flex-set(def, column, wrap, $gap-xxl, flex-start, flex-start);
+    @include flex-set(def, column, wrap, $gap-l, flex-start, flex-start);
 
     p {
       margin-bottom: var(--gap-l);
       font-size: large;
       color: var(--color-secondary);
-      @include res-min-tablet {
-        font-size: x-large;
-      }
 
       strong {
         font-family: inherit;
@@ -68,13 +55,29 @@
       grid-row: 1 / span 2;
     }
 
-    .bg {
+    &::after {
+      @include res-min-desktop-s {
+        --bg-image: url("../images/circles/about-dots.svg");
+        position: absolute;
+        right: -100px;
+        bottom: -100px;
+        content: "";
+        width: 50rem;
+        height: 35rem;
+        background-image: var(--bg-image);
+        background-repeat: no-repeat;
+        background-position: bottom 0 right 0;
+      }
+    }
+
+    &::before {
       --shape-radius: 0;
       position: absolute;
       right: -1rem;
       bottom: -1.6rem;
+      content: "";
       width: 100vw;
-      height: calc(100% + 3.2rem);
+      height: calc(100% + 1.6rem);
       background: radial-gradient(
         ellipse at center,
         $color-primary,
@@ -87,12 +90,13 @@
       }
       @include res-min-tablet {
         --shape-radius: 6rem;
+        bottom: 0;
         width: 75%;
-        height: 80%;
+        height: 480px;
       }
       @include res-min-desktop-s {
         bottom: -9.6rem;
-        height: calc(100% + 6.4rem);
+        height: calc(100% + 3.2rem);
       }
       @include res-min-desktop-m {
         right: -80vh;
@@ -108,49 +112,56 @@
     --trans-y: -1rem;
     @include box-shadow();
     position: relative;
-    padding: 5rem 1.6rem 1.2rem 1.6rem;
+    padding: $gap $gap 0.6rem $gap;
     background-color: var(--color-white);
     opacity: var(--card-opacity);
     border-radius: var(--gap);
     transform: translateY(var(--trans-y));
     transition: opacity var(--trans-time) var(--trans-fnc),
       transform var(--trans-time) var(--trans-fnc);
-    @include res-min-desktop-s {
-      padding: 7rem 1.6rem 1.2rem 1.6rem;
+    @include res-min-tablet {
+      padding: 4rem 1.6rem 1.2rem 1.6rem;
     }
 
     &--visible {
       --card-opacity: 1;
       --trans-y: 0;
 
+      &:nth-child(1) {
+        transition-delay: 0;
+      }
+
       &:nth-child(2) {
         transition-delay: 0.25s;
       }
 
-      &:last-child {
+      &:nth-child(3) {
         transition-delay: 0.5s;
       }
     }
 
     div {
       position: absolute;
-      top: 1.6rem;
-      right: 1.6rem;
-      width: 72px;
-      height: 72px;
+      top: $gap;
+      right: $gap-l;
+      width: 52px;
+      height: 52px;
       background: var(--color-primary);
       border-radius: 50%;
+      @include res-min-tablet {
+        top: $gap-l;
+      }
       @include res-min-desktop-s {
-        width: 92px;
-        height: 92px;
+        width: 72px;
+        height: 72px;
       }
 
       .icon {
-        --icon-size: var(--gap-xl);
+        --icon-size: var(--gap-l);
         @include center-item;
         fill: var(--color-white);
         @include res-min-desktop-s {
-          --icon-size: var(--gap-xxl);
+          --icon-size: var(--gap-xl);
         }
       }
     }
@@ -161,18 +172,18 @@
       line-height: 1;
       color: var(--color-secondary);
       @include res-min-desktop-s {
-        font-size: 2.2rem;
+        font-size: xx-large;
       }
     }
 
     span {
       font-family: var(--font-title);
-      font-size: 3.2rem;
+      font-size: xx-large;
       font-weight: 600;
       line-height: 1;
       color: var(--color-black);
       @include res-min-desktop-s {
-        font-size: 5rem;
+        font-size: xxx-large;
       }
     }
   }
