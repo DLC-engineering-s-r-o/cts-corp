@@ -3346,7 +3346,7 @@ const mapOptions = {
     maxZoom: 17,
     dragabble: false,
     disableDefaultUI: false,
-    scrollwheel: true,
+    scrollwheel: false,
     disableDoubleClickZoom: true,
     zoomControl: false,
 };
