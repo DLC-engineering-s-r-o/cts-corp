@@ -10,60 +10,44 @@
     padding-bottom: var(--gap-section);
     background: var(--bg-image);
     background-repeat: no-repeat;
-    background-position: bottom 0 right 18%;
+    background-position: bottom 0 right -6vh;
   }
-
-  .shape {
-    --shape-radius: 6rem;
-    position: absolute;
-    right: -67%;
-    bottom: -90px;
-    width: 100vw;
-    height: 740px;
-    background: radial-gradient(
-      ellipse at center,
-      $color-primary,
-      $color-primary--darken
-    );
-    border-radius: 80px;
-    border-radius: var(--shape-radius);
-    z-index: -1;
-
-    @include res-max-desktop-s {
-      bottom: -46px;
-    }
-    @include res-min-tablet {
-      height: 790px;
-    }
-    @include res-min-desktop-s {
-      right: -80%;
-      height: 950px;
-    }
-    @include res-min-desktop-m {
-      right: -70%;
-    }
+  @include res-min-desktop-l {
+    background-position: bottom 0 right -6vh;
+  }
+  @include res-min-desktop-xl {
+    background-position: bottom 0 right 13vh;
   }
 
   &__container {
     --column: 1fr;
-    @include grid-columns(def, var(--column), $gap, stretch, center, stretch);
-
+    --gap-container: #{$gap-xxl};
+    @include grid-columns(
+      def,
+      var(--column),
+      var(--gap-container),
+      stretch,
+      center,
+      stretch
+    );
     @include res-min-tablet {
-      --column: 1fr 1fr;
-    }
-
-    @include res-min-desktop-s {
-      --column: 2fr 1fr;
+      --column: 8fr 5fr;
     }
   }
 
+  &__title {
+  }
+
   &__content {
-    @include flex-set(def, column, wrap, $gap-xxl, flex-start, center);
+    @include flex-set(def, column, wrap, $gap-xxl, flex-start, flex-start);
 
     p {
       margin-bottom: var(--gap-l);
-      font-size: 1.5rem;
+      font-size: large;
       color: var(--color-secondary);
+      @include res-min-tablet {
+        font-size: x-large;
+      }
 
       strong {
         font-family: inherit;
@@ -73,68 +57,124 @@
   }
 
   &__numbers {
-    figure {
-      --color-box-shadow: hsla(0, 0%, 0%, 0.17);
-      @include box-shadow();
-      position: relative;
-      padding: 7rem 1.6rem 1.2rem 1.6rem;
-      margin-bottom: var(--gap-l);
-      background-color: var(--color-white);
-      border-radius: var(--gap);
+    position: relative;
+    display: grid;
+    gap: $gap-l;
+    grid-row-start: 2;
+    @include res-min-tablet {
+      align-content: center;
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
 
-      div {
-        position: absolute;
-        top: 1.6rem;
-        right: 1.6rem;
+    .bg {
+      --shape-radius: 0;
+      position: absolute;
+      right: -1rem;
+      bottom: -1.6rem;
+      width: 100vw;
+      height: calc(100% + 3.2rem);
+      background: radial-gradient(
+        ellipse at center,
+        $color-primary,
+        $color-primary--darken
+      );
+      border-radius: var(--shape-radius) 0 0 var(--shape-radius);
+      z-index: -1;
+      @include res-min-mobile-l {
+        right: -1.6rem;
+      }
+      @include res-min-tablet {
+        --shape-radius: 6rem;
+        width: 75%;
+        height: 80%;
+      }
+      @include res-min-desktop-s {
+        bottom: -9.6rem;
+        height: calc(100% + 6.4rem);
+      }
+      @include res-min-desktop-m {
+        right: -80vh;
+        width: 100vh;
+      }
+    }
+  }
+
+  &__card {
+    --card-opacity: 0;
+    --trans-time: 0.5s;
+    --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+    --trans-y: -1rem;
+    @include box-shadow();
+    position: relative;
+    padding: 5rem 1.6rem 1.2rem 1.6rem;
+    background-color: var(--color-white);
+    opacity: var(--card-opacity);
+    border-radius: var(--gap);
+    transform: translateY(var(--trans-y));
+    transition: opacity var(--trans-time) var(--trans-fnc),
+      transform var(--trans-time) var(--trans-fnc);
+    @include res-min-desktop-s {
+      padding: 7rem 1.6rem 1.2rem 1.6rem;
+    }
+
+    &--visible {
+      --card-opacity: 1;
+      --trans-y: 0;
+
+      &:nth-child(2) {
+        transition-delay: 0.25s;
+      }
+
+      &:last-child {
+        transition-delay: 0.5s;
+      }
+    }
+
+    div {
+      position: absolute;
+      top: 1.6rem;
+      right: 1.6rem;
+      width: 72px;
+      height: 72px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      @include res-min-desktop-s {
         width: 92px;
         height: 92px;
-        background: var(--color-primary);
-        border-radius: 50%;
+      }
 
-        .icon {
+      .icon {
+        --icon-size: var(--gap-xl);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        fill: var(--color-white);
+        @include res-min-desktop-s {
           --icon-size: var(--gap-xxl);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          fill: var(--color-white);
         }
       }
+    }
 
-      p {
-        font-family: var(--font-title);
+    p {
+      font-family: var(--font-title);
+      font-size: x-large;
+      line-height: 1;
+      color: var(--color-secondary);
+      @include res-min-desktop-s {
         font-size: 2.1875rem;
-        line-height: 1;
-        color: var(--color-secondary);
-
-        span {
-          font-family: inherit;
-          font-size: 5rem;
-          font-weight: 600;
-          line-height: inherit;
-          color: var(--color-black);
-        }
       }
     }
 
-    figure {
-      &:first-child {
-        animation: move 2.5s;
-      }
-      &:nth-child(2) {
-        animation: move 3s;
-      }
-      &:last-child {
-        animation: move 3.5s;
-      }
-    }
-
-    @keyframes move {
-      from {
-        left: 2000px;
-      }
-      to {
-        left: 0px;
+    span {
+      font-family: var(--font-title);
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--color-black);
+      @include res-min-desktop-s {
+        font-size: 5rem;
       }
     }
   }
