@@ -33,5 +33,11 @@
         outline: 0;
       }
     }
+
+    textarea {
+      min-height: 10rem;
+      max-height: 14rem;
+      resize: vertical;
+    }
   }
 }

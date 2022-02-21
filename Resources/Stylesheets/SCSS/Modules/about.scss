@@ -57,12 +57,13 @@
   }
 
   &__numbers {
+    --align-content: flex-start;
+    @include grid-columns(def, minmax($gap, 1fr), $gap-l, var(--align-content));
     position: relative;
-    display: grid;
-    gap: $gap-l;
     grid-row-start: 2;
+
     @include res-min-tablet {
-      align-content: center;
+      --align-content: center;
       grid-column: 2;
       grid-row: 1 / span 2;
     }
@@ -146,10 +147,7 @@
 
       .icon {
         --icon-size: var(--gap-xl);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include center-item;
         fill: var(--color-white);
         @include res-min-desktop-s {
           --icon-size: var(--gap-xxl);
@@ -163,7 +161,7 @@
       line-height: 1;
       color: var(--color-secondary);
       @include res-min-desktop-s {
-        font-size: 2.1875rem;
+        font-size: 2.2rem;
       }
     }
 

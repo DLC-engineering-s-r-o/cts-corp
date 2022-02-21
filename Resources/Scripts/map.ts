@@ -8,11 +8,21 @@ import { Loader } from "@googlemaps/js-api-loader";
 let map: google.maps.Map;
 const middleOfCzechia = { lat: 49.74378, lng: 15.33865 };
 
+let defaultZoomLevel = 8
+
+function checkScreenResolution(){
+    if (window.screen.width === 768){
+        defaultZoomLevel = 7
+    } 
+  }
+
+checkScreenResolution()
+
 const mapOptions = {
     center: middleOfCzechia,
     mapId: "c2aa51b8ca67932f",
-    zoom: 8,
-    minZoom: 8,
+    zoom: defaultZoomLevel,
+    minZoom: defaultZoomLevel,
     maxZoom: 17,
     dragabble: false,
     disableDefaultUI: true,

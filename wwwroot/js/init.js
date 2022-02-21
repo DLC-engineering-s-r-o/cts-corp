@@ -3338,11 +3338,18 @@ const markerclusterer_1 = __webpack_require__(/*! @googlemaps/markerclusterer */
 const js_api_loader_1 = __webpack_require__(/*! @googlemaps/js-api-loader */ "./node_modules/@googlemaps/js-api-loader/dist/index.esm.js");
 let map;
 const middleOfCzechia = { lat: 49.74378, lng: 15.33865 };
+let defaultZoomLevel = 8;
+function checkScreenResolution() {
+    if (window.screen.width === 768) {
+        defaultZoomLevel = 7;
+    }
+}
+checkScreenResolution();
 const mapOptions = {
     center: middleOfCzechia,
     mapId: "c2aa51b8ca67932f",
-    zoom: 8,
-    minZoom: 8,
+    zoom: defaultZoomLevel,
+    minZoom: defaultZoomLevel,
     maxZoom: 17,
     dragabble: false,
     disableDefaultUI: true,
