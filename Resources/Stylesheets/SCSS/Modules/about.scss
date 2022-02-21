@@ -49,6 +49,9 @@
     position: relative;
     grid-row-start: 2;
 
+    @include res-min-mobile-xl-max-tablet {
+      grid-template-columns: repeat(6, 1fr);
+    }
     @include res-min-tablet {
       --align-content: center;
       grid-column: 2;
@@ -119,8 +122,17 @@
     transform: translateY(var(--trans-y));
     transition: opacity var(--trans-time) var(--trans-fnc),
       transform var(--trans-time) var(--trans-fnc);
+    @include res-min-mobile-xl-max-tablet {
+      grid-column: span 3;
+    }
     @include res-min-tablet {
       padding: 4rem 1.6rem 1.2rem 1.6rem;
+    }
+
+    &:nth-of-type(3) {
+      @include res-min-mobile-xl-max-tablet {
+        grid-column: 6/2;
+      }
     }
 
     &--visible {
