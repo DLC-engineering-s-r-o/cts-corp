@@ -18,6 +18,11 @@
     @content;
   }
 }
+@mixin res-max-mobile-xl {
+  @media only screen and (max-width: $width-mobile-xl) {
+    @content;
+  }
+}
 
 @mixin res-max-tablet {
   @media only screen and (max-width: $width-tablet) {
@@ -76,6 +81,12 @@
 
 @mixin res-min-mobile-l {
   @media only screen and (min-width: ($width-mobile-l) + 1px) {
+    @content;
+  }
+}
+
+@mixin res-min-mobile-xl {
+  @media only screen and (min-width: ($width-mobile-xl) + 1px) {
     @content;
   }
 }

@@ -25,8 +25,11 @@
   }
 
   &__title {
+    h2 {
+      margin-bottom: $gap-l;
+    }
     p {
-      font-size: 1.5rem;
+      font-size: large;
     }
   }
 
@@ -45,7 +48,7 @@
 
     p {
       margin-bottom: var(--gap-l);
-      font-size: 1.5rem;
+      font-size: large;
       color: var(--color-secondary);
 
       strong {

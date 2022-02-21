@@ -11,7 +11,8 @@ const middleOfCzechia = { lat: 49.74378, lng: 15.33865 };
 let defaultZoomLevel = 8
 
 function checkScreenResolution(){
-    if (window.screen.width === 768){
+   
+    if (window.screen.width <= 768){
         defaultZoomLevel = 7
     } 
   }

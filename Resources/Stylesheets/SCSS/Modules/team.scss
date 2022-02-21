@@ -25,8 +25,12 @@
   }
 
   &__title {
+    h2 {
+      margin-bottom: $gap-l;
+    }
+
     p {
-      font-size: 1.5rem;
+      font-size: large;
       color: var(--color-secondary);
     }
   }
@@ -41,18 +45,17 @@
       center,
       stretch
     );
-
-    @include res-min-tablet {
+    @include res-min-mobile-xl {
       --col-count: 2;
     }
-
     @include res-min-desktop-s {
       --col-count: 3;
+      row-gap: 6.4rem;
     }
   }
 
   &__card {
-    @include grid-columns(def, 1fr 1fr, $gap-l, stretch, center, stretch);
+    @include grid-columns(def, 5fr 6fr, $gap-l, stretch, center, stretch);
 
     img {
       --color-box-shadow: hsla(0, 0%, 0%, 0.17);
@@ -86,6 +89,7 @@
       font-size: 0.875rem;
       color: var(--color-secondary);
       text-decoration: none;
+      word-break: break-word;
     }
   }
 }

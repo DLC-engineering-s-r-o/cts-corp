@@ -5,44 +5,36 @@
   position: relative;
   margin-top: var(--gap-section);
 
-  @include res-min-desktop-s {
-    --bg-image: url("../images/circles/contact-dots.svg");
-    padding-bottom: var(--gap-section);
-    background: var(--bg-image);
-    background-repeat: no-repeat;
-    background-position: bottom 0 left 14%;
-  }
+  // .shape {
+  //   --shape-radius: 6rem;
+  //   position: absolute;
+  //   top: 80px;
+  //   left: -42%;
+  //   width: 100vw;
+  //   height: 740px;
+  //   background: radial-gradient(
+  //     ellipse at center,
+  //     $color-primary,
+  //     $color-primary--darken
+  //   );
+  //   border-radius: 80px;
+  //   border-radius: var(--shape-radius);
+  //   z-index: -1;
 
-  .shape {
-    --shape-radius: 6rem;
-    position: absolute;
-    top: 80px;
-    left: -42%;
-    width: 100vw;
-    height: 740px;
-    background: radial-gradient(
-      ellipse at center,
-      $color-primary,
-      $color-primary--darken
-    );
-    border-radius: 80px;
-    border-radius: var(--shape-radius);
-    z-index: -1;
-
-    @include res-max-desktop-s {
-      top: 46%;
-    }
-    @include res-min-tablet {
-      height: 625px;
-    }
-    @include res-min-desktop-s {
-      height: 760px;
-    }
-  }
+  //   @include res-max-desktop-s {
+  //     top: 46%;
+  //   }
+  //   @include res-min-tablet {
+  //     height: 625px;
+  //   }
+  //   @include res-min-desktop-s {
+  //     height: 760px;
+  //   }
+  // }
 
   &__container {
     --column: 1fr;
-    --gap-container: 2rem;
+    --gap-container: #{$gap-xxl};
     @include grid-columns(
       def,
       var(--column),
@@ -67,75 +59,122 @@
       margin-bottom: var(--gap-xxl);
     }
 
-    &--address {
-      --col-count: 1;
-      @include grid-columns(
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__address {
+    --col-count: 1;
+    @include grid-columns(
+      def,
+      repeat(var(--col-count), minmax($gap-l, 1fr)),
+      var(--gap-l),
+      stretch,
+      center,
+      stretch
+    );
+
+    > div:first-of-type {
+      @include flex-set(def, row, wrap, $gap-l, flex-start, flex-start, normal);
+    }
+
+    > div {
+      @include flex-set(
         def,
-        repeat(var(--col-count), minmax($gap-l, 1fr)),
-        var(--gap-l),
-        stretch,
-        center,
-        stretch
+        column,
+        wrap,
+        $gap-xs,
+        flex-start,
+        flex-start,
+        normal
       );
+    }
 
-      > div:first-of-type {
-        @include flex-set(
-          def,
-          row,
-          wrap,
-          $gap-xxl,
-          flex-start,
-          flex-start,
-          normal
-        );
-      }
-
-      > div {
-        @include flex-set(
-          def,
-          column,
-          wrap,
-          $gap-xs,
-          flex-start,
-          flex-start,
-          normal
-        );
-      }
-
-      p {
-        font-size: 1rem;
-        span {
-          color: var(--color-primary);
-        }
-      }
+    p {
+      font-size: large;
       span {
-        font-family: var(--font-title);
-        font-size: 1.125rem;
+        color: var(--color-primary);
       }
-      svg {
-        margin-right: var(--gap-s);
-        fill: var(--color-primary);
-      }
-      address,
-      a {
-        margin-left: 1.2rem;
-        font-family: var(--font-text);
-        font-size: 1rem;
-        color: var(--color-secondary);
-        text-decoration: none;
-      }
+    }
+    span {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+    }
+    svg {
+      margin-right: var(--gap-s);
+      fill: var(--color-primary);
+    }
+    address,
+    a {
+      margin-left: 1.6rem;
+      font-family: var(--font-text);
+      font-size: large;
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+    .icon {
+      --icon-size: 1.2rem;
     }
   }
 
   &__form {
     --color-box-shadow: hsla(0, 0%, 0%, 0.17);
     @include box-shadow();
-    padding: 5rem var(--gap-xxl) var(--gap-xl) var(--gap-xxl);
+    position: relative;
+    width: 100%;
+    padding: var(--gap-l);
     background-color: var(--color-white);
     border-radius: var(--gap);
 
     @include res-max-desktop-s {
       grid-row: end;
+    }
+    @include res-min-desktop-s {
+      padding: 5rem var(--gap-xxl) var(--gap-xl) var(--gap-xxl);
+    }
+
+    &::after {
+      @include res-min-desktop-s {
+        --bg-image: url("../images/circles/contact-dots.svg");
+        position: absolute;
+        bottom: -100px;
+        left: -105px;
+        content: "";
+        width: 75rem;
+        height: 20rem;
+        background-image: var(--bg-image);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+      }
+    }
+
+    &::before {
+      --shape-radius: 0;
+      position: absolute;
+      top: -1.6rem;
+      right: -1rem;
+      content: "";
+      width: 100vw;
+      height: calc(100% + 3.2rem);
+      background: radial-gradient(
+        ellipse at center,
+        $color-primary,
+        $color-primary--darken
+      );
+      border-radius: var(--shape-radius);
+      z-index: -1;
+
+      @include res-min-mobile-l {
+        right: -1.6rem;
+      }
+      @include res-min-desktop-s {
+        --shape-radius: 6rem;
+        top: 6.4rem;
+        right: -9.6rem;
+      }
     }
 
     button {
