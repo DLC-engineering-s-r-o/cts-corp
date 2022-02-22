@@ -1,57 +1,65 @@
 @import "../base/global";
 
 #map {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    div > img[src*="data:image/svg+xml"]{
-        display: none;
-      }
-    
-      div[aria-label="Map"]  div[style*="z-index: 1;"] div[class]{
-        position: relative;
-        font-size: medium !important;
-        font-weight: 500;
-        color: $color-white !important;
-         }
-    
-      div[aria-label="Map"]  div[style*="z-index: 1;"] div[class]:before{
-        @include center-item;
-        display: block;
-        content: ""; 
-        width: 40px;
-        aspect-ratio: 1 / 1;  
-        background-image: radial-gradient(hsla(43, 98%, 53%, .8) 50%, hsla(43, 98%, 53%, .5) 50%, hsla(43, 98%, 53%, .5) 75%, hsla(43, 98%, 53%, .3) 75%, hsla(43, 98%, 53%, .3) 100%);
-        border-radius: 50%;
-        z-index: -1;
-      }
-      
-      div[aria-label="Map"]  div[style*="z-index: 1;"] div[style*="color: rgb(0, 0, 0);"]:before{
-       display: none;
-      }
-
-      div[role="dialog"]{
-        max-width: 300px;
-      }
-
-      img[alt="Google"], .gmnoprint, .gmnoscreen, .gm-style-cc{
-        display: none;
-      }
+  div > img[src*="data:image/svg+xml"] {
+    display: none;
   }
 
+  div[aria-label="Map"] div[style*="z-index: 1;"] div[class] {
+    position: relative;
+    font-size: medium !important;
+    font-weight: 500;
+    color: $color-white !important;
+  }
 
-  .map{
-    &__pop-up{
-      max-width: 250px;
-      strong{
-        font-size: large;
-        color: $color-primary;
-      }
+  div[aria-label="Map"] div[style*="z-index: 1;"] div[class]:before {
+    @include center-item;
+    display: block;
+    content: "";
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    background-image: radial-gradient(
+      hsla(43, 98%, 53%, 0.8) 50%,
+      hsla(43, 98%, 53%, 0.5) 50%,
+      hsla(43, 98%, 53%, 0.5) 75%,
+      hsla(43, 98%, 53%, 0.3) 75%,
+      hsla(43, 98%, 53%, 0.3) 100%
+    );
+    border-radius: 50%;
+    z-index: -1;
+  }
 
-      p{
-        margin: $gap-xs 0;
-      }
+  div[aria-label="Map"]
+    div[style*="z-index: 1;"]
+    div[style*="color: rgb(0, 0, 0);"]:before {
+    display: none;
+  }
+
+  div[role="dialog"] {
+    max-width: 300px;
+  }
+
+  img[alt="Google"],
+  .gmnoprint,
+  .gmnoscreen,
+  .gm-style-cc {
+    display: none;
+  }
+}
+
+.map {
+  &__pop-up {
+    max-width: 250px;
+    strong {
+      font-size: large;
+      color: $color-primary;
+    }
+
+    p {
+      margin: $gap-xs 0;
     }
   }
-
-  
+}

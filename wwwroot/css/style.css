@@ -945,11 +945,16 @@ small {
     background-image: radial-gradient(rgba(253, 186, 18, 0.8) 50%, rgba(253, 186, 18, 0.5) 50%, rgba(253, 186, 18, 0.5) 75%, rgba(253, 186, 18, 0.3) 75%, rgba(253, 186, 18, 0.3) 100%);
     border-radius: 50%;
     z-index: -1; }
-  #map div[aria-label="Map"] div[style*="z-index: 1;"] div[style*="color: rgb(0, 0, 0);"]:before {
+  #map div[aria-label="Map"]
+div[style*="z-index: 1;"]
+div[style*="color: rgb(0, 0, 0);"]:before {
     display: none; }
   #map div[role="dialog"] {
     max-width: 300px; }
-  #map img[alt="Google"], #map .gmnoprint, #map .gmnoscreen, #map .gm-style-cc {
+  #map img[alt="Google"],
+  #map .gmnoprint,
+  #map .gmnoscreen,
+  #map .gm-style-cc {
     display: none; }
 
 .map__pop-up {
