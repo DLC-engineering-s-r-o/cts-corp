@@ -981,11 +981,14 @@ small {
     @media only screen and (min-width: 769px) {
       .about__container {
         --column: 8fr 5fr;
-        --gap-row-container: 1.6rem;
+        --gap-row-container: 0;
         --gap-column-container: 6.4rem; } }
     @media only screen and (min-width: 1025px) {
       .about__container {
         --gap-row-container: 0; } }
+  @media only screen and (min-width: 769px) {
+    .about__title h2 {
+      margin-bottom: 1.6rem; } }
   .about__content {
     display: flex;
     flex-flow: column wrap;
@@ -1017,7 +1020,7 @@ small {
       .about__numbers {
         --align-content: center;
         grid-column: 2;
-        grid-row: 1 / span 2; } }
+        grid-row: 1 / span 6; } }
     @media only screen and (min-width: 1025px) {
       .about__numbers::after {
         --bg-image: url("../images/circles/about-dots.svg");
@@ -1053,7 +1056,7 @@ small {
       @media only screen and (min-width: 1025px) {
         .about__numbers::before {
           bottom: -9.6rem;
-          height: calc(100% + 3.2rem); } }
+          height: calc(100% + 6.4rem); } }
       @media only screen and (min-width: 1361px) {
         .about__numbers::before {
           right: -80vh;
