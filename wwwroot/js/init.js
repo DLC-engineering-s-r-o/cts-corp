@@ -3274,10 +3274,10 @@ function getY(p) {
 
 /***/ }),
 
-/***/ "./Resources/Scripts/animationsAbout.ts":
-/*!**********************************************!*\
-  !*** ./Resources/Scripts/animationsAbout.ts ***!
-  \**********************************************/
+/***/ "./Resources/Scripts/animationsAboutBox.ts":
+/*!*************************************************!*\
+  !*** ./Resources/Scripts/animationsAboutBox.ts ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3285,14 +3285,37 @@ function getY(p) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.initAboutBox = void 0;
 function initAboutBox() {
-    const header = document.querySelector('header');
+    const header = document.querySelector("header");
     let scrollPosition = window.scrollY;
-    const aboutCards = document.querySelectorAll('.about__card');
+    const aboutCards = document.querySelectorAll(".about__card");
     function addClassToAboutCards() {
-        aboutCards.forEach(card => {
-            card.classList.add('about__card--visible');
+        aboutCards.forEach((card) => {
+            card.classList.add("about__card--visible");
         });
     }
+    document.addEventListener("scroll", () => {
+        scrollPosition = window.scrollY;
+        if (scrollPosition >= header.offsetTop + window.innerHeight / 2) {
+            addClassToAboutCards();
+        }
+    });
+}
+exports.initAboutBox = initAboutBox;
+
+
+/***/ }),
+
+/***/ "./Resources/Scripts/animationsAboutNumber.ts":
+/*!****************************************************!*\
+  !*** ./Resources/Scripts/animationsAboutNumber.ts ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.initAboutNumbers = void 0;
+function initAboutNumbers() {
     const counterAnim = (qSelector, start = 0, end, duration = 1000) => {
         const target = document.querySelector(qSelector);
         let startTimestamp = null;
@@ -3307,17 +3330,21 @@ function initAboutBox() {
         };
         window.requestAnimationFrame(step);
     };
-    document.addEventListener('scroll', () => {
-        scrollPosition = window.scrollY;
-        if (scrollPosition >= header.offsetTop + (window.innerHeight / 2)) {
-            addClassToAboutCards();
+    let isLoaded = false;
+    const header = document.querySelector("header");
+    document.addEventListener("scroll", () => {
+        if (isLoaded)
+            return;
+        let scrollPosition = window.scrollY;
+        if (scrollPosition >= header.offsetTop + window.innerHeight / 2) {
+            counterAnim("#number-years", 1, 20, 1500);
+            counterAnim("#number-projects", 100, 1000, 1500);
+            counterAnim("#number-money", 1, 3, 800);
+            isLoaded = true;
         }
-        counterAnim("#number-years", 1, 20, 1500);
-        counterAnim("#number-projects", 100, 1000, 1500);
-        counterAnim("#number-money", 1, 3, 800);
     });
 }
-exports.initAboutBox = initAboutBox;
+exports.initAboutNumbers = initAboutNumbers;
 
 
 /***/ }),
@@ -17363,10 +17390,12 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const navigation_1 = __webpack_require__(/*! ./navigation */ "./Resources/Scripts/navigation.ts");
 const map_1 = __webpack_require__(/*! ./map */ "./Resources/Scripts/map.ts");
-const animationsAbout_1 = __webpack_require__(/*! ./animationsAbout */ "./Resources/Scripts/animationsAbout.ts");
+const animationsAboutBox_1 = __webpack_require__(/*! ./animationsAboutBox */ "./Resources/Scripts/animationsAboutBox.ts");
+const animationsAboutNumber_1 = __webpack_require__(/*! ./animationsAboutNumber */ "./Resources/Scripts/animationsAboutNumber.ts");
 document.addEventListener("DOMContentLoaded", function () {
     (0, navigation_1.initNav)();
-    (0, animationsAbout_1.initAboutBox)();
+    (0, animationsAboutBox_1.initAboutBox)();
+    (0, animationsAboutNumber_1.initAboutNumbers)();
     (0, map_1.initMap)();
 });
 
