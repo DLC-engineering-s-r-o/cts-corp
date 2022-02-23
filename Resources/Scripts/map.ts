@@ -25,9 +25,6 @@ const mapOptions = {
     zoom: defaultZoomLevel,
     minZoom: defaultZoomLevel,
     maxZoom: 17,
-    dragabble: false,
-    disableDefaultUI: false,
-    scrollwheel: false, 
     disableDoubleClickZoom: true,
     zoomControl: false,
 }
@@ -6409,7 +6406,7 @@ export function initMap() {
             const marker = new google.maps.Marker({
                 position,
                 label,
-                // icon: markerIcon,
+                icon: markerIcon,
                 title: position.name
             })
 

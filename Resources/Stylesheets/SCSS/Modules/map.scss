@@ -34,9 +34,12 @@
 
   div[aria-label="Map"]
     div[style*="z-index: 1;"]
-    div[style*="color: rgb(0, 0, 0);"]:before {
-    display: none;
-  }
+    div[style*="color: rgb(0, 0, 0);"]{
+     transform: translateY(-15%);
+      &:before {
+        display: none;
+      }
+    }
 
   div[role="dialog"] {
     max-width: 300px;
