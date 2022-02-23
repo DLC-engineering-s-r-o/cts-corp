@@ -2,7 +2,7 @@
 
 .container {
   --pad-base: var(--gap-l);
-  width: 70%;
+  width: 60%;
   min-width: 1200px;
   margin: 0 auto;
 
@@ -10,7 +10,7 @@
     width: 80%;
   }
 
-  @include res-max-desktop-m {
+  @include res-max-desktop-s {
     width: 100%;
     min-width: 0;
     padding: 0 var(--pad-base);
