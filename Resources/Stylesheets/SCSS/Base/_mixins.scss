@@ -1,14 +1,9 @@
 @import "mixins/border";
 @import "Mixins/box-shadow";
+@import "Mixins/center-item";
 @import "Mixins/grid";
 @import "Mixins/flex";
 @import "Mixins/font-face";
 @import "Mixins/responsive";
 @import "Mixins/transition";
 
-@mixin center-item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}

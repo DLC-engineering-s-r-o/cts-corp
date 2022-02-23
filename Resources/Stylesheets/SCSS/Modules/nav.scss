@@ -4,7 +4,7 @@
   --nav-color: var(--color-black);
   --nav__menu-display: none;
   @include flex-set(def, row, nowrap, $gap-xl, center, space-between);
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

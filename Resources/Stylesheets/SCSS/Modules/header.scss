@@ -1,66 +1,109 @@
 @import "../base/global";
 
 .header {
+ --anim-length: .7s;
+ --anim-delay: calc(var(--anim-length) / 2);
+  height: 100vh;
+  max-height: $height-4k;
   &__container {
-    --col-count: 1;
+    --container-max-width: #{$width-desktop-m};
+    --col-count: 2;
+    --container-padding-x: 0;
+    position: relative;
+    width: 100%;
+    max-width: var(--container-max-width);
+    height: 100%;
+    padding: 0 var(--container-padding-x);
+    margin: 0 auto;
+    z-index: 10;
     @include grid-columns(
       def,
       repeat(var(--col-count), minmax($gap-l, 1fr)),
-      var(--gap),
+      0,
       stretch,
       center,
       stretch
     );
-    position: relative;
-    height: calc(100vh - var(--nav-height));
-    max-height: $width-4k;
-    // margin-top: var(--nav-height);
-    z-index: 10;
+    @include res-max-desktop-m{
+      --container-max-width: 90%;
+    }
+
+    @include res-max-desktop-s{
+      --container-max-width: unset;
+      --container-padding-x: #{$gap-xxl};
+    }
+
+    @include res-max-tablet{    
+      --container-padding-x: #{$gap-l};
+    }
+
+    @include res-max-mobile-l{
+      --col-count: 1;
+      --container-padding-x: #{$gap-l};
+    }
   }
 
-  &__title {
-    @include flex-set(def, column, wrap, $gap, flex-start, center);
+  &__content {
+    --content-font-size: 8rem;
+    --justify-content: center;
+    --padding-top: 0;
+    @include flex-set(def, column, wrap, $gap, flex-start, var(--justify-content));
+    position: relative;   
+    padding-top: var(--padding-top);
+    font-size: var(--content-font-size);
+    z-index: 2;
 
-    h1 {
-      font-size: 7rem;
-      font-weight: 500;
-      color: var(--color-primary);
-      animation: showScale 1s;
-      z-index: 1;
-      @include res-min-desktop-s {
-        font-size: 9rem;
-      }
+    @include res-max-desktop-s{
+      --content-font-size: 6rem;
     }
 
-    p {
+    @include res-max-mobile-l{
+      --content-font-size: 5rem;
+      --padding-top: var(--nav-height);
+      --justify-content: flex-start;
+    }
+
+    >h1 {
+      opacity: 0;
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--color-primary);
+      animation: showUp var(--anim-length) linear forwards;
+      transform: translateY(1rem);
+      z-index: 1;
+    }
+
+    >p {
+      opacity: 0;
       font-family: var(--font-title);
-      font-size: $gap-xl;
+      font-size: .4em;
       font-weight: 400;
       line-height: 1.4;
-      animation: showUp 1s;
-      @include res-min-desktop-s {
-        font-size: 3.2rem;
-      }
-    }
+      animation: showUp var(--anim-length) var(--anim-delay) linear forwards;
+      transform: translateY(-1rem);
 
-    a {
-      margin-top: $gap-l;
-      animation: showUp 1s;
+      + div{
+          margin-top: .7em;
+          opacity: 0;
+          animation: showButton var(--anim-length) calc(var(--anim-length) + var(--anim-delay)) linear forwards;
+      }
     }
   }
 
   &__bg {
-    position: absolute;
+    --bg-min-height: 0;
     width: 100%;
-    height: 100%;
+    min-height: var(--bg-min-height);
     background-image: image-set(
       "../images/backgrounds/header-bg_480.png" 1x,
       "../images/backgrounds/header-bg_960.png" 2x
     );
     background-repeat: no-repeat;
     background-position: right bottom;
-    animation: showScale 1s;
-    z-index: -1;
+    opacity: 0;
+    animation: showImage 1s linear forwards;
+    transform: scale(.9,.9);z-index: 1;
     background-size: contain;
 
     @include res-min-tablet {
@@ -69,38 +112,46 @@
         "../images/backgrounds/header-bg_1920.png" 1x
       );
     }
-    @include res-min-desktop-s {
-      height: calc(100% + 4.8rem);
-      background-position: right bottom 2rem;
+
+    @include res-max-mobile-l{
+      --bg-min-height: 55vh;
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
+
   }
 }
 
-@keyframes showUp {
-  0% {
+@keyframes showImage{
+  from {
+    opacity: 0;
+    transform: scale(.9,.9);
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1,1);
+  }
+}
+
+@keyframes showUp{
+  from {
+    opacity: 0;
     transform: translateY(1rem);
   }
-  100% {
+
+  to{
+    opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes show {
-  0% {
+@keyframes showButton {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
-  }
-}
-
-@keyframes showScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }
