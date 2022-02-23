@@ -30,7 +30,7 @@ const mapOptions = {
 }
 
 const markerIcon = {
-    url: 'wwwroot/images/icons/marker.png',
+    url: './wwwroot/images/icons/marker.png',
 }
 
 const loader = new Loader({

@@ -3382,7 +3382,7 @@ const mapOptions = {
     zoomControl: false,
 };
 const markerIcon = {
-    url: 'wwwroot/images/icons/marker.png',
+    url: './wwwroot/images/icons/marker.png',
 };
 const loader = new js_api_loader_1.Loader({
     apiKey: "AIzaSyD3Vb9QGa1aKgT_jOOZPax3tx58Z9IqLH8",
