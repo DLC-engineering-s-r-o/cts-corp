@@ -15,6 +15,10 @@ function checkScreenResolution(){
     if (window.screen.width <= 768){
         defaultZoomLevel = 7
     } 
+
+    if (window.screen.width <= 425){
+        defaultZoomLevel = 6
+    } 
   }
 
 checkScreenResolution()
