@@ -14,7 +14,7 @@
     position: relative;
     height: calc(100vh - var(--nav-height));
     max-height: $width-4k;
-    margin-top: var(--nav-height);
+    // margin-top: var(--nav-height);
     z-index: 10;
   }
 

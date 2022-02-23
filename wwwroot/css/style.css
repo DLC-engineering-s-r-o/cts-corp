@@ -758,7 +758,6 @@ small {
   position: relative;
   height: calc(100vh - var(--nav-height));
   max-height: 2560px;
-  margin-top: var(--nav-height);
   z-index: 10; }
 
 .header__title {
@@ -837,7 +836,7 @@ small {
   align-content: normal;
   justify-content: space-between;
   gap: 2.4rem;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
