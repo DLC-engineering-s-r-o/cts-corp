@@ -6406,7 +6406,7 @@ export function initMap() {
             const marker = new google.maps.Marker({
                 position,
                 label,
-                icon: markerIcon,
+                // icon: markerIcon,
                 title: position.name
             })
 
