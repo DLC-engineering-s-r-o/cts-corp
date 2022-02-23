@@ -9,7 +9,7 @@
   @include flex-set(inline, row, nowrap, var(--gap-s), center, center, center);
   @include border("def", var(--border-width), var(--btn-border-color));
   @include box-shadow(0, $gap-s, $gap);
-  min-width: 15rem;
+  min-width: 12rem;
   padding: var(--pad);
   background-color: var(--btn-bg-color);
   border-radius: var(--radius-s);
