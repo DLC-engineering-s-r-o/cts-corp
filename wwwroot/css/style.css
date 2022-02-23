@@ -21,10 +21,26 @@
   --radius: 1rem;
   --radius-s: 0.5rem;
   --font-text: open-sans, sans-serif;
-  --font-title: rama-gothic-e, sans-serif;
+  --font-title: zurrich;
   --border-width: 1px;
   --nav-height: 7rem;
   --gap-multiplier: 1; }
+
+@font-face {
+  font-family: "zurrich";
+  font-weight: 400;
+  font-display: fallback;
+  font-style: normal;
+  src: url("../fonts/zurrich/regular/zurrich.eot");
+  src: url("../fonts/zurrich/regular/zurrich.eot?#iefix") format("embedded-opentype"), url("../fonts/zurrich/regular/zurrich.woff2") format("woff2"), url("../fonts/zurrich/regular/zurrich.woff") format("woff"), url("../fonts/zurrich/regular/zurrich.ttf") format("truetype"), url("../fonts/zurrich/regular/zurrich.otf") format("opentype"), url("../fonts/zurrich/regular/zurrich.svg?#webfont") format("svg"); }
+
+@font-face {
+  font-family: "zurrich-bold";
+  font-weight: 700;
+  font-display: fallback;
+  font-style: normal;
+  src: url("../fonts/zurrich/bold/zurrich-bold.eot");
+  src: url("../fonts/zurrich/bold/zurrich-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/zurrich/bold/zurrich-bold.woff2") format("woff2"), url("../fonts/zurrich/bold/zurrich-bold.woff") format("woff"), url("../fonts/zurrich/bold/zurrich-bold.ttf") format("truetype"), url("../fonts/zurrich/bold/zurrich-bold.otf") format("opentype"), url("../fonts/zurrich/bold/zurrich-bold.svg?#webfont") format("svg"); }
 
 * {
   box-sizing: border-box; }
@@ -385,7 +401,7 @@ small {
   gap: var(--gap-s);
   border: var(--border-width) solid var(--btn-border-color);
   box-shadow: 0 0.4rem 0.8rem 0 var(--color-box-shadow);
-  min-width: 15rem;
+  min-width: 12rem;
   padding: var(--pad);
   background-color: var(--btn-bg-color);
   border-radius: var(--radius-s);
@@ -499,13 +515,13 @@ small {
 
 .container {
   --pad-base: var(--gap-l);
-  width: 70%;
+  width: 60%;
   min-width: 1200px;
   margin: 0 auto; }
   @media only screen and (max-width: 1440px) {
     .container {
       width: 80%; } }
-  @media only screen and (max-width: 1360px) {
+  @media only screen and (max-width: 1024px) {
     .container {
       width: 100%;
       min-width: 0;

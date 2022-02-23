@@ -1,3 +1,4 @@
 @import "mixins";
 
-// @include font-face('segoe-ui', '../fonts/segoe-ui/regular/segoe-ui');
+@include font-face('zurrich', '../fonts/zurrich/regular/zurrich');
+@include font-face('zurrich-bold', '../fonts/zurrich/bold/zurrich-bold', 700);
