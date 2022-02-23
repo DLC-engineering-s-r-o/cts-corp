@@ -9762,6 +9762,21 @@ function initMap() {
             });
             return marker;
         });
+        // for (let i = 0; i <= references.length; i++) {
+        //     var reference = references[i],
+        //         latLng = new google.maps.LatLng(reference.lat, reference.lng); 
+        //     const marker = new google.maps.Marker({
+        //       position: latLng,
+        //       map: map,
+        //       title: reference.name
+        //     });
+        //     marker.addListener('click', () => {
+        //         infoWindow.setContent(
+        //             `<div class='map__pop-up'><strong>${reference.name}</strong><br><span>${new Date(reference.date).toLocaleDateString("cs-CZ")}</span><p>${reference.desc}</p><b>${reference.price} Kč</b></div>`,
+        //         )
+        //         infoWindow.open(map, marker)
+        //     })
+        //   }
         polygon.setMap(map);
         new markerclusterer_1.MarkerClusterer({
             map,
