@@ -1205,21 +1205,21 @@ div[style*="color: rgb(0, 0, 0);"]:before {
               --icon-size: var(--gap-xl); } }
     .about__card p {
       font-family: var(--font-title);
-      font-size: x-large;
+      font-size: 1.5em;
       line-height: 1;
       color: var(--color-secondary); }
       @media only screen and (min-width: 1025px) {
         .about__card p {
-          font-size: xx-large; } }
+          font-size: 2em; } }
     .about__card span {
       font-family: var(--font-title);
-      font-size: xx-large;
+      font-size: 2em;
       font-weight: 600;
       line-height: 1;
       color: var(--color-black); }
       @media only screen and (min-width: 1025px) {
         .about__card span {
-          font-size: xxx-large; } }
+          font-size: 4em; } }
 
 .services {
   --gap-section: 7rem;
