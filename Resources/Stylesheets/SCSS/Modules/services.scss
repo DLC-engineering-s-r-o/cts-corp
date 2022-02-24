@@ -5,7 +5,7 @@
   padding-top: var(--gap-section);
 
   &__container {
-    --gap-container: 3rem;
+    --gap-container: #{$gap-xxl};
     @include grid-columns(
       def,
       1fr,
@@ -14,14 +14,6 @@
       center,
       stretch
     );
-
-    @include res-min-tablet {
-      --gap-container: 4rem;
-    }
-
-    @include res-min-desktop-s {
-      --gap-container: 5rem;
-    }
   }
 
   &__title {
@@ -34,10 +26,27 @@
   }
 
   &__content {
-    @include grid-columns(def, 1fr, $gap-l, stretch, center, stretch);
+    --column: 1fr;
+    --column-gap: #{$gap};
+    --align-items: center;
+    --justify-content: center;
+    --align-content: stretch;
+    @include grid-columns(
+      def,
+      var(--column),
+      var(--column-gap),
+      var(--align-items),
+      var(--justify-content),
+      var(--align-content)
+    );
+    justify-items: center;
 
     @include res-min-tablet {
-      @include grid-columns(def, 2fr 1fr, $gap-xl, stretch, center, stretch);
+      --column: 2fr 1fr;
+      --column-gap: #{$gap-l};
+    }
+    @include res-min-desktop-s {
+      --column-gap: #{$gap-xl};
     }
 
     h3 {
@@ -63,10 +72,9 @@
     }
 
     &--reverse {
-      @include grid-columns(def, 1fr, $gap-l, stretch, center, stretch);
-
+      --column: 1fr;
       @include res-min-tablet {
-        @include grid-columns(def, 1fr 2fr, $gap-xl, stretch, center, stretch);
+        --column: 1fr 2fr;
       }
 
       > picture {

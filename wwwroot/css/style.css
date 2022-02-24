@@ -1206,38 +1206,37 @@ div[style*="color: rgb(0, 0, 0);"]:before {
   --gap-section: 7rem;
   padding-top: var(--gap-section); }
   .services__container {
-    --gap-container: 3rem;
+    --gap-container: 3.2rem;
     display: grid;
     gap: var(--gap-container);
     align-items: stretch;
     align-content: stretch;
     justify-content: center;
     grid-template-columns: 1fr; }
-    @media only screen and (min-width: 769px) {
-      .services__container {
-        --gap-container: 4rem; } }
-    @media only screen and (min-width: 1025px) {
-      .services__container {
-        --gap-container: 5rem; } }
   .services__title h2 {
     margin-bottom: 1.6rem; }
   .services__title p {
     font-size: large; }
   .services__content {
+    --column: 1fr;
+    --column-gap: 0.8rem;
+    --align-items: center;
+    --justify-content: center;
+    --align-content: stretch;
     display: grid;
-    gap: 1.6rem;
-    align-items: stretch;
-    align-content: stretch;
-    justify-content: center;
-    grid-template-columns: 1fr; }
+    gap: var(--column-gap);
+    align-items: var(--align-items);
+    align-content: var(--align-content);
+    justify-content: var(--justify-content);
+    grid-template-columns: var(--column);
+    justify-items: center; }
     @media only screen and (min-width: 769px) {
       .services__content {
-        display: grid;
-        gap: 2.4rem;
-        align-items: stretch;
-        align-content: stretch;
-        justify-content: center;
-        grid-template-columns: 2fr 1fr; } }
+        --column: 2fr 1fr;
+        --column-gap: 1.6rem; } }
+    @media only screen and (min-width: 1025px) {
+      .services__content {
+        --column-gap: 2.4rem; } }
     .services__content h3 {
       margin-bottom: var(--gap);
       font-size: 2rem;
@@ -1253,20 +1252,10 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         font-weight: bold;
         color: inherit; }
     .services__content--reverse {
-      display: grid;
-      gap: 1.6rem;
-      align-items: stretch;
-      align-content: stretch;
-      justify-content: center;
-      grid-template-columns: 1fr; }
+      --column: 1fr; }
       @media only screen and (min-width: 769px) {
         .services__content--reverse {
-          display: grid;
-          gap: 2.4rem;
-          align-items: stretch;
-          align-content: stretch;
-          justify-content: center;
-          grid-template-columns: 1fr 2fr; } }
+          --column: 1fr 2fr; } }
       @media only screen and (max-width: 768px) {
         .services__content--reverse > picture {
           grid-row: end; } }
