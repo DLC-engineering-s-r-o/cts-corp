@@ -129,7 +129,7 @@
   &__card {
     --card-opacity: 0;
     --trans-time: 0.5s;
-    --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+    --color-box-shadow: #{$color-box-shadow};
     --trans-y: -1rem;
     --column: 2fr 1fr;
     --column-gap: 0;
@@ -163,7 +163,7 @@
     @include res-min-tablet {
       --column: 2fr 1fr;
       --column-gap: 0;
-      padding: 4rem 1.6rem 1.2rem 1.6rem;
+      padding: 4rem $gap-l 1.2rem $gap-l;
       text-align: left;
     }
 

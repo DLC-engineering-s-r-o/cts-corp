@@ -5,7 +5,7 @@
   padding-top: var(--gap-section);
 
   &__container {
-    --gap-container: 3rem;
+    --gap-container: #{$gap-xxl};
     @include grid-columns(
       def,
       1fr,
@@ -58,7 +58,7 @@
     @include grid-columns(def, 5fr 6fr, $gap-l, stretch, center, stretch);
 
     img {
-      --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+      --color-box-shadow: #{$color-box-shadow};
       @include box-shadow(0, 0, 20px);
       border-radius: var(--gap);
     }

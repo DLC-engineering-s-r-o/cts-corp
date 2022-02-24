@@ -2,7 +2,7 @@
 
 .form {
   &__element {
-    --gap-form: 0.4rem;
+    --gap-form: #{$gap-s};
     @include grid-columns(def, 1fr, var(--gap-form), stretch, center, stretch);
 
     @include res-max-tablet {

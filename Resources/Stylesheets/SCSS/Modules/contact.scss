@@ -109,7 +109,7 @@
     }
     address,
     a {
-      margin-left: 1.6rem;
+      margin-left: $gap-l;
       font-family: var(--font-text);
       font-size: large;
       color: var(--color-secondary);
@@ -121,7 +121,7 @@
   }
 
   &__form {
-    --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+    --color-box-shadow: #{$color-box-shadow};
     @include box-shadow();
     position: relative;
     width: 100%;
@@ -154,7 +154,7 @@
     &::before {
       --shape-radius: 0;
       position: absolute;
-      top: -1.6rem;
+      top: -$gap-l;
       right: -1rem;
       content: "";
       width: 100vw;
@@ -168,7 +168,7 @@
       z-index: -1;
 
       @include res-min-mobile-l {
-        right: -1.6rem;
+        right: -$gap-l;
       }
       @include res-min-desktop-s {
         --shape-radius: 6rem;

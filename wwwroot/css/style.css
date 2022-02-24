@@ -9,7 +9,7 @@
   --color-primary: #fdba12;
   --color-primary--darken: #f47f1f;
   --color-secondary: #424243;
-  --color-box-shadow: rgba(0, 0, 0, 0);
+  --color-box-shadow: rgba(0, 0, 0, 0.17);
   --trans-time: 0.25s;
   --trans-fnc: ease-in-out;
   --gap-xxl: 3.2rem;
@@ -413,7 +413,7 @@ small {
   transition: transform var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease-in-out;
   cursor: pointer; }
   .button:hover {
-    --color-box-shadow: hsla(0, 0%, 0%, .17); }
+    --color-box-shadow: rgba(0, 0, 0, 0.17); }
   .button:hover {
     --btn-trans-y: -5%; }
   .button--secondary {
@@ -666,7 +666,7 @@ small {
     .contact__address .icon {
       --icon-size: 1.2rem; }
   .contact__form {
-    --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+    --color-box-shadow: rgba(0, 0, 0, 0.17);
     box-shadow: 30px 30px 75px 0 var(--color-box-shadow);
     position: relative;
     width: 100%;
@@ -674,7 +674,7 @@ small {
     background-color: var(--color-white);
     border-radius: var(--gap); }
     .contact__form:hover {
-      --color-box-shadow: hsla(0, 0%, 0%, .17); }
+      --color-box-shadow: rgba(0, 0, 0, 0.17); }
     @media only screen and (max-width: 1024px) {
       .contact__form {
         grid-row: end; } }
@@ -1099,7 +1099,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
   .about__card {
     --card-opacity: 0;
     --trans-time: 0.5s;
-    --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+    --color-box-shadow: rgba(0, 0, 0, 0.17);
     --trans-y: -1rem;
     --column: 2fr 1fr;
     --column-gap: 0;
@@ -1121,7 +1121,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     transform: translateY(var(--trans-y));
     transition: opacity var(--trans-time) var(--trans-fnc), transform var(--trans-time) var(--trans-fnc); }
     .about__card:hover {
-      --color-box-shadow: hsla(0, 0%, 0%, .17); }
+      --color-box-shadow: rgba(0, 0, 0, 0.17); }
     @media only screen and (min-width: 426px) {
       .about__card {
         --column: 1fr;
@@ -1263,7 +1263,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
   --gap-section: 7rem;
   padding-top: var(--gap-section); }
   .team__container {
-    --gap-container: 3rem;
+    --gap-container: 3.2rem;
     display: grid;
     gap: var(--gap-container);
     align-items: stretch;
@@ -1304,11 +1304,11 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     justify-content: center;
     grid-template-columns: 5fr 6fr; }
     .team__card img {
-      --color-box-shadow: hsla(0, 0%, 0%, 0.17);
+      --color-box-shadow: rgba(0, 0, 0, 0.17);
       box-shadow: 0 0 20px 0 var(--color-box-shadow);
       border-radius: var(--gap); }
       .team__card img:hover {
-        --color-box-shadow: hsla(0, 0%, 0%, .17); }
+        --color-box-shadow: rgba(0, 0, 0, 0.17); }
     .team__card > div {
       display: flex;
       flex-flow: column wrap;
