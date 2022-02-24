@@ -733,7 +733,7 @@ small {
       grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
 
 .footer {
-  --gap-section: 7rem;
+  --gap-section: 5rem;
   margin-top: var(--gap-section);
   margin-bottom: var(--gap-xxl);
   color: var(--color-black);
