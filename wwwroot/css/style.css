@@ -354,9 +354,12 @@ small {
 
 .title {
   --title-color: black;
-  font-size: 4rem;
+  font-size: 3em;
   font-weight: 600;
   color: var(--title-color); }
+  @media only screen and (min-width: 426px) {
+    .title {
+      font-size: 4em; } }
   .title > strong {
     display: block;
     font-size: 0.4em;
