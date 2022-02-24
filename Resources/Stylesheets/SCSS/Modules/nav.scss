@@ -14,9 +14,9 @@
   z-index: 999;
   @include res-max-desktop-s {
     --nav-height: #{$gap-xxl};
-    background-color: hsla(0, 0%, 100%, 0.5);
+    background-color: $color-nav-bg;
     backdrop-filter: saturate(180%) blur(5px);
-    box-shadow: inset 0 0 0.8rem 0 hsla(0, 0%, 67%, 0.226);
+    box-shadow: inset 0 0 0.8rem 0 $color-nav-box-shadow;
   }
   @include res-max-desktop-m {
     padding: 0 1rem;
@@ -24,7 +24,7 @@
 
   .fuzzy {
     @include res-min-desktop-s {
-      background-color: hsla(0, 0%, 100%, 0.5);
+      background-color: $color-nav-bg;
       border-radius: 0.4rem;
       backdrop-filter: saturate(180%) blur(5px);
     }
@@ -89,6 +89,14 @@
       --nav__menu-display: flex;
       animation: showMenu 0.5s forwards;
       animation-delay: 0.1s;
+
+      ul {
+        position: relative;
+        top: -1rem;
+        @include res-min-mobile-l {
+          top: -5rem;
+        }
+      }
     }
   }
 
@@ -106,11 +114,14 @@
       height: 100%;
       font-family: var(--font-title);
       font-size: var(--gap-xl);
-      line-height: 2;
+      line-height: 1.7;
       color: currentColor;
       text-decoration: none;
       text-transform: uppercase;
       z-index: 10;
+      @include res-min-mobile-l {
+        line-height: 2;
+      }
 
       &:hover {
         color: var(--color-black);
@@ -128,6 +139,8 @@
   small {
     position: absolute;
     bottom: var(--gap-xl);
+    text-align: center;
+
     > a {
       color: var(--color-white);
     }

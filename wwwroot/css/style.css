@@ -941,6 +941,12 @@ small {
       --nav__menu-display: flex;
       animation: showMenu 0.5s forwards;
       animation-delay: 0.1s; }
+      .nav__menu--open ul {
+        position: relative;
+        top: -1rem; }
+        @media only screen and (min-width: 426px) {
+          .nav__menu--open ul {
+            top: -5rem; } }
   .nav ul {
     padding: 0;
     list-style: none;
@@ -952,11 +958,14 @@ small {
     height: 100%;
     font-family: var(--font-title);
     font-size: var(--gap-xl);
-    line-height: 2;
+    line-height: 1.7;
     color: currentColor;
     text-decoration: none;
     text-transform: uppercase;
     z-index: 10; }
+    @media only screen and (min-width: 426px) {
+      .nav__item > a {
+        line-height: 2; } }
     .nav__item > a:hover {
       color: var(--color-black);
       text-decoration: underline; }
@@ -966,7 +975,8 @@ small {
     left: var(--gap-xl); }
   .nav small {
     position: absolute;
-    bottom: var(--gap-xl); }
+    bottom: var(--gap-xl);
+    text-align: center; }
     .nav small > a {
       color: var(--color-white); }
 
