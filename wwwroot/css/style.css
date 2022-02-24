@@ -959,8 +959,7 @@ small {
     z-index: 10; }
     .nav__item > a:hover {
       color: var(--color-black);
-      text-decoration: underline;
-      transition: all var(--trans-time) var(--trans-fnc) 0s; }
+      text-decoration: underline; }
   .nav picture {
     position: absolute;
     bottom: var(--gap-xl);

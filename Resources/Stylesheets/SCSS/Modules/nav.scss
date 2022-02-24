@@ -115,7 +115,6 @@
       &:hover {
         color: var(--color-black);
         text-decoration: underline;
-        @include transition(all, var(--trans-time), var(--trans-fnc));
       }
     }
   }
