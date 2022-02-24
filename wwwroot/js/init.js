@@ -3380,12 +3380,8 @@ const mapOptions = {
     mapId: "c2aa51b8ca67932f",
     zoom: defaultZoomLevel,
     minZoom: defaultZoomLevel,
-    maxZoom: 17,
     disableDoubleClickZoom: true,
     zoomControl: false,
-};
-const markerIcon = {
-    url: './wwwroot/images/icons/marker.png',
 };
 const loader = new js_api_loader_1.Loader({
     apiKey: "AIzaSyD3Vb9QGa1aKgT_jOOZPax3tx58Z9IqLH8",
@@ -9739,6 +9735,14 @@ function initMap() {
             new google.maps.LatLng(50.3201483243762, 12.111568450927734),
             new google.maps.LatLng(50.32021682764627, 12.111525535583496)
         ];
+        const svgMarker = {
+            path: "M107.074,46.243A12.792,12.792,0,0,0,88.756,64.1a73.467,73.467,0,0,1,7.7,9.275l.315.472a1.6,1.6,0,0,0,2.22.442,1.656,1.656,0,0,0,.442-.442l.315-.472a48.579,48.579,0,0,1,7.108-8.691,12.775,12.775,0,0,0,.217-18.438Z",
+            fillColor: "var(--color-primary)",
+            fillOpacity: 0.6,
+            strokeWeight: 0,
+            rotation: 0,
+            scale: 1,
+        };
         const polygon = new google.maps.Polygon({
             paths: [europeCoords, czechRepublicCoords],
             strokeColor: '#fff',
@@ -9753,7 +9757,7 @@ function initMap() {
             const marker = new google.maps.Marker({
                 position,
                 label,
-                // icon: markerIcon,
+                // icon: svgMarker,
                 title: position.name
             });
             marker.addListener('click', () => {
@@ -9762,25 +9766,14 @@ function initMap() {
             });
             return marker;
         });
-        // for (let i = 0; i <= references.length; i++) {
-        //     var reference = references[i],
-        //         latLng = new google.maps.LatLng(reference.lat, reference.lng); 
-        //     const marker = new google.maps.Marker({
-        //       position: latLng,
-        //       map: map,
-        //       title: reference.name
-        //     });
-        //     marker.addListener('click', () => {
-        //         infoWindow.setContent(
-        //             `<div class='map__pop-up'><strong>${reference.name}</strong><br><span>${new Date(reference.date).toLocaleDateString("cs-CZ")}</span><p>${reference.desc}</p><b>${reference.price} Kč</b></div>`,
-        //         )
-        //         infoWindow.open(map, marker)
-        //     })
-        //   }
         polygon.setMap(map);
         new markerclusterer_1.MarkerClusterer({
             map,
             markers,
+            algorithm: new markerclusterer_1.GridAlgorithm({
+                gridSize: 60,
+                maxZoom: 17
+            })
         });
     });
 }
