@@ -45,7 +45,7 @@
       center,
       stretch
     );
-    @include res-min-mobile-xl {
+    @include res-min-tablet {
       --col-count: 2;
     }
     @include res-min-desktop-s {
