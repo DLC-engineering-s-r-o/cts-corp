@@ -995,7 +995,7 @@ small {
   @media only screen and (min-width: 426px) {
     #map {
       height: 50vh; } }
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 769px) {
     #map {
       height: 90vh; } }
   #map div > img[src*="data:image/svg+xml"] {
