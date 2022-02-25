@@ -2,7 +2,13 @@
 
 #map {
   width: 100%;
-  height: 90vh;
+  height: 30vh;
+  @include res-min-mobile-l {
+    height: 50vh;
+  }
+  @include res-min-desktop-s {
+    height: 90vh;
+  }
 
   div > img[src*="data:image/svg+xml"] {
     display: none;

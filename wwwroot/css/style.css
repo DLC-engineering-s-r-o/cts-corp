@@ -991,7 +991,13 @@ small {
 
 #map {
   width: 100%;
-  height: 90vh; }
+  height: 30vh; }
+  @media only screen and (min-width: 426px) {
+    #map {
+      height: 50vh; } }
+  @media only screen and (min-width: 1025px) {
+    #map {
+      height: 90vh; } }
   #map div > img[src*="data:image/svg+xml"] {
     display: none; }
   #map div[aria-label="Map"] div[style*="z-index: 1;"] div[class] {
