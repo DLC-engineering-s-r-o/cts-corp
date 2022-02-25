@@ -828,14 +828,14 @@
               <h3>Kontaktujte nás</h3>
               <p>Vyplňte formulář a náš tým se vám ozve zpět do 24 hodin.</p>
             </div>
-            <form>
+            <form name="contactform" method="post" action="email.php">
               <div class="form__element">
                 <label for="name">Jméno</label>
-                <input type="text" id="name" />
+                <input type="text" id="name" name="fname"/>
               </div>
               <div class="form__element">
                 <label for="surname">Příjmení</label>
-                <input type="text" id="surname" />
+                <input type="text" id="surname" name="lname"/>
               </div>
               <div class="form__element">
                 <label for="email">Email</label>
