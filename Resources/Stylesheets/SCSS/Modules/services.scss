@@ -43,10 +43,10 @@
 
     @include res-min-tablet {
       --column: 2fr 1fr;
-      --column-gap: #{$gap-l};
+      --column-gap: #{$gap-xl};
     }
     @include res-min-desktop-s {
-      --column-gap: #{$gap-xl};
+      --column-gap: 4rem;
     }
 
     h3 {

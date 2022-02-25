@@ -1259,10 +1259,10 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     @media only screen and (min-width: 769px) {
       .services__content {
         --column: 2fr 1fr;
-        --column-gap: 1.6rem; } }
+        --column-gap: 2.4rem; } }
     @media only screen and (min-width: 1025px) {
       .services__content {
-        --column-gap: 2.4rem; } }
+        --column-gap: 4rem; } }
     .services__content h3 {
       margin-bottom: var(--gap);
       font-size: 2rem;
