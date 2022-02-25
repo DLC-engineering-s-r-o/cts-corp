@@ -62,10 +62,12 @@
       var(--justify-content),
       var(--align-content)
     );
-
     position: relative;
     grid-row-start: 2;
 
+    @include res-min-mobile-s {
+      --column: 1fr 1fr;
+    }
     @include res-min-mobile-l {
       --column: 1fr 1fr 1fr;
     }
@@ -131,10 +133,10 @@
     --trans-time: 0.5s;
     --color-box-shadow: #{$color-box-shadow};
     --trans-y: -1rem;
-    --column: 2fr 1fr;
-    --column-gap: 0;
+    --column: 1fr;
+    --column-gap: #{$gap-l};
     --align-content: flex-start;
-    --justify-content: normal;
+    --justify-content: center;
     --align-content: flex-start;
     @include grid-columns(
       def,
@@ -146,25 +148,29 @@
     );
     @include box-shadow();
     position: relative;
-    padding: $gap $gap 0.6rem $gap;
+    padding: $gap-xl $gap $gap-xl $gap;
     background-color: var(--color-white);
     opacity: var(--card-opacity);
     border-radius: var(--gap);
+    text-align: center;
     transform: translateY(var(--trans-y));
     transition: opacity var(--trans-time) var(--trans-fnc),
       transform var(--trans-time) var(--trans-fnc);
 
-    @include res-min-mobile-l {
-      --column: 1fr;
-      --column-gap: #{$gap};
-      --justify-content: center;
-      text-align: center;
-    }
     @include res-min-tablet {
       --column: 2fr 1fr;
       --column-gap: 0;
       padding: 4rem $gap-l 1.2rem $gap-l;
       text-align: left;
+    }
+
+    &--span {
+      @include res-min-mobile-s {
+        grid-column: span 2;
+      }
+      @include res-min-mobile-l {
+        grid-column: span 1;
+      }
     }
 
     &--visible {
@@ -185,12 +191,10 @@
     }
 
     div:nth-of-type(2) {
-      --justify-content: flex-end;
+      --justify-content: center;
+      grid-row: 1;
       @include flex-set($justify-content: var(--justify-content));
-      @include res-min-mobile-l {
-        --justify-content: center;
-        grid-row: 1;
-      }
+
       @include res-min-tablet {
         top: $gap-l;
         grid-column: 2;
