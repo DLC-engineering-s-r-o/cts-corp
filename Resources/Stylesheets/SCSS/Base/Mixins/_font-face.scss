@@ -5,6 +5,6 @@
         font-display: fallback;
         font-style: normal;
         src: url("#{$path}.eot");
-        src: url("#{$path}.eot?#iefix") format("embedded-opentype"), url("#{$path}.woff2") format("woff2"), url("#{$path}.woff") format("woff"), url("#{$path}.ttf") format("truetype"), url("#{$path}.otf") format("opentype"), url("#{$path}.svg?#webfont") format("svg");
+        src: url("#{$path}.eot?#iefix") format("embedded-opentype"), url("#{$path}.woff2") format("woff2"), url("#{$path}.ttf") format("truetype"), url("#{$path}.otf") format("opentype");
     }
 }
