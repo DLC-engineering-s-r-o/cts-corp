@@ -1062,7 +1062,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       --shape-radius: 6rem;
       position: absolute;
       right: 0;
-      bottom: 0;
+      bottom: -10%;
       display: block;
       content: "";
       width: 30%;
@@ -1072,6 +1072,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       z-index: -1; } }
   @media only screen and (min-width: 1025px) {
     .about:before {
+      bottom: 0;
       height: 80%; } }
   @media only screen and (min-width: 1661px) {
     .about:before {
