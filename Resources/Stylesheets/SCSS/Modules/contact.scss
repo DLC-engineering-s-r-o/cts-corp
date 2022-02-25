@@ -136,22 +136,24 @@
       padding: 5rem var(--gap-xxl) var(--gap-xl) var(--gap-xxl);
     }
 
-    &::after {
+    &:after {
       @include res-min-desktop-s {
         --bg-image: url("../images/circles/contact-dots.svg");
         position: absolute;
-        bottom: -100px;
-        left: -105px;
+        bottom: 0;
+        left: 0;
+        display: block;
         content: "";
-        width: 75rem;
-        height: 20rem;
+        width: 172%;
+        aspect-ratio: 1171 / 374;
         background-image: var(--bg-image);
         background-repeat: no-repeat;
-        background-position: bottom left;
+        background-position: bottom 0 left 0;
+        transform: translate(-10%, 30%);
       }
     }
 
-    &::before {
+    &:before {
       --shape-radius: 0;
       position: absolute;
       top: -$gap-l;
@@ -159,10 +161,10 @@
       content: "";
       width: 100vw;
       height: calc(100% + 3.2rem);
-      background: radial-gradient(
-        ellipse at center,
-        $color-primary,
-        $color-primary--darken
+      background: linear-gradient(
+        45deg,
+        $color-primary 0%,
+        $color-primary--darken 100%
       );
       border-radius: var(--shape-radius);
       z-index: -1;

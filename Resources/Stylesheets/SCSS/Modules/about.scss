@@ -8,6 +8,33 @@
     padding-bottom: var(--gap-section);
   }
 
+  &:before {
+    @include res-min-tablet {
+      --shape-radius: 6rem;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      content: "";
+      width: 30%;
+      height: 85%;
+      background: linear-gradient(
+        45deg,
+        $color-primary--darken 0%,
+        $color-primary 100%
+      );
+      border-radius: var(--shape-radius) 0 0 var(--shape-radius);
+      z-index: -1;
+    }
+    @include res-min-desktop-s {
+      height: 80%;
+    }
+    @include res-min-desktop-xl {
+      bottom: -10%;
+      height: 90%;
+    }
+  }
+
   &__container {
     --column: 1fr;
     --gap-row-container: #{$gap-xxl};
@@ -78,54 +105,58 @@
       grid-row: 1 / span 6;
     }
 
-    &::after {
-      @include res-min-desktop-s {
+    &:after {
+      @include res-min-desktop-m {
         --bg-image: url("../images/circles/about-dots.svg");
         position: absolute;
-        right: -100px;
-        bottom: -100px;
+        right: 0;
+        bottom: 0;
+        display: block;
         content: "";
-        width: 50rem;
-        height: 35rem;
+        width: 172%;
+        aspect-ratio: 680/501;
         background-image: var(--bg-image);
         background-repeat: no-repeat;
         background-position: bottom 0 right 0;
+        transform: translate(14%, 20%);
       }
     }
 
-    // &::before {
-    //   --shape-radius: 0;
-    //   position: absolute;
-    //   right: -1rem;
-    //   bottom: -1.6rem;
-    //   content: "";
-    //   width: 100vw;
-    //   height: calc(100% + 3.2rem);
-    //   background: radial-gradient(
-    //     ellipse at center,
-    //     $color-primary,
-    //     $color-primary--darken
-    //   );
-    //   border-radius: var(--shape-radius) 0 0 var(--shape-radius);
-    //   z-index: -1;
-    //   @include res-min-mobile-l {
-    //     right: -1.6rem;
-    //   }
-    //   @include res-min-tablet {
-    //     --shape-radius: 6rem;
-    //     bottom: 0;
-    //     width: 75%;
-    //     height: 480px;
-    //   }
-    //   @include res-min-desktop-s {
-    //     bottom: -9.6rem;
-    //     height: calc(100% + 6.4rem);
-    //   }
-    //   @include res-min-desktop-m {
-    //     right: -80vh;
-    //     width: 100vh;
-    //   }
-    // }
+    &::before {
+      @include res-max-tablet {
+        --shape-radius: 0;
+        position: absolute;
+        right: -1rem;
+        bottom: -1.6rem;
+        content: "";
+        width: 100vw;
+        height: calc(100% + 3.2rem);
+        background: radial-gradient(
+          ellipse at center,
+          $color-primary,
+          $color-primary--darken
+        );
+        border-radius: var(--shape-radius) 0 0 var(--shape-radius);
+        z-index: -1;
+        @include res-min-mobile-l {
+          right: -1.6rem;
+        }
+        // @include res-min-tablet {
+        //   --shape-radius: 6rem;
+        //   bottom: 0;
+        //   width: 75%;
+        //   height: 480px;
+        // }
+        // @include res-min-desktop-s {
+        //   bottom: -9.6rem;
+        //   height: calc(100% + 6.4rem);
+        // }
+        // @include res-min-desktop-m {
+        //   right: -80vh;
+        //   width: 100vh;
+        // }
+      }
+    }
   }
 
   &__card {

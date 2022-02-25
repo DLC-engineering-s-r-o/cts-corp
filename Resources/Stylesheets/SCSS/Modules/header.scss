@@ -1,8 +1,8 @@
 @import "../base/global";
 
 .header {
- --anim-length: .7s;
- --anim-delay: calc(var(--anim-length) / 2);
+  --anim-length: 0.7s;
+  --anim-delay: calc(var(--anim-length) / 2);
   height: 100vh;
   max-height: $height-4k;
   &__container {
@@ -24,20 +24,20 @@
       center,
       stretch
     );
-    @include res-max-desktop-m{
+    @include res-max-desktop-m {
       --container-max-width: 90%;
     }
 
-    @include res-max-desktop-s{
+    @include res-max-desktop-s {
       --container-max-width: unset;
       --container-padding-x: #{$gap-xxl};
     }
 
-    @include res-max-tablet{    
+    @include res-max-tablet {
       --container-padding-x: #{$gap-l};
     }
 
-    @include res-max-mobile-l{
+    @include res-max-mobile-l {
       --col-count: 1;
       --container-padding-x: #{$gap-l};
     }
@@ -47,23 +47,34 @@
     --content-font-size: 8rem;
     --justify-content: center;
     --padding-top: 0;
-    @include flex-set(def, column, wrap, $gap, flex-start, var(--justify-content));
-    position: relative;   
+    @include flex-set(
+      def,
+      column,
+      wrap,
+      $gap,
+      flex-start,
+      var(--justify-content)
+    );
+    position: relative;
     padding-top: var(--padding-top);
     font-size: var(--content-font-size);
     z-index: 2;
 
-    @include res-max-desktop-s{
+    @include res-max-desktop-xxl {
+      --content-font-size: 9rem;
+    }
+
+    @include res-max-desktop-s {
       --content-font-size: 6rem;
     }
 
-    @include res-max-mobile-l{
+    @include res-max-mobile-l {
       --content-font-size: 5rem;
       --padding-top: var(--nav-height);
       --justify-content: flex-start;
     }
 
-    >h1 {
+    > h1 {
       opacity: 0;
       font-size: 1em;
       font-weight: 500;
@@ -74,19 +85,20 @@
       z-index: 1;
     }
 
-    >p {
+    > p {
       opacity: 0;
       font-family: var(--font-title);
-      font-size: .4em;
+      font-size: 0.4em;
       font-weight: 400;
       line-height: 1.4;
       animation: showUp var(--anim-length) var(--anim-delay) linear forwards;
       transform: translateY(-1rem);
 
-      + div{
-          margin-top: .7em;
-          opacity: 0;
-          animation: showButton var(--anim-length) calc(var(--anim-length) + var(--anim-delay)) linear forwards;
+      + div {
+        margin-top: 0.7em;
+        opacity: 0;
+        animation: showButton var(--anim-length)
+          calc(var(--anim-length) + var(--anim-delay)) linear forwards;
       }
     }
   }
@@ -103,7 +115,8 @@
     background-position: right bottom;
     opacity: 0;
     animation: showImage 1s linear forwards;
-    transform: scale(.9,.9);z-index: 1;
+    transform: scale(0.9, 0.9);
+    z-index: 1;
     background-size: contain;
 
     @include res-min-tablet {
@@ -113,35 +126,34 @@
       );
     }
 
-    @include res-max-mobile-l{
+    @include res-max-mobile-l {
       --bg-min-height: 55vh;
       position: absolute;
       bottom: 0;
       left: 0;
     }
-
   }
 }
 
-@keyframes showImage{
+@keyframes showImage {
   from {
     opacity: 0;
-    transform: scale(.9,.9);
+    transform: scale(0.9, 0.9);
   }
 
-  to{
+  to {
     opacity: 1;
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 }
 
-@keyframes showUp{
+@keyframes showUp {
   from {
     opacity: 0;
     transform: translateY(1rem);
   }
 
-  to{
+  to {
     opacity: 1;
     transform: translateY(0);
   }
