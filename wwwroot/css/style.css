@@ -1032,7 +1032,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
 .map__pop-up {
   max-width: 250px; }
   .map__pop-up strong {
-    font-size: large;
+    font-size: 20px;
     color: black; }
   .map__pop-up span {
     display: block;
