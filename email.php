@@ -1,7 +1,5 @@
 <?php
 if(isset($_POST['email'])) {
-
-    // EDIT THE 2 LINES BELOW AS REQUIRED
 	$headers = "Content-Type: text/html; charset=UTF-8";
     $email_to = "chylik.lukas@gmail.com";
     $email_subject = "Nová zpráva z webu CTS CORP., s.r.o.";
@@ -9,12 +7,11 @@ if(isset($_POST['email'])) {
     function died($error) {
         // your error code can go here
         echo "Je nám líto, ale u formuláře, který jste vyplnili, se vyskytla chyba.";
-        echo "Tyto chyby se zobrazí níže.<br /><br />";
+        echo "Podrobnosti můžete vidět níže.<br /><br />";
         echo $error."<br /><br />";
-        echo "Vráťte sa a opravte tieto chyby.<br /><br />";
+        echo "Vráťte se a opravte tyto chyby.<br /><br />";
         die();
     }
-
 
     // validation expected data exists
     if(!isset($_POST['first_name']) ||
@@ -35,26 +32,23 @@ if(isset($_POST['email'])) {
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 
   if(!preg_match($email_exp,$email_from)) {
-    $error_message .= 'Zadaná e-mailová adresa nie je platná.<br />';
+    $error_message .= 'Zadaná e-mailová adresa je neplatná.<br />';
   }
 
   if(strlen($comments) < 10) {
-    $error_message .= 'Správa, ktorú ste zadali, nie je platná. Zpráva musí obsahovat minimálne 10 znaků.<br />';
+    $error_message .= 'Zpráva, kterou jste zadali, je neplatná. Zpráva musí obsahovat minimálně 10 znaků.<br />';
   }
 
   if(strlen($error_message) > 0) {
     died($error_message);
   }
 
-    $email_message = "Podrobnosti formuláře můžete vidět níže.\n\n";
-
+    $email_message = "Podrobnosti můžete vidět níže.\n\n";
 
     function clean_string($string) {
       $bad = array("content-type","bcc:","to:","cc:","href");
       return str_replace($bad,"",$string);
     }
-
-
 
     $email_message .= "Jméno: ".clean_string($first_name)."\n";
     $email_message .= "Příjmení: ".clean_string($last_name)."\n";
@@ -69,24 +63,21 @@ $headers = "Content-Type: text/html; charset=UTF-8".'From: '.$email_from."\r\n".
 @mail($email_to, $email_subject, $email_message, $headers);
 }?>
 
-
 <!DOCTYPE html>
 <html lang="cs-CZ">
 <head>
     <meta charset="utf-8" />
     <title>CTS Corp e-mail</title>
-	 <meta name="google-site-verification" content="RdiMTKEZzUS7iX6XKmxAcZX1QCukV7AS2b-HO80Kqms" />
-     <link href="wwwroot/CSS/style.min.css" rel="stylesheet" />
 
      <style>
-/* todo */
+/* todo style*/
      </style>
 </head>
 <body>
-    <section class="sec sec--after-email">
-        <div class="container">
-            <h2 class="title" data-aos="fade-up">Děkujeme za vaši zprávu</h2>
-             <p class="desc">Ozveme sa vám v čo najkratšom možnom čase.</p>
+    <section class="sec">
+        <div class="container text-to-center">
+            <h2 class="title">Děkujeme za vaši zprávu</h2>
+             <p class="desc">Zpráva byla úspěšně odeslána. Ozveme se vám v co najkratším možném čase.</p>
                 <a href="index.html" class="button">
                     <span>Domovská stránka</span>
                 </a>
