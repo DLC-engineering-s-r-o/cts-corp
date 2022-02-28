@@ -385,7 +385,7 @@ small {
 .desc {
   font-size: large;
   font-weight: 300;
-  line-height: 1.8; }
+  line-height: 1.5; }
 
 .button {
   --pad: 0.8rem;
