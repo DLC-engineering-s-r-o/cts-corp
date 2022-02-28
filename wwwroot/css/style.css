@@ -629,7 +629,7 @@ small {
         justify-items: center; } }
   @media only screen and (min-width: 426px) {
     .contact__title {
-      transform: translate(10%, 0); } }
+      margin-left: 2rem; } }
   @media only screen and (min-width: 769px) {
     .contact__title {
       margin-left: 4rem;
