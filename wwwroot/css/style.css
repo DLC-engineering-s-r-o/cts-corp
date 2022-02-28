@@ -1205,7 +1205,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       .about__card {
         --column: 2fr 1fr;
         --column-gap: 0;
-        padding: 6rem 2.4rem 2.4rem 2.4rem;
+        padding: 4rem 2.4rem 2.4rem 2.4rem;
         text-align: left; } }
     @media only screen and (min-width: 321px) {
       .about__card--span {
