@@ -347,10 +347,6 @@ p,
 span,
 small {
   font-family: var(--font-text); }
-  p *,
-  span *,
-  small * {
-    font-weight: inherit; }
 
 .title {
   --title-color: black;
@@ -383,9 +379,14 @@ small {
         --title-left: 1rem; } }
 
 .desc {
-  font-size: large;
+  --desc-font-size: 22px;
+  font-family: "open-sans", sans-serif;
+  font-size: var(--desc-font-size);
   font-weight: 300;
-  line-height: 1.8; }
+  line-height: 1.7; }
+  @media only screen and (max-width: 1024px) {
+    .desc {
+      --desc-font-size: large; } }
 
 .button {
   --pad: 0.8rem;
@@ -522,7 +523,7 @@ small {
     .container {
       width: 80%;
       min-width: 1024px; } }
-  @media only screen and (max-width: 1366px) {
+  @media only screen and (max-width: 1024px) {
     .container {
       width: 100%;
       min-width: 0;
@@ -1064,7 +1065,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       right: 0;
       bottom: -10%;
       display: block;
-      content: "";
+      content: '';
       width: 30%;
       height: 85%;
       background: linear-gradient(45deg, #f47f1f 0%, #fdba12 100%);
@@ -1091,7 +1092,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     row-gap: var(--gap-row-container); }
     @media only screen and (min-width: 769px) {
       .about__container {
-        --column: 8fr 5fr;
+        --column: 2fr 1fr;
         --gap-row-container: 0;
         --gap-column-container: 6.4rem; } }
     @media only screen and (min-width: 1025px) {
@@ -1109,11 +1110,9 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     gap: 1.6rem; }
     .about__content p {
       margin-bottom: var(--gap-l);
-      font-size: large;
       color: var(--color-secondary); }
       .about__content p strong {
-        font-family: inherit;
-        font-weight: bold; }
+        font-family: inherit; }
   .about__numbers {
     --column: 1fr;
     --column-gap: 1.6rem;
@@ -1142,12 +1141,12 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         grid-row: 1 / span 6; } }
     @media only screen and (min-width: 1367px) {
       .about__numbers:after {
-        --bg-image: url("../images/circles/about-dots.svg");
+        --bg-image: url('../images/circles/about-dots.svg');
         position: absolute;
         right: 0;
         bottom: 0;
         display: block;
-        content: "";
+        content: '';
         width: 172%;
         aspect-ratio: 680/501;
         background-image: var(--bg-image);
@@ -1160,7 +1159,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         position: absolute;
         right: -1rem;
         bottom: -1.6rem;
-        content: "";
+        content: '';
         width: 100vw;
         height: calc(100% + 3.2rem);
         background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
@@ -1201,6 +1200,12 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         --column: 2fr 1fr;
         --column-gap: 0;
         padding: 4rem 1.6rem 1.2rem 1.6rem;
+        text-align: left; } }
+    @media only screen and (min-width: 1367px) {
+      .about__card {
+        --column: 2fr 1fr;
+        --column-gap: 0;
+        padding: 6rem 2.4rem 2.4rem 2.4rem;
         text-align: left; } }
     @media only screen and (min-width: 321px) {
       .about__card--span {

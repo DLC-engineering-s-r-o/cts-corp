@@ -54,7 +54,7 @@ if(isset($_POST['email'])) {
     $email_message .= "Příjmení: ".clean_string($last_name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
     $email_message .= "Tel: ".clean_string($telephone)."\n";
-    $email_message .= "Message: ".clean_string($comments)."\n";
+    $email_message .= "Zpráva: ".clean_string($comments)."\n";
 
 // create email headers
 $headers = "Content-Type: text/html; charset=UTF-8".'From: '.$email_from."\r\n".
@@ -69,9 +69,7 @@ $headers = "Content-Type: text/html; charset=UTF-8".'From: '.$email_from."\r\n".
     <meta charset="utf-8" />
     <title>CTS Corp e-mail</title>
 
-     <style>
-/* todo style*/
-     </style>
+    <link rel="stylesheet" href="wwwroot/css/style.min.css" type="text/css" />
 </head>
 <body>
     <section class="sec">
