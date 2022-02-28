@@ -591,6 +591,7 @@ small {
   .form__element textarea {
     border: 0 solid var(--color-black);
     border-bottom: var(--border-width) solid var(--color-black);
+    width: 100%;
     font-family: var(--font-text);
     font-size: 1rem; }
     .form__element input:focus,
@@ -637,6 +638,9 @@ small {
   @media only screen and (min-width: 1025px) {
     .contact__title {
       margin-left: 6rem; } }
+  @media only screen and (min-width: 1441px) {
+    .contact__title {
+      margin-left: 8rem; } }
   .contact__title h2 {
     margin-bottom: var(--gap-xxl); }
   .contact__title a:hover {
@@ -739,10 +743,16 @@ small {
           top: 6.4rem;
           right: -7.6rem;
           height: 107%; } }
+      @media only screen and (min-width: 1441px) {
+        .contact__form:before {
+          height: 112%; } }
     .contact__form button {
       text-align: center; }
     .contact__form > div {
       margin-bottom: var(--gap-xxl); }
+      @media only screen and (min-width: 769px) {
+        .contact__form > div {
+          margin-bottom: 5.5rem; } }
       .contact__form > div h3 {
         margin-bottom: var(--gap);
         font-size: 2rem;
@@ -771,6 +781,9 @@ small {
   @media only screen and (min-width: 1025px) {
     .footer {
       --gap-section: 13rem; } }
+  @media only screen and (min-width: 1441px) {
+    .footer {
+      --gap-section: 15rem; } }
   .footer a {
     color: var(--color-black); }
 
