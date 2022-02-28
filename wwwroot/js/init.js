@@ -3286,17 +3286,24 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.initAboutBox = void 0;
 function initAboutBox() {
     const header = document.querySelector("header");
-    let scrollPosition = window.scrollY;
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
     const aboutCards = document.querySelectorAll(".about__card");
-    function addClassToAboutCards() {
+    function addClassToAboutCards(scrollPos) {
         aboutCards.forEach((card) => {
-            card.classList.add("about__card--visible");
+            if (lastKnownScrollPosition >= header.offsetTop + window.innerHeight / 2) {
+                card.classList.add("about__card--visible");
+            }
         });
     }
     document.addEventListener("scroll", () => {
-        scrollPosition = window.scrollY;
-        if (scrollPosition >= header.offsetTop + window.innerHeight / 2) {
-            addClassToAboutCards();
+        lastKnownScrollPosition = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(function () {
+                addClassToAboutCards(lastKnownScrollPosition);
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 }

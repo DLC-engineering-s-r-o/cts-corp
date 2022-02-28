@@ -1,19 +1,28 @@
 export function initAboutBox() {
   const header = document.querySelector("header") as HTMLElement;
-  let scrollPosition = window.scrollY;
-  const aboutCards = document.querySelectorAll(".about__card");
+  let lastKnownScrollPosition = 0
+  let ticking = false
 
-  function addClassToAboutCards() {
+  const aboutCards = document.querySelectorAll(".about__card")
+
+  function addClassToAboutCards(scrollPos) {
     aboutCards.forEach((card) => {
-      card.classList.add("about__card--visible");
+      if (lastKnownScrollPosition >= header.offsetTop + window.innerHeight / 2) {
+        card.classList.add("about__card--visible")
+      } 
     });
   }
 
   document.addEventListener("scroll", () => {
-    scrollPosition = window.scrollY;
+    lastKnownScrollPosition = window.scrollY
 
-    if (scrollPosition >= header.offsetTop + window.innerHeight / 2) {
-      addClassToAboutCards();
-    }
-  });
+    if (!ticking){
+      window.requestAnimationFrame(function() {
+        addClassToAboutCards(lastKnownScrollPosition)
+        ticking = false
+      })
+
+      ticking = true
+    }  
+  })
 }
