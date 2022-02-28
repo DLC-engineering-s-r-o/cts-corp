@@ -7,6 +7,10 @@
   color: var(--color-black);
   text-align: center;
 
+  @include res-min-mobile-l {
+    --gap-section: 8rem;
+  }
+
   @include res-min-desktop-s {
     --gap-section: 13rem;
   }

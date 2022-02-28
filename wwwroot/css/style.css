@@ -617,14 +617,26 @@ small {
     align-content: stretch;
     justify-content: center;
     grid-template-columns: var(--column); }
-    @media only screen and (min-width: 1025px) {
+    @media only screen and (min-width: 426px) {
       .contact__container {
         --column: 1fr 1fr;
-        --gap-container: 4rem;
-        justify-items: end; } }
+        --gap-container: 2rem; } }
+    @media only screen and (min-width: 769px) {
+      .contact__container {
+        --gap-container: 4rem; } }
     @media only screen and (min-width: 1921px) {
       .contact__container {
         justify-items: center; } }
+  @media only screen and (min-width: 426px) {
+    .contact__title {
+      transform: translate(10%, 0); } }
+  @media only screen and (min-width: 769px) {
+    .contact__title {
+      margin-left: 4rem;
+      transform: translate(0, 0); } }
+  @media only screen and (min-width: 1025px) {
+    .contact__title {
+      margin-left: 6rem; } }
   .contact__title h2 {
     margin-bottom: var(--gap-xxl); }
   .contact__title a:hover {
@@ -680,7 +692,7 @@ small {
     border-radius: var(--gap); }
     .contact__form:hover {
       --color-box-shadow: rgba(0, 0, 0, 0.17); }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 425px) {
       .contact__form {
         grid-row: end; } }
     @media only screen and (min-width: 1025px) {
@@ -699,7 +711,8 @@ small {
         background-image: var(--bg-image);
         background-repeat: no-repeat;
         background-position: bottom 0 left 0;
-        transform: translate(-10%, 30%); } }
+        transform: translate(-10%, 30%);
+        z-index: -1; } }
     .contact__form:before {
       --shape-radius: 0;
       position: absolute;
@@ -713,12 +726,19 @@ small {
       z-index: -1; }
       @media only screen and (min-width: 426px) {
         .contact__form:before {
-          right: -1.6rem; } }
+          --shape-radius: 3rem;
+          top: 4.4rem;
+          right: -2.8rem;
+          height: 100%; } }
+      @media only screen and (min-width: 769px) {
+        .contact__form:before {
+          right: -4.8rem; } }
       @media only screen and (min-width: 1025px) {
         .contact__form:before {
           --shape-radius: 6rem;
           top: 6.4rem;
-          right: -9.6rem; } }
+          right: -7.6rem;
+          height: 107%; } }
     .contact__form button {
       text-align: center; }
     .contact__form > div {
@@ -745,6 +765,9 @@ small {
   margin-bottom: var(--gap-xxl);
   color: var(--color-black);
   text-align: center; }
+  @media only screen and (min-width: 426px) {
+    .footer {
+      --gap-section: 8rem; } }
   @media only screen and (min-width: 1025px) {
     .footer {
       --gap-section: 13rem; } }

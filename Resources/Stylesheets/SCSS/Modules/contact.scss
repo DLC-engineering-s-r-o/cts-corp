@@ -5,33 +5,6 @@
   position: relative;
   margin-top: var(--gap-section);
 
-  // .shape {
-  //   --shape-radius: 6rem;
-  //   position: absolute;
-  //   top: 80px;
-  //   left: -42%;
-  //   width: 100vw;
-  //   height: 740px;
-  //   background: radial-gradient(
-  //     ellipse at center,
-  //     $color-primary,
-  //     $color-primary--darken
-  //   );
-  //   border-radius: 80px;
-  //   border-radius: var(--shape-radius);
-  //   z-index: -1;
-
-  //   @include res-max-desktop-s {
-  //     top: 46%;
-  //   }
-  //   @include res-min-tablet {
-  //     height: 625px;
-  //   }
-  //   @include res-min-desktop-s {
-  //     height: 760px;
-  //   }
-  // }
-
   &__container {
     --column: 1fr;
     --gap-container: #{$gap-xxl};
@@ -44,10 +17,12 @@
       stretch
     );
 
-    @include res-min-desktop-s {
+    @include res-min-mobile-l {
       --column: 1fr 1fr;
+      --gap-container: 2rem;
+    }
+    @include res-min-tablet {
       --gap-container: 4rem;
-      justify-items: end;
     }
     @include res-min-desktop-xxl {
       justify-items: center;
@@ -55,6 +30,17 @@
   }
 
   &__title {
+    @include res-min-mobile-l {
+      transform: translate(10%, 0);
+    }
+    @include res-min-tablet {
+      margin-left: 4rem;
+      transform: translate(0, 0);
+    }
+    @include res-min-desktop-s {
+      margin-left: 6rem;
+    }
+
     h2 {
       margin-bottom: var(--gap-xxl);
     }
@@ -129,7 +115,7 @@
     background-color: var(--color-white);
     border-radius: var(--gap);
 
-    @include res-max-desktop-s {
+    @include res-max-mobile-l {
       grid-row: end;
     }
     @include res-min-desktop-s {
@@ -150,6 +136,7 @@
         background-repeat: no-repeat;
         background-position: bottom 0 left 0;
         transform: translate(-10%, 30%);
+        z-index: -1;
       }
     }
 
@@ -170,12 +157,19 @@
       z-index: -1;
 
       @include res-min-mobile-l {
-        right: -$gap-l;
+        --shape-radius: 3rem;
+        top: 4.4rem;
+        right: -2.8rem;
+        height: 100%;
+      }
+      @include res-min-tablet {
+        right: -4.8rem;
       }
       @include res-min-desktop-s {
         --shape-radius: 6rem;
         top: 6.4rem;
-        right: -9.6rem;
+        right: -7.6rem;
+        height: 107%;
       }
     }
 
