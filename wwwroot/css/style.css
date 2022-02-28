@@ -609,6 +609,9 @@ small {
   --gap-section: 7rem;
   position: relative;
   margin-top: var(--gap-section); }
+  @media only screen and (min-width: 769px) {
+    .contact {
+      --gap-section: 10rem; } }
   .contact__container {
     --column: 1fr;
     --gap-container: 3.2rem;

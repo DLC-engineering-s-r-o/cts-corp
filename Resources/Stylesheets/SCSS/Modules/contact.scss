@@ -4,6 +4,9 @@
   --gap-section: 7rem;
   position: relative;
   margin-top: var(--gap-section);
+  @include res-min-tablet {
+    --gap-section: 10rem;
+  }
 
   &__container {
     --column: 1fr;
