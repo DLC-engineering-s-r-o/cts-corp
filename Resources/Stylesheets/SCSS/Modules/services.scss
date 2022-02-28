@@ -20,9 +20,6 @@
     h2 {
       margin-bottom: $gap-l;
     }
-    p {
-      font-size: large;
-    }
   }
 
   &__content {
@@ -46,7 +43,7 @@
       --column-gap: #{$gap-xl};
     }
     @include res-min-desktop-s {
-      --column-gap: 4rem;
+      --column-gap: #{$gap-xl};
     }
 
     h3 {
@@ -57,7 +54,6 @@
 
     p {
       margin-bottom: var(--gap-l);
-      font-size: large;
       color: var(--color-secondary);
 
       strong {
