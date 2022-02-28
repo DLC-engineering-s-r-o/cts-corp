@@ -63,6 +63,9 @@ address {
 textarea {
   font-family: inherit; }
 
+section {
+  scroll-margin-top: calc(var(--nav-height) * -0.5); }
+
 body {
   display: flex;
   flex-flow: column wrap; }
