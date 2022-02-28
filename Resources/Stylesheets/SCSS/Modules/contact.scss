@@ -203,7 +203,7 @@
       @include grid-columns(
         def,
         repeat(var(--col-count), minmax($gap-l, 1fr)),
-        var(--gap-l),
+        var(--gap-xl),
         stretch,
         center,
         stretch

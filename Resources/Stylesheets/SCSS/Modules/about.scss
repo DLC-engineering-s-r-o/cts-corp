@@ -29,10 +29,13 @@
     @include res-min-desktop-s {
       --shape-radius: 6rem;
       bottom: 0;
+      width: 24%;
       height: 80%;
     }
     @include res-min-desktop-m {
-      height: 80%;
+      bottom: -5%;
+      width: 26%;
+      height: 85%;
     }
     @include res-min-desktop-xl {
       bottom: -10%;
@@ -186,6 +189,11 @@
     }
     @include res-min-desktop-m {
       padding: $gap-xl;
+      margin-left: 1rem;
+    }
+    @include res-min-desktop-l {
+      padding: $gap-xl;
+      margin-left: 2rem;
     }
 
     &--span {
@@ -245,9 +253,13 @@
         line-height: 1;
         color: var(--color-black);
         @include res-min-tablet {
-          font-size: 3em;
+          font-size: 2.5em;
         }
+
         @include res-min-desktop-s {
+          font-size: 3.5em;
+        }
+        @include res-min-desktop-m {
           font-size: 4em;
         }
       }
@@ -259,6 +271,10 @@
       @include flex-set($justify-content: var(--justify-content));
       @include res-min-tablet {
         --justify-content: flex-end;
+        margin-bottom: -1rem;
+      }
+      @include res-min-desktop-m {
+        margin-bottom: -2rem;
       }
     }
   }
@@ -272,9 +288,14 @@
     background: var(--color-primary);
     border-radius: 50%;
 
+    @include res-min-tablet {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+
     @include res-min-desktop-s {
-      width: 72px;
-      height: 72px;
+      width: 5rem;
+      height: 5rem;
     }
 
     .icon {

@@ -733,7 +733,7 @@ small {
     .contact__form form {
       --col-count: 2;
       display: grid;
-      gap: var(--gap-l);
+      gap: var(--gap-xl);
       align-items: stretch;
       align-content: stretch;
       justify-content: center;
@@ -1075,10 +1075,13 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     .about:before {
       --shape-radius: 6rem;
       bottom: 0;
+      width: 24%;
       height: 80%; } }
   @media only screen and (min-width: 1367px) {
     .about:before {
-      height: 80%; } }
+      bottom: -5%;
+      width: 26%;
+      height: 85%; } }
   @media only screen and (min-width: 1661px) {
     .about:before {
       bottom: -10%;
@@ -1209,7 +1212,12 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         --column-gap: 0; } }
     @media only screen and (min-width: 1367px) {
       .about .card {
-        padding: 2.4rem; } }
+        padding: 2.4rem;
+        margin-left: 1rem; } }
+    @media only screen and (min-width: 1441px) {
+      .about .card {
+        padding: 2.4rem;
+        margin-left: 2rem; } }
     @media only screen and (min-width: 321px) {
       .about .card--span {
         grid-column: span 2; } }
@@ -1256,8 +1264,11 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         color: var(--color-black); }
         @media only screen and (min-width: 769px) {
           .about .card__bottom span {
-            font-size: 3em; } }
+            font-size: 2.5em; } }
         @media only screen and (min-width: 1025px) {
+          .about .card__bottom span {
+            font-size: 3.5em; } }
+        @media only screen and (min-width: 1367px) {
           .about .card__bottom span {
             font-size: 4em; } }
     .about .card__top {
@@ -1271,7 +1282,11 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       gap: 0; }
       @media only screen and (min-width: 769px) {
         .about .card__top {
-          --justify-content: flex-end; } }
+          --justify-content: flex-end;
+          margin-bottom: -1rem; } }
+      @media only screen and (min-width: 1367px) {
+        .about .card__top {
+          margin-bottom: -2rem; } }
   .about .icon-wrapper {
     position: relative;
     display: block;
@@ -1280,10 +1295,14 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     aspect-ratio: 1 / 1;
     background: var(--color-primary);
     border-radius: 50%; }
+    @media only screen and (min-width: 769px) {
+      .about .icon-wrapper {
+        width: 3.6rem;
+        height: 3.6rem; } }
     @media only screen and (min-width: 1025px) {
       .about .icon-wrapper {
-        width: 72px;
-        height: 72px; } }
+        width: 5rem;
+        height: 5rem; } }
     .about .icon-wrapper .icon {
       --icon-size: var(--gap-l);
       position: absolute;
