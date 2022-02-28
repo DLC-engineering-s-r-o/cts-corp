@@ -1,0 +1,6 @@
+User-agent: *
+
+Allow: *.js
+Allow: *.css
+
+Sitemap: https://http://ctscorp.cz/sitemap.xml

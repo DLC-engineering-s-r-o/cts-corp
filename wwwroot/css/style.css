@@ -63,6 +63,9 @@ address {
 textarea {
   font-family: inherit; }
 
+section {
+  scroll-margin-top: calc(var(--nav-height) * -0.5); }
+
 body {
   display: flex;
   flex-flow: column wrap; }
@@ -441,13 +444,8 @@ small {
     transition: all 0.3s; }
     .burger > span + span {
       margin-top: 14px; }
-    .burger > span:nth-child(1) {
-      animation: ease 0.7s top-2 forwards; }
-    .burger > span:nth-child(2) {
-      animation: ease 0.7s scaled-2 forwards; }
     .burger > span:nth-child(3) {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 30%, #fdba12 30%, #fdba12 70%);
-      animation: ease 0.7s bottom-2 forwards; }
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 30%, #fdba12 30%, #fdba12 70%); }
   .burger--open > span:nth-child(1) {
     animation: ease 0.7s top-1 forwards; }
   .burger--open > span:nth-child(2) {
@@ -591,6 +589,7 @@ small {
   .form__element textarea {
     border: 0 solid var(--color-black);
     border-bottom: var(--border-width) solid var(--color-black);
+    width: 100%;
     font-family: var(--font-text);
     font-size: 1rem; }
     .form__element input:focus,
@@ -608,6 +607,9 @@ small {
   --gap-section: 7rem;
   position: relative;
   margin-top: var(--gap-section); }
+  @media only screen and (min-width: 769px) {
+    .contact {
+      --gap-section: 10rem; } }
   .contact__container {
     --column: 1fr;
     --gap-container: 3.2rem;
@@ -617,14 +619,29 @@ small {
     align-content: stretch;
     justify-content: center;
     grid-template-columns: var(--column); }
-    @media only screen and (min-width: 1025px) {
+    @media only screen and (min-width: 426px) {
       .contact__container {
         --column: 1fr 1fr;
-        --gap-container: 4rem;
-        justify-items: end; } }
+        --gap-container: 2rem; } }
+    @media only screen and (min-width: 769px) {
+      .contact__container {
+        --gap-container: 4rem; } }
     @media only screen and (min-width: 1921px) {
       .contact__container {
         justify-items: center; } }
+  @media only screen and (min-width: 426px) {
+    .contact__title {
+      margin-left: 2rem; } }
+  @media only screen and (min-width: 769px) {
+    .contact__title {
+      margin-left: 4rem;
+      transform: translate(0, 0); } }
+  @media only screen and (min-width: 1025px) {
+    .contact__title {
+      margin-left: 6rem; } }
+  @media only screen and (min-width: 1441px) {
+    .contact__title {
+      margin-left: 8rem; } }
   .contact__title h2 {
     margin-bottom: var(--gap-xxl); }
   .contact__title a:hover {
@@ -680,7 +697,7 @@ small {
     border-radius: var(--gap); }
     .contact__form:hover {
       --color-box-shadow: rgba(0, 0, 0, 0.17); }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 425px) {
       .contact__form {
         grid-row: end; } }
     @media only screen and (min-width: 1025px) {
@@ -699,7 +716,8 @@ small {
         background-image: var(--bg-image);
         background-repeat: no-repeat;
         background-position: bottom 0 left 0;
-        transform: translate(-10%, 30%); } }
+        transform: translate(-10%, 30%);
+        z-index: -1; } }
     .contact__form:before {
       --shape-radius: 0;
       position: absolute;
@@ -713,16 +731,29 @@ small {
       z-index: -1; }
       @media only screen and (min-width: 426px) {
         .contact__form:before {
-          right: -1.6rem; } }
+          --shape-radius: 3rem;
+          top: 4.4rem;
+          right: -2.8rem;
+          height: 100%; } }
+      @media only screen and (min-width: 769px) {
+        .contact__form:before {
+          right: -4.8rem; } }
       @media only screen and (min-width: 1025px) {
         .contact__form:before {
           --shape-radius: 6rem;
           top: 6.4rem;
-          right: -9.6rem; } }
+          right: -7.6rem;
+          height: 107%; } }
+      @media only screen and (min-width: 1441px) {
+        .contact__form:before {
+          height: 112%; } }
     .contact__form button {
       text-align: center; }
     .contact__form > div {
       margin-bottom: var(--gap-xxl); }
+      @media only screen and (min-width: 769px) {
+        .contact__form > div {
+          margin-bottom: 5.5rem; } }
       .contact__form > div h3 {
         margin-bottom: var(--gap);
         font-size: 2rem;
@@ -733,7 +764,7 @@ small {
     .contact__form form {
       --col-count: 2;
       display: grid;
-      gap: var(--gap-l);
+      gap: var(--gap-xl);
       align-items: stretch;
       align-content: stretch;
       justify-content: center;
@@ -745,9 +776,15 @@ small {
   margin-bottom: var(--gap-xxl);
   color: var(--color-black);
   text-align: center; }
+  @media only screen and (min-width: 426px) {
+    .footer {
+      --gap-section: 8rem; } }
   @media only screen and (min-width: 1025px) {
     .footer {
       --gap-section: 13rem; } }
+  @media only screen and (min-width: 1441px) {
+    .footer {
+      --gap-section: 15rem; } }
   .footer a {
     color: var(--color-black); }
 
@@ -1075,10 +1112,13 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     .about:before {
       --shape-radius: 6rem;
       bottom: 0;
+      width: 24%;
       height: 80%; } }
   @media only screen and (min-width: 1367px) {
     .about:before {
-      height: 80%; } }
+      bottom: -5%;
+      width: 26%;
+      height: 85%; } }
   @media only screen and (min-width: 1661px) {
     .about:before {
       bottom: -10%;
@@ -1209,7 +1249,12 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         --column-gap: 0; } }
     @media only screen and (min-width: 1367px) {
       .about .card {
-        padding: 2.4rem; } }
+        padding: 2.4rem;
+        margin-left: 1rem; } }
+    @media only screen and (min-width: 1441px) {
+      .about .card {
+        padding: 2.4rem;
+        margin-left: 2rem; } }
     @media only screen and (min-width: 321px) {
       .about .card--span {
         grid-column: span 2; } }
@@ -1256,8 +1301,11 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         color: var(--color-black); }
         @media only screen and (min-width: 769px) {
           .about .card__bottom span {
-            font-size: 3em; } }
+            font-size: 2.5em; } }
         @media only screen and (min-width: 1025px) {
+          .about .card__bottom span {
+            font-size: 3.5em; } }
+        @media only screen and (min-width: 1367px) {
           .about .card__bottom span {
             font-size: 4em; } }
     .about .card__top {
@@ -1271,7 +1319,11 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       gap: 0; }
       @media only screen and (min-width: 769px) {
         .about .card__top {
-          --justify-content: flex-end; } }
+          --justify-content: flex-end;
+          margin-bottom: -1rem; } }
+      @media only screen and (min-width: 1367px) {
+        .about .card__top {
+          margin-bottom: -2rem; } }
   .about .icon-wrapper {
     position: relative;
     display: block;
@@ -1280,10 +1332,14 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     aspect-ratio: 1 / 1;
     background: var(--color-primary);
     border-radius: 50%; }
+    @media only screen and (min-width: 769px) {
+      .about .icon-wrapper {
+        width: 3.6rem;
+        height: 3.6rem; } }
     @media only screen and (min-width: 1025px) {
       .about .icon-wrapper {
-        width: 72px;
-        height: 72px; } }
+        width: 5rem;
+        height: 5rem; } }
     .about .icon-wrapper .icon {
       --icon-size: var(--gap-l);
       position: absolute;
