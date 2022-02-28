@@ -444,13 +444,8 @@ small {
     transition: all 0.3s; }
     .burger > span + span {
       margin-top: 14px; }
-    .burger > span:nth-child(1) {
-      animation: ease 0.7s top-2 forwards; }
-    .burger > span:nth-child(2) {
-      animation: ease 0.7s scaled-2 forwards; }
     .burger > span:nth-child(3) {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 30%, #fdba12 30%, #fdba12 70%);
-      animation: ease 0.7s bottom-2 forwards; }
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 30%, #fdba12 30%, #fdba12 70%); }
   .burger--open > span:nth-child(1) {
     animation: ease 0.7s top-1 forwards; }
   .burger--open > span:nth-child(2) {
