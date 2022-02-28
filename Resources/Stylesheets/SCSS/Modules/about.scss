@@ -1,4 +1,4 @@
-@import '../base/global';
+@import "../base/global";
 
 .about {
   --gap-section: 7rem;
@@ -10,13 +10,13 @@
 
   &:before {
     @include res-min-tablet {
-      --shape-radius: 6rem;
+      --shape-radius: 3rem;
       position: absolute;
       right: 0;
       bottom: -10%;
       display: block;
-      content: '';
-      width: 30%;
+      content: "";
+      width: 22%;
       height: 85%;
       background: linear-gradient(
         45deg,
@@ -27,7 +27,11 @@
       z-index: -1;
     }
     @include res-min-desktop-s {
+      --shape-radius: 6rem;
       bottom: 0;
+      height: 80%;
+    }
+    @include res-min-desktop-m {
       height: 80%;
     }
     @include res-min-desktop-xl {
@@ -76,7 +80,7 @@
 
   &__numbers {
     --column: 1fr;
-    --column-gap: #{$gap-l};
+    --column-gap: #{$gap};
     --align-content: flex-start;
     --justify-content: normal;
     --align-content: normal;
@@ -103,15 +107,18 @@
       grid-column: 2;
       grid-row: 1 / span 6;
     }
+    @include res-min-desktop-s {
+      --column-gap: #{$gap-l};
+    }
 
     &:after {
       @include res-min-desktop-m {
-        --bg-image: url('../images/circles/about-dots.svg');
+        --bg-image: url("../images/circles/about-dots.svg");
         position: absolute;
         right: 0;
         bottom: 0;
         display: block;
-        content: '';
+        content: "";
         width: 172%;
         aspect-ratio: 680/501;
         background-image: var(--bg-image);
@@ -127,7 +134,7 @@
         position: absolute;
         right: -1rem;
         bottom: -1.6rem;
-        content: '';
+        content: "";
         width: 100vw;
         height: calc(100% + 3.2rem);
         background: radial-gradient(
@@ -144,7 +151,7 @@
     }
   }
 
-  &__card {
+  .card {
     --card-opacity: 0;
     --trans-time: 0.5s;
     --color-box-shadow: #{$color-box-shadow};
@@ -163,8 +170,9 @@
       var(--align-content)
     );
     @include box-shadow();
-    position: relative;
-    padding: $gap-xl $gap $gap-xl $gap;
+    max-width: 425px;
+    padding: $gap-l;
+    background-color: var(--color-white);
     background-color: var(--color-white);
     opacity: var(--card-opacity);
     border-radius: var(--gap);
@@ -172,19 +180,12 @@
     transform: translateY(var(--trans-y));
     transition: opacity var(--trans-time) var(--trans-fnc),
       transform var(--trans-time) var(--trans-fnc);
-
+    box-shadow: 5px 5px 10px hsla(0, 0%, 0%, 0.5);
     @include res-min-tablet {
-      --column: 2fr 1fr;
       --column-gap: 0;
-      padding: 4rem $gap-l 1.2rem $gap-l;
-      text-align: left;
     }
-
     @include res-min-desktop-m {
-      --column: 2fr 1fr;
-      --column-gap: 0;
-      padding: 4rem $gap-xl $gap-xl $gap-xl;
-      text-align: left;
+      padding: $gap-xl;
     }
 
     &--span {
@@ -213,61 +214,75 @@
       }
     }
 
-    div:nth-of-type(2) {
+    &__bottom {
       --justify-content: center;
-      grid-row: 1;
-      @include flex-set($justify-content: var(--justify-content));
-
+      --flow: column;
+      flex-direction: column;
+      text-align: center;
+      @include flex-set(
+        $justify-content: var(--justify-content),
+        $flow: var(--flow)
+      );
       @include res-min-tablet {
-        top: $gap-l;
-        grid-column: 2;
+        --justify-content: flex-start;
+        text-align: left;
       }
 
-      .icon-wrapper {
-        position: relative;
-        width: 52px;
-        height: 52px;
-        background: var(--color-primary);
-        border-radius: 50%;
+      p {
+        font-family: var(--font-title);
+        font-size: 1.5em;
+        line-height: 1;
+        color: var(--color-secondary);
+        @include res-min-desktop-s {
+          font-size: 2em;
+        }
+      }
 
+      span {
+        font-family: var(--font-title);
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--color-black);
         @include res-min-tablet {
-          top: -$gap-xl;
+          font-size: 3em;
         }
         @include res-min-desktop-s {
-          left: $gap-l;
-          width: 72px;
-          height: 72px;
-        }
-
-        .icon {
-          --icon-size: var(--gap-l);
-          @include center-item;
-          fill: var(--color-white);
-          @include res-min-desktop-s {
-            --icon-size: var(--gap-xl);
-          }
+          font-size: 4em;
         }
       }
     }
 
-    p {
-      font-family: var(--font-title);
-      font-size: 1.5em;
-      line-height: 1;
-      color: var(--color-secondary);
-      @include res-min-desktop-s {
-        font-size: 2em;
+    &__top {
+      --justify-content: center;
+      display: flex;
+      @include flex-set($justify-content: var(--justify-content));
+      @include res-min-tablet {
+        --justify-content: flex-end;
       }
     }
+  }
 
-    span {
-      font-family: var(--font-title);
-      font-size: 2em;
-      font-weight: 600;
-      line-height: 1;
-      color: var(--color-black);
+  .icon-wrapper {
+    position: relative;
+    display: block;
+    width: 52px;
+    height: 52px;
+    aspect-ratio: 1 / 1;
+    background: var(--color-primary);
+    border-radius: 50%;
+
+    @include res-min-desktop-s {
+      width: 72px;
+      height: 72px;
+    }
+
+    .icon {
+      --icon-size: var(--gap-l);
+      @include center-item;
+      fill: var(--color-white);
       @include res-min-desktop-s {
-        font-size: 4em;
+        --icon-size: var(--gap-xl);
       }
     }
   }

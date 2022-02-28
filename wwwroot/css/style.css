@@ -1060,20 +1060,24 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       padding-bottom: var(--gap-section); } }
   @media only screen and (min-width: 769px) {
     .about:before {
-      --shape-radius: 6rem;
+      --shape-radius: 3rem;
       position: absolute;
       right: 0;
       bottom: -10%;
       display: block;
-      content: '';
-      width: 30%;
+      content: "";
+      width: 22%;
       height: 85%;
       background: linear-gradient(45deg, #f47f1f 0%, #fdba12 100%);
       border-radius: var(--shape-radius) 0 0 var(--shape-radius);
       z-index: -1; } }
   @media only screen and (min-width: 1025px) {
     .about:before {
+      --shape-radius: 6rem;
       bottom: 0;
+      height: 80%; } }
+  @media only screen and (min-width: 1367px) {
+    .about:before {
       height: 80%; } }
   @media only screen and (min-width: 1661px) {
     .about:before {
@@ -1115,7 +1119,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         font-family: inherit; }
   .about__numbers {
     --column: 1fr;
-    --column-gap: 1.6rem;
+    --column-gap: 0.8rem;
     --align-content: flex-start;
     --justify-content: normal;
     --align-content: normal;
@@ -1139,14 +1143,17 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         --align-content: center;
         grid-column: 2;
         grid-row: 1 / span 6; } }
+    @media only screen and (min-width: 1025px) {
+      .about__numbers {
+        --column-gap: 1.6rem; } }
     @media only screen and (min-width: 1367px) {
       .about__numbers:after {
-        --bg-image: url('../images/circles/about-dots.svg');
+        --bg-image: url("../images/circles/about-dots.svg");
         position: absolute;
         right: 0;
         bottom: 0;
         display: block;
-        content: '';
+        content: "";
         width: 172%;
         aspect-ratio: 680/501;
         background-image: var(--bg-image);
@@ -1159,7 +1166,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         position: absolute;
         right: -1rem;
         bottom: -1.6rem;
-        content: '';
+        content: "";
         width: 100vw;
         height: calc(100% + 3.2rem);
         background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
@@ -1168,7 +1175,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
   @media only screen and (max-width: 768px) and (min-width: 426px) {
     .about__numbers::before {
       right: -1.6rem; } }
-  .about__card {
+  .about .card {
     --card-opacity: 0;
     --trans-time: 0.5s;
     --color-box-shadow: rgba(0, 0, 0, 0.17);
@@ -1185,46 +1192,77 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     justify-content: var(--justify-content);
     grid-template-columns: var(--column);
     box-shadow: 30px 30px 75px 0 var(--color-box-shadow);
-    position: relative;
-    padding: 2.4rem 0.8rem 2.4rem 0.8rem;
+    max-width: 425px;
+    padding: 1.6rem;
+    background-color: var(--color-white);
     background-color: var(--color-white);
     opacity: var(--card-opacity);
     border-radius: var(--gap);
     text-align: center;
     transform: translateY(var(--trans-y));
-    transition: opacity var(--trans-time) var(--trans-fnc), transform var(--trans-time) var(--trans-fnc); }
-    .about__card:hover {
+    transition: opacity var(--trans-time) var(--trans-fnc), transform var(--trans-time) var(--trans-fnc);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); }
+    .about .card:hover {
       --color-box-shadow: rgba(0, 0, 0, 0.17); }
     @media only screen and (min-width: 769px) {
-      .about__card {
-        --column: 2fr 1fr;
-        --column-gap: 0;
-        padding: 4rem 1.6rem 1.2rem 1.6rem;
-        text-align: left; } }
+      .about .card {
+        --column-gap: 0; } }
     @media only screen and (min-width: 1367px) {
-      .about__card {
-        --column: 2fr 1fr;
-        --column-gap: 0;
-        padding: 4rem 2.4rem 2.4rem 2.4rem;
-        text-align: left; } }
+      .about .card {
+        padding: 2.4rem; } }
     @media only screen and (min-width: 321px) {
-      .about__card--span {
+      .about .card--span {
         grid-column: span 2; } }
     @media only screen and (min-width: 426px) {
-      .about__card--span {
+      .about .card--span {
         grid-column: span 1; } }
-    .about__card--visible {
+    .about .card--visible {
       --card-opacity: 1;
       --trans-y: 0; }
-      .about__card--visible:nth-child(1) {
+      .about .card--visible:nth-child(1) {
         transition-delay: 0; }
-      .about__card--visible:nth-child(2) {
+      .about .card--visible:nth-child(2) {
         transition-delay: 0.25s; }
-      .about__card--visible:nth-child(3) {
+      .about .card--visible:nth-child(3) {
         transition-delay: 0.5s; }
-    .about__card div:nth-of-type(2) {
+    .about .card__bottom {
       --justify-content: center;
-      grid-row: 1;
+      --flow: column;
+      flex-direction: column;
+      text-align: center;
+      display: flex;
+      flex-flow: var(--flow) nowrap;
+      align-items: stretch;
+      align-content: normal;
+      justify-content: var(--justify-content);
+      gap: 0; }
+      @media only screen and (min-width: 769px) {
+        .about .card__bottom {
+          --justify-content: flex-start;
+          text-align: left; } }
+      .about .card__bottom p {
+        font-family: var(--font-title);
+        font-size: 1.5em;
+        line-height: 1;
+        color: var(--color-secondary); }
+        @media only screen and (min-width: 1025px) {
+          .about .card__bottom p {
+            font-size: 2em; } }
+      .about .card__bottom span {
+        font-family: var(--font-title);
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--color-black); }
+        @media only screen and (min-width: 769px) {
+          .about .card__bottom span {
+            font-size: 3em; } }
+        @media only screen and (min-width: 1025px) {
+          .about .card__bottom span {
+            font-size: 4em; } }
+    .about .card__top {
+      --justify-content: center;
+      display: flex;
       display: flex;
       flex-flow: row nowrap;
       align-items: stretch;
@@ -1232,50 +1270,30 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       justify-content: var(--justify-content);
       gap: 0; }
       @media only screen and (min-width: 769px) {
-        .about__card div:nth-of-type(2) {
-          top: 1.6rem;
-          grid-column: 2; } }
-      .about__card div:nth-of-type(2) .icon-wrapper {
-        position: relative;
-        width: 52px;
-        height: 52px;
-        background: var(--color-primary);
-        border-radius: 50%; }
-        @media only screen and (min-width: 769px) {
-          .about__card div:nth-of-type(2) .icon-wrapper {
-            top: -2.4rem; } }
-        @media only screen and (min-width: 1025px) {
-          .about__card div:nth-of-type(2) .icon-wrapper {
-            left: 1.6rem;
-            width: 72px;
-            height: 72px; } }
-        .about__card div:nth-of-type(2) .icon-wrapper .icon {
-          --icon-size: var(--gap-l);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translateX(-50%) translateY(-50%);
-          fill: var(--color-white); }
-          @media only screen and (min-width: 1025px) {
-            .about__card div:nth-of-type(2) .icon-wrapper .icon {
-              --icon-size: var(--gap-xl); } }
-    .about__card p {
-      font-family: var(--font-title);
-      font-size: 1.5em;
-      line-height: 1;
-      color: var(--color-secondary); }
+        .about .card__top {
+          --justify-content: flex-end; } }
+  .about .icon-wrapper {
+    position: relative;
+    display: block;
+    width: 52px;
+    height: 52px;
+    aspect-ratio: 1 / 1;
+    background: var(--color-primary);
+    border-radius: 50%; }
+    @media only screen and (min-width: 1025px) {
+      .about .icon-wrapper {
+        width: 72px;
+        height: 72px; } }
+    .about .icon-wrapper .icon {
+      --icon-size: var(--gap-l);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      fill: var(--color-white); }
       @media only screen and (min-width: 1025px) {
-        .about__card p {
-          font-size: 2em; } }
-    .about__card span {
-      font-family: var(--font-title);
-      font-size: 2em;
-      font-weight: 600;
-      line-height: 1;
-      color: var(--color-black); }
-      @media only screen and (min-width: 1025px) {
-        .about__card span {
-          font-size: 4em; } }
+        .about .icon-wrapper .icon {
+          --icon-size: var(--gap-xl); } }
 
 .services {
   --gap-section: 7rem;
