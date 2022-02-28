@@ -1,4 +1,4 @@
-@import "../base/global";
+@import '../base/global';
 
 .about {
   --gap-section: 7rem;
@@ -15,7 +15,7 @@
       right: 0;
       bottom: -10%;
       display: block;
-      content: "";
+      content: '';
       width: 30%;
       height: 85%;
       background: linear-gradient(
@@ -44,7 +44,7 @@
     column-gap: var(--gap-column-container);
     row-gap: var(--gap-row-container);
     @include res-min-tablet {
-      --column: 8fr 5fr;
+      --column: 2fr 1fr;
       --gap-row-container: 0;
       --gap-column-container: 6.4rem;
     }
@@ -66,12 +66,10 @@
 
     p {
       margin-bottom: var(--gap-l);
-      font-size: large;
       color: var(--color-secondary);
 
       strong {
         font-family: inherit;
-        font-weight: bold;
       }
     }
   }
@@ -108,12 +106,12 @@
 
     &:after {
       @include res-min-desktop-m {
-        --bg-image: url("../images/circles/about-dots.svg");
+        --bg-image: url('../images/circles/about-dots.svg');
         position: absolute;
         right: 0;
         bottom: 0;
         display: block;
-        content: "";
+        content: '';
         width: 172%;
         aspect-ratio: 680/501;
         background-image: var(--bg-image);
@@ -129,7 +127,7 @@
         position: absolute;
         right: -1rem;
         bottom: -1.6rem;
-        content: "";
+        content: '';
         width: 100vw;
         height: calc(100% + 3.2rem);
         background: radial-gradient(
@@ -179,6 +177,13 @@
       --column: 2fr 1fr;
       --column-gap: 0;
       padding: 4rem $gap-l 1.2rem $gap-l;
+      text-align: left;
+    }
+
+    @include res-min-desktop-m {
+      --column: 2fr 1fr;
+      --column-gap: 0;
+      padding: 6rem $gap-xl $gap-xl $gap-xl;
       text-align: left;
     }
 

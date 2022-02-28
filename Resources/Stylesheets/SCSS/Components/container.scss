@@ -11,7 +11,7 @@
     min-width: 1024px;
   }
 
-  @include res-max-desktop-m {
+  @include res-max-desktop-s {
     width: 100%;
     min-width: 0;
     padding: 0 var(--pad-base);
