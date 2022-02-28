@@ -3274,85 +3274,66 @@ function getY(p) {
 
 /***/ }),
 
-/***/ "./Resources/Scripts/animationsAboutBox.ts":
-/*!*************************************************!*\
-  !*** ./Resources/Scripts/animationsAboutBox.ts ***!
-  \*************************************************/
+/***/ "./Resources/Scripts/boxAnim.ts":
+/*!**************************************!*\
+  !*** ./Resources/Scripts/boxAnim.ts ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.initAboutBox = void 0;
-function initAboutBox() {
+exports.initAnim = void 0;
+function initAnim() {
     const header = document.querySelector("header");
     let lastKnownScrollPosition = 0;
     let ticking = false;
+    const animLength = 1000;
     const aboutCards = document.querySelectorAll(".card");
-    function addClassToAboutCards(scrollPos) {
-        aboutCards.forEach((card) => {
-            if (lastKnownScrollPosition >=
-                header.offsetTop + window.innerHeight / 2) {
-                card.classList.add("card--visible");
+    const cardsText = document.querySelectorAll(".card__number");
+    function incrementNumbers(element, step, timeInterval) {
+        let maxNumber = element.getAttribute('data-number');
+        let cardNumber = 0;
+        if (maxNumber) {
+            let interval = setInterval(function () {
+                element.innerText = cardNumber;
+                if (cardNumber >= maxNumber)
+                    clearInterval(interval);
+                cardNumber = cardNumber + step;
+            }, timeInterval);
+        }
+        element.removeAttribute('data-number');
+    }
+    function addClassToCards(scrollPos) {
+        for (let i = 0; i < aboutCards.length; i++) {
+            let card = aboutCards[i];
+            let cardText = cardsText[i];
+            let step = 1;
+            let interval = animLength / 20;
+            if (i == 1) {
+                step = 100;
+                interval = animLength / 10;
             }
-        });
+            else if (i == 2)
+                interval = animLength / 3;
+            if (lastKnownScrollPosition >= card.offsetTop + window.innerHeight / 3) {
+                card.classList.add("card--visible");
+                incrementNumbers(cardText, step, interval);
+            }
+        }
     }
     document.addEventListener("scroll", () => {
         lastKnownScrollPosition = window.scrollY;
         if (!ticking) {
-            window.requestAnimationFrame(function () {
-                addClassToAboutCards(lastKnownScrollPosition);
+            window.requestAnimationFrame(() => {
+                addClassToCards(lastKnownScrollPosition);
                 ticking = false;
             });
             ticking = true;
         }
     });
 }
-exports.initAboutBox = initAboutBox;
-
-
-/***/ }),
-
-/***/ "./Resources/Scripts/animationsAboutNumber.ts":
-/*!****************************************************!*\
-  !*** ./Resources/Scripts/animationsAboutNumber.ts ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.initAboutNumbers = void 0;
-function initAboutNumbers() {
-    const counterAnim = (qSelector, start = 0, end, duration = 1000) => {
-        const target = document.querySelector(qSelector);
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp)
-                startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            target.innerText = Math.floor(progress * (end - start) + start);
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }
-        };
-        window.requestAnimationFrame(step);
-    };
-    let isLoaded = false;
-    const header = document.querySelector("header");
-    document.addEventListener("scroll", () => {
-        if (isLoaded)
-            return;
-        let scrollPosition = window.scrollY;
-        if (scrollPosition >= header.offsetTop + window.innerHeight / 2) {
-            counterAnim("#number-years", 1, 20, 1500);
-            counterAnim("#number-projects", 100, 1000, 1500);
-            counterAnim("#number-money", 1, 3, 800);
-            isLoaded = true;
-        }
-    });
-}
-exports.initAboutNumbers = initAboutNumbers;
+exports.initAnim = initAnim;
 
 
 /***/ }),
@@ -17406,12 +17387,10 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const navigation_1 = __webpack_require__(/*! ./navigation */ "./Resources/Scripts/navigation.ts");
 const map_1 = __webpack_require__(/*! ./map */ "./Resources/Scripts/map.ts");
-const animationsAboutBox_1 = __webpack_require__(/*! ./animationsAboutBox */ "./Resources/Scripts/animationsAboutBox.ts");
-const animationsAboutNumber_1 = __webpack_require__(/*! ./animationsAboutNumber */ "./Resources/Scripts/animationsAboutNumber.ts");
+const boxAnim_1 = __webpack_require__(/*! ./boxAnim */ "./Resources/Scripts/boxAnim.ts");
 document.addEventListener("DOMContentLoaded", function () {
     (0, navigation_1.initNav)();
-    (0, animationsAboutBox_1.initAboutBox)();
-    (0, animationsAboutNumber_1.initAboutNumbers)();
+    (0, boxAnim_1.initAnim)();
     (0, map_1.initMap)();
 });
 

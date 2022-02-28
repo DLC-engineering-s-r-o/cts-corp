@@ -1065,7 +1065,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       right: 0;
       bottom: -10%;
       display: block;
-      content: "";
+      content: '';
       width: 22%;
       height: 85%;
       background: linear-gradient(45deg, #f47f1f 0%, #fdba12 100%);
@@ -1148,12 +1148,12 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         --column-gap: 1.6rem; } }
     @media only screen and (min-width: 1367px) {
       .about__numbers:after {
-        --bg-image: url("../images/circles/about-dots.svg");
+        --bg-image: url('../images/circles/about-dots.svg');
         position: absolute;
         right: 0;
         bottom: 0;
         display: block;
-        content: "";
+        content: '';
         width: 172%;
         aspect-ratio: 680/501;
         background-image: var(--bg-image);
@@ -1166,7 +1166,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         position: absolute;
         right: -1rem;
         bottom: -1.6rem;
-        content: "";
+        content: '';
         width: 100vw;
         height: calc(100% + 3.2rem);
         background: radial-gradient(ellipse at center, #fdba12, #f47f1f);

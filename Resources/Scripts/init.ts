@@ -1,11 +1,9 @@
 ﻿import { initNav } from "./navigation";
 import { initMap } from "./map";
-import { initAboutBox } from "./animationsAboutBox";
-import { initAboutNumbers } from "./animationsAboutNumber";
+import { initAnim } from "./boxAnim";
 
 document.addEventListener("DOMContentLoaded", function () {
   initNav();
-  initAboutBox();
-  initAboutNumbers();
+  initAnim();
   initMap();
 });
