@@ -1102,7 +1102,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
       right: 0;
       bottom: -10%;
       display: block;
-      content: '';
+      content: "";
       width: 22%;
       height: 85%;
       background: linear-gradient(45deg, #f47f1f 0%, #fdba12 100%);
@@ -1188,12 +1188,12 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         --column-gap: 1.6rem; } }
     @media only screen and (min-width: 1367px) {
       .about__numbers:after {
-        --bg-image: url('../images/circles/about-dots.svg');
+        --bg-image: url("../images/circles/about-dots.svg");
         position: absolute;
         right: 0;
         bottom: 0;
         display: block;
-        content: '';
+        content: "";
         width: 172%;
         aspect-ratio: 680/501;
         background-image: var(--bg-image);
@@ -1206,7 +1206,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         position: absolute;
         right: -1rem;
         bottom: -1.6rem;
-        content: '';
+        content: "";
         width: 100vw;
         height: calc(100% + 3.2rem);
         background: radial-gradient(ellipse at center, #fdba12, #f47f1f);
@@ -1240,8 +1240,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     border-radius: var(--gap);
     text-align: center;
     transform: translateY(var(--trans-y));
-    transition: opacity var(--trans-time) var(--trans-fnc), transform var(--trans-time) var(--trans-fnc);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); }
+    transition: opacity var(--trans-time) var(--trans-fnc), transform var(--trans-time) var(--trans-fnc); }
     .about .card:hover {
       --color-box-shadow: rgba(0, 0, 0, 0.17); }
     @media only screen and (min-width: 769px) {
@@ -1364,8 +1363,6 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     grid-template-columns: 1fr; }
   .services__title h2 {
     margin-bottom: 1.6rem; }
-  .services__title p {
-    font-size: large; }
   .services__content {
     --column: 1fr;
     --column-gap: 0.8rem;
@@ -1385,14 +1382,13 @@ div[style*="color: rgb(0, 0, 0);"]:before {
         --column-gap: 2.4rem; } }
     @media only screen and (min-width: 1025px) {
       .services__content {
-        --column-gap: 4rem; } }
+        --column-gap: 2.4rem; } }
     .services__content h3 {
       margin-bottom: var(--gap);
       font-size: 2rem;
       text-transform: uppercase; }
     .services__content p {
       margin-bottom: var(--gap-l);
-      font-size: large;
       color: var(--color-secondary); }
       .services__content p strong {
         font-family: inherit;
@@ -1429,7 +1425,6 @@ div[style*="color: rgb(0, 0, 0);"]:before {
   .team__title h2 {
     margin-bottom: 1.6rem; }
   .team__title p {
-    font-size: large;
     color: var(--color-secondary); }
   .team__content {
     --col-count: 1;
