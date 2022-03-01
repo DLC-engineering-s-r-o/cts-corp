@@ -356,7 +356,7 @@ small {
   font-size: 3em;
   font-weight: 600;
   color: var(--title-color); }
-  @media only screen and (min-width: 426px) {
+  @media only screen and (min-width: 769px) {
     .title {
       font-size: 4em; } }
   .title > strong {
@@ -1495,5 +1495,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
 .reference {
   --gap-section: 7rem;
   padding-top: var(--gap-section); }
+  .reference h2 {
+    margin-bottom: 2rem; }
 
 /*# sourceMappingURL=style.css.map */

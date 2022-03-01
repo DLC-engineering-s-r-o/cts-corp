@@ -32,7 +32,8 @@ small {
   font-size: 3em;
   font-weight: 600;
   color: var(--title-color);
-  @include res-min-mobile-l {
+
+  @include res-min-tablet {
     font-size: 4em;
   }
 

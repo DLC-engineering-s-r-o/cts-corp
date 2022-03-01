@@ -1,4 +1,8 @@
 .reference {
   --gap-section: 7rem;
   padding-top: var(--gap-section);
+
+  h2 {
+    margin-bottom: 2rem;
+  }
 }
