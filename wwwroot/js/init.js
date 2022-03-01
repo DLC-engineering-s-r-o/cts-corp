@@ -3285,12 +3285,11 @@ function getY(p) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.initAnim = void 0;
 function initAnim() {
-    const header = document.querySelector("header");
+    const aboutCards = document.querySelectorAll(".card");
+    const cardsText = document.querySelectorAll(".card__number");
     let lastKnownScrollPosition = 0;
     let ticking = false;
     const animLength = 1000;
-    const aboutCards = document.querySelectorAll(".card");
-    const cardsText = document.querySelectorAll(".card__number");
     function incrementNumbers(element, step, timeInterval) {
         let maxNumber = element.getAttribute('data-number');
         let cardNumber = 0;
@@ -3316,7 +3315,7 @@ function initAnim() {
             }
             else if (i == 2)
                 interval = animLength / 3;
-            if (lastKnownScrollPosition >= card.offsetTop + window.innerHeight / 3) {
+            if (scrollPos >= card.offsetTop + window.innerHeight / 3) {
                 card.classList.add("card--visible");
                 incrementNumbers(cardText, step, interval);
             }
@@ -3327,9 +3326,9 @@ function initAnim() {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 addClassToCards(lastKnownScrollPosition);
-                ticking = false;
+                ticking;
             });
-            ticking = true;
+            !ticking;
         }
     });
 }
