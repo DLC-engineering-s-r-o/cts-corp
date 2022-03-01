@@ -41,7 +41,7 @@
   div[aria-label="Map"]
     div[style*="z-index: 1;"]
     div[style*="color: rgb(0, 0, 0);"] {
-     transform: translateY(-30%);
+     transform: translateX(-5%) translateY(-25%);
     &:before {
       display: none;
     }
