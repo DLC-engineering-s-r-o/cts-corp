@@ -6393,8 +6393,8 @@ export function initMap() {
 
         const svgMarker = {
             url: 'wwwroot/images/icons/marker.png',
-            origin: new google.maps.Point(0,0), // origin
-            anchor: new google.maps.Point(0, 0) // anchor
+            origin: new google.maps.Point(0,0),
+            anchor: new google.maps.Point(0, 0)
           };
 
         const polygon = new google.maps.Polygon({
