@@ -90,9 +90,12 @@
       font-family: var(--font-title);
       font-size: 0.4em;
       font-weight: 400;
-      line-height: 1.4;
+      line-height: 1.2;
       animation: showUp var(--anim-length) var(--anim-delay) linear forwards;
       transform: translateY(-1rem);
+      @include res-min-mobile-l {
+        line-height: 1.4;
+      }
 
       + div {
         margin-top: 0.7em;
