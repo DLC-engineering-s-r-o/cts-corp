@@ -1447,7 +1447,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     align-content: stretch;
     justify-content: center;
     grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
-    @media only screen and (min-width: 769px) {
+    @media only screen and (min-width: 426px) {
       .team__content {
         --col-count: 2; } }
     @media only screen and (min-width: 1025px) {
@@ -1460,7 +1460,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     align-items: stretch;
     align-content: stretch;
     justify-content: center;
-    grid-template-columns: 5fr 6fr; }
+    grid-template-columns: 5fr 8fr; }
     .team__card img {
       --color-box-shadow: rgba(0, 0, 0, 0.17);
       box-shadow: 0 0 20px 0 var(--color-box-shadow);
