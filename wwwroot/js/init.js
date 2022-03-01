@@ -14495,6 +14495,27 @@ exports.initNav = initNav;
 
 /***/ }),
 
+/***/ "./Resources/Scripts/year.ts":
+/*!***********************************!*\
+  !*** ./Resources/Scripts/year.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.setCurentYear = void 0;
+function setCurentYear() {
+    const years = document.querySelectorAll('time.year');
+    years.forEach(year => {
+        year.innerHTML = new Date().getFullYear().toString();
+    });
+}
+exports.setCurentYear = setCurentYear;
+
+
+/***/ }),
+
 /***/ "./node_modules/@turf/clone/dist/es/index.js":
 /*!***************************************************!*\
   !*** ./node_modules/@turf/clone/dist/es/index.js ***!
@@ -17388,10 +17409,12 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const navigation_1 = __webpack_require__(/*! ./navigation */ "./Resources/Scripts/navigation.ts");
 const map_1 = __webpack_require__(/*! ./map */ "./Resources/Scripts/map.ts");
 const boxAnim_1 = __webpack_require__(/*! ./boxAnim */ "./Resources/Scripts/boxAnim.ts");
+const year_1 = __webpack_require__(/*! ./year */ "./Resources/Scripts/year.ts");
 document.addEventListener("DOMContentLoaded", function () {
     (0, navigation_1.initNav)();
     (0, boxAnim_1.initAnim)();
     (0, map_1.initMap)();
+    (0, year_1.setCurentYear)();
 });
 
 })();
