@@ -74,7 +74,7 @@
     color: var(--nav-color);
     z-index: -1;
 
-    @include res-min-tablet {
+    @include res-min-desktop-l {
       background: var(--bg-image),
         radial-gradient(
           ellipse at center,
@@ -92,10 +92,7 @@
 
       ul {
         position: relative;
-        top: -1rem;
-        @include res-min-mobile-l {
-          top: -5rem;
-        }
+        top: -5%;        
       }
     }
   }
@@ -139,6 +136,7 @@
   small {
     position: absolute;
     bottom: var(--gap-xl);
+    padding: 0 var(--gap-l);
     text-align: center;
 
     > a {

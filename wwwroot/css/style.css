@@ -631,12 +631,12 @@ small {
     .contact__address p {
       font-size: large; }
       .contact__address p span {
+        margin-right: var(--gap-s);
         color: var(--color-primary); }
     .contact__address span {
       font-family: var(--font-title);
       font-size: 1.4rem; }
     .contact__address svg {
-      margin-right: var(--gap-s);
       fill: var(--color-primary); }
     .contact__address address,
     .contact__address a {
@@ -951,7 +951,7 @@ small {
     opacity: 0;
     color: var(--nav-color);
     z-index: -1; }
-    @media only screen and (min-width: 769px) {
+    @media only screen and (min-width: 1441px) {
       .nav__menu {
         background: var(--bg-image), radial-gradient(ellipse at center, #fdba12, #f47f1f);
         background-repeat: no-repeat;
@@ -962,10 +962,7 @@ small {
       animation-delay: 0.1s; }
       .nav__menu--open ul {
         position: relative;
-        top: -1rem; }
-        @media only screen and (min-width: 426px) {
-          .nav__menu--open ul {
-            top: -5rem; } }
+        top: -5%; }
   .nav ul {
     padding: 0;
     list-style: none;
@@ -995,6 +992,7 @@ small {
   .nav small {
     position: absolute;
     bottom: var(--gap-xl);
+    padding: 0 var(--gap-l);
     text-align: center; }
     .nav small > a {
       color: var(--color-white); }

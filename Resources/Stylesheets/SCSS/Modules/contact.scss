@@ -85,6 +85,7 @@
     p {
       font-size: large;
       span {
+        margin-right: var(--gap-s);
         color: var(--color-primary);
       }
     }
@@ -93,7 +94,6 @@
       font-size: 1.4rem;
     }
     svg {
-      margin-right: var(--gap-s);
       fill: var(--color-primary);
     }
     address,
