@@ -390,6 +390,9 @@ small {
   @media only screen and (max-width: 1024px) {
     .desc {
       --desc-font-size: large; } }
+  @media only screen and (max-width: 768px) {
+    .desc--form {
+      line-height: 1.4; } }
 
 .button {
   --pad: 0.8rem;
@@ -577,7 +580,7 @@ small {
   align-content: stretch;
   justify-content: center;
   grid-template-columns: 1fr; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 425px) {
     .form__element {
       grid-column: span 2; } }
   .form__element--full {
@@ -590,6 +593,7 @@ small {
     border: 0 solid var(--color-black);
     border-bottom: var(--border-width) solid var(--color-black);
     width: 100%;
+    border-radius: 0;
     font-family: var(--font-text);
     font-size: 1rem; }
     .form__element input:focus,
@@ -621,17 +625,14 @@ small {
     grid-template-columns: var(--column); }
     @media only screen and (min-width: 426px) {
       .contact__container {
-        --column: 1fr 1fr;
-        --gap-container: 2rem; } }
+        --gap-container: 4rem; } }
     @media only screen and (min-width: 769px) {
       .contact__container {
+        --column: 1fr 1fr;
         --gap-container: 4rem; } }
     @media only screen and (min-width: 1921px) {
       .contact__container {
         justify-items: center; } }
-  @media only screen and (min-width: 426px) {
-    .contact__title {
-      margin-left: 2rem; } }
   @media only screen and (min-width: 769px) {
     .contact__title {
       margin-left: 4rem;
@@ -697,7 +698,7 @@ small {
     border-radius: var(--gap); }
     .contact__form:hover {
       --color-box-shadow: rgba(0, 0, 0, 0.17); }
-    @media only screen and (max-width: 425px) {
+    @media only screen and (max-width: 768px) {
       .contact__form {
         grid-row: end; } }
     @media only screen and (min-width: 1025px) {
@@ -731,13 +732,13 @@ small {
       z-index: -1; }
       @media only screen and (min-width: 426px) {
         .contact__form:before {
-          --shape-radius: 3rem;
-          top: 4.4rem;
-          right: -2.8rem;
-          height: 100%; } }
+          right: -1.6rem; } }
       @media only screen and (min-width: 769px) {
         .contact__form:before {
-          right: -4.8rem; } }
+          --shape-radius: 3rem;
+          top: 4rem;
+          right: -4.8rem;
+          height: 100%; } }
       @media only screen and (min-width: 1025px) {
         .contact__form:before {
           --shape-radius: 6rem;
@@ -759,24 +760,32 @@ small {
         font-size: 2rem;
         text-transform: uppercase; }
       .contact__form > div p {
-        font-size: 1rem;
         color: var(--color-secondary); }
     .contact__form form {
       --col-count: 2;
+      --column-gap: 1.6rem;
       display: grid;
-      gap: var(--gap-xl);
+      gap: var(--column-gap);
       align-items: stretch;
       align-content: stretch;
       justify-content: center;
       grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
+      @media only screen and (min-width: 769px) {
+        .contact__form form {
+          --column-gap: 2.4rem; } }
 
 .footer {
   --gap-section: 5rem;
+  padding: 0 1rem;
   margin-top: var(--gap-section);
   margin-bottom: var(--gap-xxl);
   color: var(--color-black);
   text-align: center; }
   @media only screen and (min-width: 426px) {
+    .footer {
+      --gap-section: 5rem;
+      padding: 0 1.6rem; } }
+  @media only screen and (min-width: 769px) {
     .footer {
       --gap-section: 8rem; } }
   @media only screen and (min-width: 1025px) {

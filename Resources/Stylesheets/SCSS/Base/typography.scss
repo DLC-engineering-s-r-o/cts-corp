@@ -1,4 +1,4 @@
-@import '../Base/global';
+@import "../Base/global";
 
 h1,
 h2,
@@ -72,7 +72,13 @@ small {
   font-weight: 300;
   line-height: 1.7;
 
-  @include res-max-desktop-s{
+  @include res-max-desktop-s {
     --desc-font-size: large;
+  }
+
+  &--form {
+    @include res-max-tablet {
+      line-height: 1.4;
+    }
   }
 }

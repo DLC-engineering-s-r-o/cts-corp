@@ -2,15 +2,18 @@
 
 .footer {
   --gap-section: 5rem;
+  padding: 0 1rem;
   margin-top: var(--gap-section);
   margin-bottom: var(--gap-xxl);
   color: var(--color-black);
   text-align: center;
-
   @include res-min-mobile-l {
+    --gap-section: 5rem;
+    padding: 0 $gap-l;
+  }
+  @include res-min-tablet {
     --gap-section: 8rem;
   }
-
   @include res-min-desktop-s {
     --gap-section: 13rem;
   }
