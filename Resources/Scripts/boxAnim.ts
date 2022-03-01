@@ -12,7 +12,7 @@ export function initAnim() {
     let cardNumber = 0
     
     if(maxNumber){
-      let interval = setInterval(function () {
+      let interval = setInterval(() => {
         element.innerText = cardNumber
         if (cardNumber >= maxNumber) clearInterval(interval)
   
