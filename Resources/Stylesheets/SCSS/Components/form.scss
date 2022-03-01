@@ -5,7 +5,7 @@
     --gap-form: #{$gap-s};
     @include grid-columns(def, 1fr, var(--gap-form), stretch, center, stretch);
 
-    @include res-max-tablet {
+    @include res-max-mobile-l {
       grid-column: span 2;
     }
 
@@ -23,6 +23,7 @@
       @include border(def, 0, var(--color-black));
       @include border(bottom, var(--border-width), var(--color-black));
       width: 100%;
+      border-radius: 0;
       font-family: var(--font-text);
       font-size: 1rem;
 

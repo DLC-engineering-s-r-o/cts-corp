@@ -21,10 +21,10 @@
     );
 
     @include res-min-mobile-l {
-      --column: 1fr 1fr;
-      --gap-container: 2rem;
+      --gap-container: 4rem;
     }
     @include res-min-tablet {
+      --column: 1fr 1fr;
       --gap-container: 4rem;
     }
     @include res-min-desktop-xxl {
@@ -33,9 +33,6 @@
   }
 
   &__title {
-    @include res-min-mobile-l {
-      margin-left: 2rem;
-    }
     @include res-min-tablet {
       margin-left: 4rem;
       transform: translate(0, 0);
@@ -121,7 +118,7 @@
     background-color: var(--color-white);
     border-radius: var(--gap);
 
-    @include res-max-mobile-l {
+    @include res-max-tablet {
       grid-row: end;
     }
     @include res-min-desktop-s {
@@ -163,13 +160,13 @@
       z-index: -1;
 
       @include res-min-mobile-l {
-        --shape-radius: 3rem;
-        top: 4.4rem;
-        right: -2.8rem;
-        height: 100%;
+        right: -1.6rem;
       }
       @include res-min-tablet {
+        --shape-radius: 3rem;
+        top: 4rem;
         right: -4.8rem;
+        height: 100%;
       }
       @include res-min-desktop-s {
         --shape-radius: 6rem;
@@ -189,7 +186,7 @@
     > div {
       margin-bottom: var(--gap-xxl);
       @include res-min-tablet {
-        margin-bottom: 5.5rem;
+        margin-bottom: 4.3rem;
       }
 
       h3 {
@@ -199,21 +196,24 @@
       }
 
       p {
-        font-size: 1rem;
         color: var(--color-secondary);
       }
     }
 
     form {
       --col-count: 2;
+      --column-gap: #{$gap-l};
       @include grid-columns(
         def,
         repeat(var(--col-count), minmax($gap-l, 1fr)),
-        var(--gap-xl),
+        var(--column-gap),
         stretch,
         center,
         stretch
       );
+      @include res-min-tablet {
+        --column-gap: #{$gap-xl};
+      }
     }
   }
 }

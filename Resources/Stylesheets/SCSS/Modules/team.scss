@@ -44,8 +44,9 @@
       center,
       stretch
     );
-    @include res-min-tablet {
+    @include res-min-mobile-l {
       --col-count: 2;
+      row-gap: 4rem;
     }
     @include res-min-desktop-s {
       --col-count: 3;
@@ -54,7 +55,7 @@
   }
 
   &__card {
-    @include grid-columns(def, 5fr 6fr, $gap-l, stretch, center, stretch);
+    @include grid-columns(def, 5fr 8fr, $gap-l, stretch, center, stretch);
 
     img {
       --color-box-shadow: #{$color-box-shadow};
