@@ -46,6 +46,7 @@
     );
     @include res-min-mobile-l {
       --col-count: 2;
+      row-gap: 4rem;
     }
     @include res-min-desktop-s {
       --col-count: 3;

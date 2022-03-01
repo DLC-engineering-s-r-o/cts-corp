@@ -358,6 +358,9 @@ small {
   color: var(--title-color); }
   @media only screen and (min-width: 769px) {
     .title {
+      font-size: 3.2em; } }
+  @media only screen and (min-width: 1367px) {
+    .title {
       font-size: 4em; } }
   .title > strong {
     display: block;
@@ -863,6 +866,7 @@ small {
       font-weight: 500;
       line-height: 1;
       color: var(--color-primary);
+      white-space: nowrap;
       animation: showUp var(--anim-length) linear forwards;
       transform: translateY(1rem);
       z-index: 1; }
@@ -1452,7 +1456,8 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     grid-template-columns: repeat(var(--col-count), minmax(1.6rem, 1fr)); }
     @media only screen and (min-width: 426px) {
       .team__content {
-        --col-count: 2; } }
+        --col-count: 2;
+        row-gap: 4rem; } }
     @media only screen and (min-width: 1025px) {
       .team__content {
         --col-count: 3;

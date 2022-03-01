@@ -80,6 +80,7 @@
       font-weight: 500;
       line-height: 1;
       color: var(--color-primary);
+      white-space: nowrap;
       animation: showUp var(--anim-length) linear forwards;
       transform: translateY(1rem);
       z-index: 1;
