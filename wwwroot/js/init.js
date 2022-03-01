@@ -9725,12 +9725,9 @@ function initMap() {
             new google.maps.LatLng(50.32021682764627, 12.111525535583496)
         ];
         const svgMarker = {
-            path: "M107.074,46.243A12.792,12.792,0,0,0,88.756,64.1a73.467,73.467,0,0,1,7.7,9.275l.315.472a1.6,1.6,0,0,0,2.22.442,1.656,1.656,0,0,0,.442-.442l.315-.472a48.579,48.579,0,0,1,7.108-8.691,12.775,12.775,0,0,0,.217-18.438Z",
-            fillColor: "var(--color-primary)",
-            fillOpacity: 0.6,
-            strokeWeight: 0,
-            rotation: 0,
-            scale: 1,
+            url: 'wwwroot/images/icons/marker.png',
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 0) // anchor
         };
         const polygon = new google.maps.Polygon({
             paths: [europeCoords, czechRepublicCoords],
@@ -9746,7 +9743,7 @@ function initMap() {
             const marker = new google.maps.Marker({
                 position,
                 label,
-                // icon: svgMarker,
+                icon: svgMarker,
                 title: position.name
             });
             marker.addListener('click', () => {

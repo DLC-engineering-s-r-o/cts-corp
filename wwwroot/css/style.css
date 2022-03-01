@@ -1063,8 +1063,12 @@ small {
     z-index: -1; }
   #map div[aria-label="Map"]
 div[style*="z-index: 1;"]
+div[style*="color: rgb(0, 0, 0);"] {
+    transform: translateY(-30%); }
+    #map div[aria-label="Map"]
+div[style*="z-index: 1;"]
 div[style*="color: rgb(0, 0, 0);"]:before {
-    display: none; }
+      display: none; }
   #map div[role="dialog"] {
     max-width: 300px; }
   #map img[alt="Google"],
