@@ -1,7 +1,7 @@
 @import "../base/global";
 
 .team {
-  --gap-section: .4rem;
+  --gap-section: 3.4rem;
   padding-top: var(--gap-section);
   scroll-margin-top: var(--gap-section);
   @include res-min-mobile-l {
