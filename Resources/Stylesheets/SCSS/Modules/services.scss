@@ -46,6 +46,13 @@
       --column-gap: #{$gap-xl};
     }
 
+    img {
+      @include res-max-desktop-m{
+        width: 100%;
+        max-width: 320px;
+      }      
+    }
+
     h3 {
       margin-bottom: var(--gap);
       font-size: 2rem;
