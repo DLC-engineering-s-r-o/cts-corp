@@ -973,7 +973,7 @@ small {
     display: block;
     height: 100%;
     font-family: var(--font-title);
-    font-size: var(--gap-xl);
+    font-size: 2rem;
     line-height: 1.7;
     color: currentColor;
     text-decoration: none;
@@ -982,6 +982,9 @@ small {
     @media only screen and (min-width: 426px) {
       .nav__item > a {
         line-height: 2; } }
+    @media only screen and (min-width: 1025px) {
+      .nav__item > a {
+        font-size: var(--gap-xl); } }
     .nav__item > a:hover {
       color: var(--color-black);
       text-decoration: underline; }
