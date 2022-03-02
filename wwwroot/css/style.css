@@ -1388,7 +1388,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
           grid-row: end; } }
 
 .team {
-  --gap-section: .4rem;
+  --gap-section: 3.4rem;
   padding-top: var(--gap-section);
   scroll-margin-top: var(--gap-section); }
   @media only screen and (min-width: 426px) {
