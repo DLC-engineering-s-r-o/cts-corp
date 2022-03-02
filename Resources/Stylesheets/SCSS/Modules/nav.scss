@@ -1,7 +1,7 @@
 @import "../Base/global";
 
 .nav {
-  --nav-color: var(--color-black);
+  --nav-color: #{$color-nav};
   --nav__menu-display: none;
   @include flex-set(def, row, nowrap, $gap-xl, center, space-between);
   position: fixed;

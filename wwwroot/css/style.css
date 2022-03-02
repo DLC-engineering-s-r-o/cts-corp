@@ -513,6 +513,8 @@ small {
     max-width: 74px;
     height: auto;
     fill: var(--nav-color); }
+    .logo > svg path, .logo > svg rect {
+      fill: var(--nav-color); }
     @media only screen and (max-width: 1024px) {
       .logo > svg {
         max-width: 45px;
@@ -892,7 +894,7 @@ small {
     opacity: 1; } }
 
 .nav {
-  --nav-color: var(--color-black);
+  --nav-color: #464749;
   --nav__menu-display: none;
   display: flex;
   flex-flow: row nowrap;
