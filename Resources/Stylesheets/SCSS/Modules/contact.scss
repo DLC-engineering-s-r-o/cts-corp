@@ -186,7 +186,10 @@
     > div {
       margin-bottom: var(--gap-xxl);
       @include res-min-tablet {
-        margin-bottom: 4.3rem;
+        margin-bottom: var(--gap-xl);
+      }
+      @include res-min-desktop-s{
+        margin-bottom: 4.2rem;
       }
 
       h3 {
