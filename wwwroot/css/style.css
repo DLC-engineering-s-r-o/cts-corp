@@ -1365,6 +1365,10 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     @media only screen and (min-width: 1025px) {
       .services__content {
         --column-gap: 2.4rem; } }
+    @media only screen and (max-width: 1366px) {
+      .services__content img {
+        width: 100%;
+        max-width: 320px; } }
     .services__content h3 {
       margin-bottom: var(--gap);
       font-size: 2rem;
