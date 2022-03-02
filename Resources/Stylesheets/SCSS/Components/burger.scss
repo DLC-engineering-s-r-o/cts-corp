@@ -18,12 +18,12 @@
     transition: top, transform .3s;
         
     &:nth-child(1) {
-      top: 0px;
+      top: -2px;
       transition:  transform .2s;
       transition: top .2s .2s, transform .2s;
     }
     &:nth-child(2) {
-      top: 6px;
+      top: 5px;
       transition: top .2s .2s, transform .2s;
     }
     &:nth-child(3) {
