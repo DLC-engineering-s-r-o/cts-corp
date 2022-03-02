@@ -7,7 +7,9 @@
     display: block;
     width: 100%;
     max-width: 74px;
+    height: auto;
     fill: var(--nav-color);
+    
     @include res-max-desktop-s {
       max-width: 45px;
       height: 40px;

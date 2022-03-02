@@ -511,6 +511,7 @@ small {
     display: block;
     width: 100%;
     max-width: 74px;
+    height: auto;
     fill: var(--nav-color); }
     @media only screen and (max-width: 1024px) {
       .logo > svg {
