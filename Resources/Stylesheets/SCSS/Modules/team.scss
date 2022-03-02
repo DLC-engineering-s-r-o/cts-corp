@@ -1,8 +1,13 @@
 @import "../base/global";
 
 .team {
-  --gap-section: 7rem;
+  --gap-section: .4rem;
   padding-top: var(--gap-section);
+  scroll-margin-top: var(--gap-section);
+  @include res-min-mobile-l {
+    --gap-section: 7rem;
+    scroll-margin-top: calc(var(--nav-height) * -0.5);
+  }
 
   &__container {
     --gap-container: #{$gap-xxl};

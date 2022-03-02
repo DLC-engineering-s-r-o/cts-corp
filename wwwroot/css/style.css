@@ -1388,8 +1388,13 @@ div[style*="color: rgb(0, 0, 0);"]:before {
           grid-row: end; } }
 
 .team {
-  --gap-section: 7rem;
-  padding-top: var(--gap-section); }
+  --gap-section: .4rem;
+  padding-top: var(--gap-section);
+  scroll-margin-top: var(--gap-section); }
+  @media only screen and (min-width: 426px) {
+    .team {
+      --gap-section: 7rem;
+      scroll-margin-top: calc(var(--nav-height) * -0.5); } }
   .team__container {
     --gap-container: 3.2rem;
     display: grid;
