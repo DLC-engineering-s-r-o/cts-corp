@@ -396,6 +396,8 @@ small {
   @media only screen and (max-width: 768px) {
     .desc--form {
       line-height: 1.4; } }
+  .desc a {
+    color: var(--color-secondary); }
   .desc .primary-link {
     font-weight: normal;
     color: var(--color-primary); }

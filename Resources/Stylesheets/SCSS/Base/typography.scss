@@ -86,6 +86,10 @@ small {
     }
   }
 
+  a{
+    color: var(--color-secondary);
+  }
+  
   .primary-link{
     font-weight: normal;
     color: var(--color-primary);
