@@ -6,9 +6,10 @@
   --btn-bg-color: var(--color-black);
   --btn-border-color: var(--color-black);
   --btn-trans-y: 0;
+  --shadow-alpha:.17;
   @include flex-set(inline, row, nowrap, var(--gap-s), center, center, center);
   @include border("def", var(--border-width), var(--btn-border-color));
-  @include box-shadow(0, $gap-s, $gap);
+  @include box-shadow(var(--shadow-alpha), 0, $gap-s, $gap);
   min-width: 12rem;
   padding: var(--pad);
   background-color: var(--btn-bg-color);
@@ -27,6 +28,9 @@
 
   &:hover {
     --btn-trans-y: -5%;
+    @include res-max-tablet{
+      --btn-trans-y: 0;
+    }
   }
 
   &--secondary {

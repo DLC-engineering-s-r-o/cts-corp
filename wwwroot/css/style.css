@@ -26,6 +26,10 @@
   --nav-height: 7rem;
   --gap-multiplier: 1; }
 
+@media only screen and (max-width: 768px) {
+  :root {
+    --trans-time: 0; } }
+
 @font-face {
   font-family: "zurrich";
   font-weight: 400;
@@ -408,6 +412,7 @@ small {
   --btn-bg-color: var(--color-black);
   --btn-border-color: var(--color-black);
   --btn-trans-y: 0;
+  --shadow-alpha:.17;
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -415,7 +420,7 @@ small {
   justify-content: center;
   gap: var(--gap-s);
   border: var(--border-width) solid var(--btn-border-color);
-  box-shadow: 0 0.4rem 0.8rem 0 var(--color-box-shadow);
+  box-shadow: 0 0.4rem 0.8rem 0 hsla(0, 0%, 0%, var(--shadow-alpha));
   min-width: 12rem;
   padding: var(--pad);
   background-color: var(--btn-bg-color);
@@ -431,9 +436,10 @@ small {
   transition: transform var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease-in-out;
   cursor: pointer; }
   .button:hover {
-    --color-box-shadow: rgba(0, 0, 0, 0.17); }
-  .button:hover {
     --btn-trans-y: -5%; }
+    @media only screen and (max-width: 768px) {
+      .button:hover {
+        --btn-trans-y: 0; } }
   .button--secondary {
     --btn-color: var(--color-black);
     --btn-bg-color: var(--color-trans); }
@@ -661,14 +667,12 @@ small {
       --icon-size: 1.2rem; }
   .contact__form {
     --color-box-shadow: rgba(0, 0, 0, 0.17);
-    box-shadow: 30px 30px 75px 0 var(--color-box-shadow);
+    box-shadow: 30px 30px 75px 0 rgba(0, 0, 0, 0.15);
     position: relative;
     width: 100%;
     padding: var(--gap-l);
     background-color: var(--color-white);
     border-radius: var(--gap); }
-    .contact__form:hover {
-      --color-box-shadow: rgba(0, 0, 0, 0.17); }
     @media only screen and (max-width: 768px) {
       .contact__form {
         grid-row: end; } }
@@ -1223,7 +1227,7 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     align-content: var(--align-content);
     justify-content: var(--justify-content);
     grid-template-columns: var(--column);
-    box-shadow: 30px 30px 75px 0 var(--color-box-shadow);
+    box-shadow: 30px 30px 75px 0 rgba(0, 0, 0, 0.15);
     max-width: 425px;
     padding: 1.6rem;
     background-color: var(--color-white);
@@ -1233,8 +1237,6 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     text-align: center;
     transform: translateY(var(--trans-y));
     transition: opacity var(--trans-time) var(--trans-fnc), transform var(--trans-time) var(--trans-fnc); }
-    .about .card:hover {
-      --color-box-shadow: rgba(0, 0, 0, 0.17); }
     @media only screen and (min-width: 769px) {
       .about .card {
         --column-gap: 0; } }
@@ -1451,10 +1453,8 @@ div[style*="color: rgb(0, 0, 0);"]:before {
     grid-template-columns: 5fr 8fr; }
     .team__card img {
       --color-box-shadow: rgba(0, 0, 0, 0.17);
-      box-shadow: 0 0 20px 0 var(--color-box-shadow);
+      box-shadow: 0 20px 75px 0 rgba(0, 0, 0, 0);
       border-radius: var(--gap); }
-      .team__card img:hover {
-        --color-box-shadow: rgba(0, 0, 0, 0.17); }
     .team__card > div {
       display: flex;
       flex-flow: column wrap;

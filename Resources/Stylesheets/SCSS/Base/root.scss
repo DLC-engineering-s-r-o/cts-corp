@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 :root {
   --color-black: #{$color-black};
@@ -27,4 +28,10 @@
   --border-width: 1px;
   --nav-height: 7rem;
   --gap-multiplier: #{$gap-multiplier};
+}
+
+@include res-max-tablet{
+  :root{
+    --trans-time: 0;
+  }
 }
