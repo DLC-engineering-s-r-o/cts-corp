@@ -1,9 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
-
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NC,L,R]
-
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^ %{REQUEST_URI}.html [NC,L]
