@@ -607,7 +607,7 @@
               Vyplňte formulář a náš tým se vám ozve zpět do 24 hodin.
             </p>
           </div>
-          <form action="email.php" name="contactform" method="POST">
+          <form name="contactform" method="POST" id="contactForm">
             <div class="form__element">
               <label for="fName">Jméno *</label>
               <input type="text" id="fName" name="fname" required />
@@ -628,7 +628,7 @@
               <label for="msg">Vaše zpráva *</label>
               <textarea id="msg" name="mesage" rows="10" required></textarea>
             </div>
-            <button type="submit" aria-label="Submit button" class="button">
+            <button type="submit" aria-label="Submit button" class="button" id="submitBtn">
               Odeslat
             </button>
           </form>
