@@ -3337,6 +3337,60 @@ exports.initAnim = initAnim;
 
 /***/ }),
 
+/***/ "./Resources/Scripts/email.ts":
+/*!************************************!*\
+  !*** ./Resources/Scripts/email.ts ***!
+  \************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.initEmail = void 0;
+function initEmail() {
+    const fNameEl = document.getElementById('fName');
+    const lNameEl = document.getElementById('lName');
+    const phoneEl = document.getElementById('phone');
+    const mailEl = document.getElementById('email');
+    const messageEl = document.getElementById('msg');
+    const submitBtn = document.getElementById('submitBtn');
+    let fName = '';
+    let lName = '';
+    let email = '';
+    let phone = '';
+    let message = '';
+    function setEmailContent() {
+        if (fNameEl.value) {
+            fName = fNameEl.value;
+        }
+        if (lNameEl.value) {
+            lName = lNameEl.value;
+        }
+        if (phoneEl.value) {
+            phone = phoneEl.value;
+        }
+        if (mailEl.value) {
+            email = mailEl.value;
+        }
+        if (messageEl.value) {
+            message = messageEl.value;
+        }
+        return fName + lName + phone + email + message;
+    }
+    submitBtn.addEventListener('click', () => {
+        setEmailContent();
+        if (fName != '' && lName != '' && email != '' && message != '') {
+            console.log(fName + ' ' + lName + ' ' + email + ' ' + phone + ' ' + message);
+        }
+        else
+            console.log('%cPlease fill in the required fields!', 'color:red;');
+    });
+}
+exports.initEmail = initEmail;
+
+
+/***/ }),
+
 /***/ "./Resources/Scripts/map.ts":
 /*!**********************************!*\
   !*** ./Resources/Scripts/map.ts ***!
@@ -16214,11 +16268,13 @@ const navigation_1 = __webpack_require__(/*! ./navigation */ "./Resources/Script
 const map_1 = __webpack_require__(/*! ./map */ "./Resources/Scripts/map.ts");
 const boxAnim_1 = __webpack_require__(/*! ./boxAnim */ "./Resources/Scripts/boxAnim.ts");
 const year_1 = __webpack_require__(/*! ./year */ "./Resources/Scripts/year.ts");
+const email_1 = __webpack_require__(/*! ./email */ "./Resources/Scripts/email.ts");
 document.addEventListener("DOMContentLoaded", function () {
     (0, navigation_1.initNav)();
     (0, boxAnim_1.initAnim)();
     (0, map_1.initMap)();
     (0, year_1.setCurentYear)();
+    (0, email_1.initEmail)();
 });
 
 })();
