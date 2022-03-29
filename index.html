@@ -607,14 +607,10 @@
               Vyplňte formulář a náš tým se vám ozve zpět do 24 hodin.
             </p>
           </div>
-          <form id="contactForm" name="contactform">
-            <div class="form__element">
-              <label for="fName">Jméno *</label>
-              <input type="text" id="fName" name="fname" required />
-            </div>
-            <div class="form__element">
-              <label for="lName">Příjmení *</label>
-              <input type="text" id="lName" name="lname" required />
+          <form method="dialog">
+            <div class="form__element form__element--full">
+              <label for="fullName">Jméno a příjmení *</label>
+              <input type="text" id="fullName" name="fullname" required />
             </div>
             <div class="form__element">
               <label for="email">Email *</label>

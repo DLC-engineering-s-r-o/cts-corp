@@ -559,9 +559,9 @@ small {
   grid-template-columns: 1fr; }
   @media only screen and (max-width: 425px) {
     .form__element {
-      grid-column: span 2; } }
+      grid-column-end: span 2; } }
   .form__element--full {
-    grid-column: span 2; }
+    grid-column-end: span 2; }
   .form__element label {
     font-family: var(--font-title);
     font-size: 1.375rem; }
