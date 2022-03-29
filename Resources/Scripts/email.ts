@@ -11,6 +11,16 @@ export function initEmail() {
     let message = ''
     let website = 'ctscorp.cz'
 
+    function validateEmail(mail) 
+    {
+     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+      {
+        return true
+      }
+        console.log("%cYou have entered an invalid email address!", 'color:red;')
+        return false
+    }
+
     function setEmailContent() {
 
         if (fullNameEl.value) {
@@ -20,7 +30,7 @@ export function initEmail() {
             phone = phoneEl.value
         }
 
-        if (mailEl.value) {
+        if (validateEmail(mailEl.value)) {
             email = mailEl.value
         }
 
