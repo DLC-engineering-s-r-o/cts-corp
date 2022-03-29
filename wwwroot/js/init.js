@@ -5577,7 +5577,14 @@ function initEmail() {
         setEmailContent();
         if (fullName != '' && email != '' && message != '') {
             // postEmailData()
-            axiosPost();
+            axios_1.default.get(azureFncUrl)
+                .catch(function (error) {
+                if (error.response) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                }
+            });
         }
         else
             console.log('%cPlease fill in the required fields!', 'color:red;');
