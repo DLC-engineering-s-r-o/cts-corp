@@ -65,11 +65,12 @@ export function initEmail() {
                 phone: phone,
                 body: message,
                 website: website
-        }).then(response => {
-            console.log(response);
-          })
-          .catch(error => {
-            console.log(error);
+        }).catch(function (error) {
+            if (error.response) {
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            }
           });
     }
 
@@ -78,14 +79,15 @@ export function initEmail() {
 
         if (fullName != '' && email != '' && message != '') {
             // postEmailData()
-            axios.get(azureFncUrl)
-            .catch(function (error) {
-              if (error.response) {
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-              }
-            });
+            axiosPost()
+            // axios.get(azureFncUrl)
+            // .catch(function (error) {
+            //   if (error.response) {
+            //     console.log(error.response.data);
+            //     console.log(error.response.status);
+            //     console.log(error.response.headers);
+            //   }
+            // });
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
