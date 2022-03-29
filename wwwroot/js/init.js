@@ -5549,12 +5549,16 @@ function initEmail() {
         return fullName + phone + email + message;
     }
     function axiosPost() {
-        var formData = new FormData();
+        let formData = new FormData();
         formData.append('fullName', fullName);
         formData.append('email', email);
         formData.append('phone', phone);
         formData.append('body', message);
         formData.append('website', website);
+        console.log(formData);
+        var request = new XMLHttpRequest();
+        request.open("POST", azureFncUrl);
+        request.send(formData);
         // const formData = {
         //     fullName: fullName,
         //     email: email,
@@ -5562,10 +5566,6 @@ function initEmail() {
         //     body: message,
         //     website: website
         // }
-        console.log(formData);
-        var request = new XMLHttpRequest();
-        request.open("POST", azureFncUrl);
-        request.send(formData);
         // axios({
         //     method: 'post',
         //     url: azureFncUrl,
