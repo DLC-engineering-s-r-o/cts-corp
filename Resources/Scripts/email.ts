@@ -22,12 +22,11 @@ export function initEmail() {
     }
 
     function setEmailContent() {
-
         if (fullNameEl.value) {
             fullName = fullNameEl.value
         }
         if (phoneEl.value) {
-            phone = phoneEl.value
+            phone = phoneEl.value.replace('+', '00')
         }
 
         if (validateEmail(mailEl.value)) {
