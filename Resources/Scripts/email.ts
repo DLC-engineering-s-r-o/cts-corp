@@ -42,8 +42,8 @@ export function initEmail() {
         setEmailContent()
 
         if (fullName != '' && email != '' && message != '') {
-            httpGet(`https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?sender=${fullName}&body=${message}`)
-            console.log(`https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?sender=${fullName}&body=${message}`)
+            httpGet(`https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?body=${message}&sender=${fullName}`)
+            console.log(`https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?body=${message}&sender=${fullName}`)
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
