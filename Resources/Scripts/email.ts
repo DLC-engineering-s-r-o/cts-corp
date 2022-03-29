@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 export function initEmail() {
     axios as any
 
@@ -8,7 +7,8 @@ export function initEmail() {
     const phoneEl = document.getElementById('phone') as HTMLInputElement
     const mailEl = document.getElementById('email') as HTMLInputElement
     const messageEl = document.getElementById('msg') as HTMLTextAreaElement
-    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement
+    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement    
+
     const azureFncUrl = 'https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail'
 
     let fullName = ''
@@ -59,20 +59,16 @@ export function initEmail() {
     }
 
     function axiosPost() {
-        const formData = {
-                fullName: fullName,
-                email: email,
-                phone: phone,
-                body: message,
-                website: website
-           }
-
         axios({
             method: 'post',
             url: azureFncUrl,
             headers: {},
             data:{
-                formData 
+                fullName: fullName,
+                email: email,
+                phone: phone,
+                body: message,
+                website: website
             }
         }).then((response) =>{
             console.log(response)

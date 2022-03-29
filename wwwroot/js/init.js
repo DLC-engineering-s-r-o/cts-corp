@@ -5560,19 +5560,16 @@ function initEmail() {
         request.send(formData);
     }
     function axiosPost() {
-        const formData = {
-            fullName: fullName,
-            email: email,
-            phone: phone,
-            body: message,
-            website: website
-        };
         (0, axios_1.default)({
             method: 'post',
             url: azureFncUrl,
             headers: {},
             data: {
-                formData
+                fullName: fullName,
+                email: email,
+                phone: phone,
+                body: message,
+                website: website
             }
         }).then((response) => {
             console.log(response);
