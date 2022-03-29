@@ -5548,22 +5548,41 @@ function initEmail() {
         }
         return fullName + phone + email + message;
     }
+    function postEmailData() {
+        let formData = new FormData();
+        let request = new XMLHttpRequest();
+        formData.append('fullName', fullName);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('body', message);
+        formData.append('website', website);
+        request.open("POST", azureFncUrl);
+        request.send(formData);
+    }
     function axiosPost() {
-        axios_1.default.post(azureFncUrl, {
+        const formData = {
             fullName: fullName,
             email: email,
             phone: phone,
             body: message,
             website: website
+        };
+        (0, axios_1.default)({
+            method: 'post',
+            url: azureFncUrl,
+            headers: {},
+            data: {
+                formData
+            }
         }).then((response) => {
             console.log(response);
-        }).catch((error) => {
-            console.log(error);
         });
+        // .then(data => console.log(data)).catch(err => console.log(err))
     }
     submitBtn.addEventListener('click', () => {
         setEmailContent();
         if (fullName != '' && email != '' && message != '') {
+            // postEmailData()
             axiosPost();
         }
         else
