@@ -59,22 +59,18 @@ export function initEmail() {
     }
 
     function axiosPost() {
-        axios({
-            method: 'post',
-            url: azureFncUrl,
-            headers: {},
-            data:{
+        axios.post(azureFncUrl, {
                 fullName: fullName,
                 email: email,
                 phone: phone,
                 body: message,
                 website: website
-            }
-        }).then((response) =>{
-            console.log(response)
-        })
-
-        // .then(data => console.log(data)).catch(err => console.log(err))
+        }).then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
     }
 
     submitBtn.addEventListener('click', () => {

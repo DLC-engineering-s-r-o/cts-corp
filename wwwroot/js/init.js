@@ -5560,21 +5560,18 @@ function initEmail() {
         request.send(formData);
     }
     function axiosPost() {
-        (0, axios_1.default)({
-            method: 'post',
-            url: azureFncUrl,
-            headers: {},
-            data: {
-                fullName: fullName,
-                email: email,
-                phone: phone,
-                body: message,
-                website: website
-            }
+        axios_1.default.post(azureFncUrl, {
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            body: message,
+            website: website
         }).then((response) => {
             console.log(response);
+        })
+            .catch((error) => {
+            console.log(error);
         });
-        // .then(data => console.log(data)).catch(err => console.log(err))
     }
     submitBtn.addEventListener('click', () => {
         setEmailContent();
