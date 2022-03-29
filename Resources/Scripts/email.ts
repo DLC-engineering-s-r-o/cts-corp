@@ -46,34 +46,34 @@ export function initEmail() {
     }
 
     function axiosPost(){
-        let formData = new FormData()
+        // let formData = new FormData()
 
-        formData.append('fullName', fullName)
-        formData.append('email', 'aaaaaa')
-        formData.append('phone', phone)
-        formData.append('body', message)
-        formData.append('website', website)
+        // formData.append('fullName', fullName)
+        // formData.append('email', 'aaaaaa')
+        // formData.append('phone', phone)
+        // formData.append('body', message)
+        // formData.append('website', website)
        
-        console.log(formData)
-        var request = new XMLHttpRequest();
-        request.open("POST", azureFncUrl);
-        request.send(formData);
+        // console.log(formData)
+        // var request = new XMLHttpRequest();
+        // request.open("POST", azureFncUrl);
+        // request.send(formData);
 
-        // const formData = {
-        //     fullName: fullName,
-        //     email: email,
-        //     phone: phone,
-        //     body: message,
-        //     website: website
-        // }
+        const formData = {
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            body: message,
+            website: website
+        }
 
-        // axios({
-        //     method: 'post',
-        //     url: azureFncUrl,
-        //     data: {
-        //         formData
-        //     }
-        // }).then(data => console.log(data)).catch(err => console.log(err))
+        axios({
+            method: 'post',
+            url: azureFncUrl,
+            data: {
+                formData
+            }
+        }).then(data => console.log(data)).catch(err => console.log(err))
     }
 
     submitBtn.addEventListener('click', () => {

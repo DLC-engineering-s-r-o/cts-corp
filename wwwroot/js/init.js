@@ -5549,30 +5549,30 @@ function initEmail() {
         return fullName + phone + email + message;
     }
     function axiosPost() {
-        let formData = new FormData();
-        formData.append('fullName', fullName);
-        formData.append('email', 'aaaaaa');
-        formData.append('phone', phone);
-        formData.append('body', message);
-        formData.append('website', website);
-        console.log(formData);
-        var request = new XMLHttpRequest();
-        request.open("POST", azureFncUrl);
-        request.send(formData);
-        // const formData = {
-        //     fullName: fullName,
-        //     email: email,
-        //     phone: phone,
-        //     body: message,
-        //     website: website
-        // }
-        // axios({
-        //     method: 'post',
-        //     url: azureFncUrl,
-        //     data: {
-        //         formData
-        //     }
-        // }).then(data => console.log(data)).catch(err => console.log(err))
+        // let formData = new FormData()
+        // formData.append('fullName', fullName)
+        // formData.append('email', 'aaaaaa')
+        // formData.append('phone', phone)
+        // formData.append('body', message)
+        // formData.append('website', website)
+        // console.log(formData)
+        // var request = new XMLHttpRequest();
+        // request.open("POST", azureFncUrl);
+        // request.send(formData);
+        const formData = {
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            body: message,
+            website: website
+        };
+        (0, axios_1.default)({
+            method: 'post',
+            url: azureFncUrl,
+            data: {
+                formData
+            }
+        }).then(data => console.log(data)).catch(err => console.log(err));
     }
     submitBtn.addEventListener('click', () => {
         setEmailContent();
