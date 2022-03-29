@@ -55,7 +55,7 @@ export function initEmail() {
         }
 
         xhr.open("POST", azureFncUrl, true)
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
         xhr.send(JSON.stringify(data))
     }
 
