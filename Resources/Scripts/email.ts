@@ -7,7 +7,7 @@ export function initEmail() {
     const phoneEl = document.getElementById('phone') as HTMLInputElement
     const mailEl = document.getElementById('email') as HTMLInputElement
     const messageEl = document.getElementById('msg') as HTMLTextAreaElement
-    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement    
+    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement
 
     const azureFncUrl = 'https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail'
 
@@ -16,7 +16,7 @@ export function initEmail() {
     let phone = ''
     let message = ''
     let website = 'ctscorp.cz'
-   
+
     function validateEmail(mail) {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
             return true
@@ -44,54 +44,48 @@ export function initEmail() {
         return fullName + phone + email + message
     }
 
-    function postEmailData(){
-        let formData = new FormData()
-        let request = new XMLHttpRequest()
+    function postEmailData() {
+        let xhr = new XMLHttpRequest()
+        let data = {
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            body: message,
+            website: website
+        }
 
-        formData.append('fullName', fullName)
-        formData.append('email', email)
-        formData.append('phone', phone)
-        formData.append('body', message)
-        formData.append('website', website)
-          
-        request.open("POST", azureFncUrl)
-        request.send(formData)
+        xhr.open("POST", azureFncUrl, true)
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        xhr.send(JSON.stringify(data))
     }
+
 
     function axiosPost() {
         axios.post(azureFncUrl, {
-                fullName: fullName,
-                email: email,
-                phone: phone,
-                body: message,
-                website: website
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            body: message,
+            website: website
         }).catch(function (error) {
             if (error.response) {
-              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
             }
-          });
+        });
     }
 
     submitBtn.addEventListener('click', () => {
         setEmailContent()
 
         if (fullName != '' && email != '' && message != '') {
-            // postEmailData()
-            axiosPost()
-            // axios.get(azureFncUrl)
-            // .catch(function (error) {
-            //   if (error.response) {
-            //     console.log(error.response.data);
-            //     console.log(error.response.status);
-            //     console.log(error.response.headers);
-            //   }
-            // });
+            postEmailData()
+            // axiosPost()
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
     })
 
-   
+
 }

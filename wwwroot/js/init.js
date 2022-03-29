@@ -5549,15 +5549,17 @@ function initEmail() {
         return fullName + phone + email + message;
     }
     function postEmailData() {
-        let formData = new FormData();
-        let request = new XMLHttpRequest();
-        formData.append('fullName', fullName);
-        formData.append('email', email);
-        formData.append('phone', phone);
-        formData.append('body', message);
-        formData.append('website', website);
-        request.open("POST", azureFncUrl);
-        request.send(formData);
+        let xhr = new XMLHttpRequest();
+        let data = {
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            body: message,
+            website: website
+        };
+        xhr.open("POST", azureFncUrl, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        xhr.send(JSON.stringify(data));
     }
     function axiosPost() {
         axios_1.default.post(azureFncUrl, {
@@ -5577,16 +5579,8 @@ function initEmail() {
     submitBtn.addEventListener('click', () => {
         setEmailContent();
         if (fullName != '' && email != '' && message != '') {
-            // postEmailData()
-            axiosPost();
-            // axios.get(azureFncUrl)
-            // .catch(function (error) {
-            //   if (error.response) {
-            //     console.log(error.response.data);
-            //     console.log(error.response.status);
-            //     console.log(error.response.headers);
-            //   }
-            // });
+            postEmailData();
+            // axiosPost()
         }
         else
             console.log('%cPlease fill in the required fields!', 'color:red;');
