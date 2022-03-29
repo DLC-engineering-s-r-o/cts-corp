@@ -10,6 +10,7 @@
     "@googlemaps/js-api-loader": "^1.13.7",
     "@googlemaps/markerclusterer": "^1.0.25",
     "@types/googlemaps": "^3.43.3",
+    "axios": "^0.26.1",
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.7",
     "clean-css-cli": "^5.5.2",

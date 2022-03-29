@@ -1,10 +1,15 @@
+import axios from 'axios'
+
 export function initEmail() {
+    axios as any
+
     const fullNameEl = document.getElementById('fullName') as HTMLInputElement
     const phoneEl = document.getElementById('phone') as HTMLInputElement
     const mailEl = document.getElementById('email') as HTMLInputElement
     const messageEl = document.getElementById('msg') as HTMLTextAreaElement
     const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement
-
+    const azureFncUrl = 'https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail'
+   
     let fullName = ''
     let email = ''
     let phone = ''
@@ -40,11 +45,25 @@ export function initEmail() {
         return fullName + phone + email + message
     }
 
+    function axiosPost(){
+        axios({
+            method: 'post',
+            url: azureFncUrl,
+            data: {
+                fullName: fullName,
+                email: email,
+                phone: phone,
+                body: message,
+                website: website
+            }
+        }).then(data => console.log(data)).catch(err => console.log(err))
+    }
+
     submitBtn.addEventListener('click', () => {
         setEmailContent()
 
         if (fullName != '' && email != '' && message != '') {
-            window.location.href = `https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?fullName=${fullName}&email=${email}&phone=${phone}&body=${message}&website=${website}`
+            axiosPost()
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
