@@ -5555,9 +5555,9 @@ function initEmail() {
             phone: phone,
             body: message,
             website: website
-        }).then(function (response) {
+        }).then((response) => {
             console.log(response);
-        }).catch(function (error) {
+        }).catch((error) => {
             console.log(error);
         });
     }

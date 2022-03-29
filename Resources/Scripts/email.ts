@@ -50,10 +50,10 @@ export function initEmail() {
             phone: phone,
             body: message,
             website: website
-        }).then(function (response) {
-            console.log(response);
-        }).catch(function (error) {
-            console.log(error);
+        }).then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
         })
     }
 
