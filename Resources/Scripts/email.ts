@@ -65,10 +65,10 @@ export function initEmail() {
                 phone: phone,
                 body: message,
                 website: website
-        }).then((response) => {
+        }).then(response => {
             console.log(response);
           })
-          .catch((error) => {
+          .catch(error => {
             console.log(error);
           });
     }
