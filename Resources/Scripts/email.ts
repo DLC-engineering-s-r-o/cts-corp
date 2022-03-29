@@ -11,13 +11,6 @@ export function initEmail() {
     let message = ''
     let website = 'ctscorp.cz'
 
-    function httpGet(theUrl) {
-        var xmlHttp = new XMLHttpRequest()
-        xmlHttp.open( "GET", theUrl, false ) // false for synchronous request
-        xmlHttp.send( null )
-        return xmlHttp.responseText
-    }
-
     function setEmailContent() {
 
         if (fullNameEl.value) {
@@ -42,8 +35,7 @@ export function initEmail() {
         setEmailContent()
 
         if (fullName != '' && email != '' && message != '') {
-            httpGet(`https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?body=${message}&sender=${fullName}`)
-            console.log(`https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?body=${message}&sender=${fullName}`)
+            window.location.href = `https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail?sender=${fullName}&email=${email}&phone=${phone}&body=${message}&website=${website}`
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
