@@ -9,19 +9,17 @@ export function initEmail() {
     const messageEl = document.getElementById('msg') as HTMLTextAreaElement
     const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement
     const azureFncUrl = 'https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail'
-   
+
     let fullName = ''
     let email = ''
     let phone = ''
     let message = ''
     let website = 'ctscorp.cz'
 
-    function validateEmail(mail) 
-    {
-     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
-      {
-        return true
-      }
+    function validateEmail(mail) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+            return true
+        }
         console.log("%cYou have entered an invalid email address!", 'color:red;')
         return false
     }
@@ -45,35 +43,18 @@ export function initEmail() {
         return fullName + phone + email + message
     }
 
-    function axiosPost(){
-        // let formData = new FormData()
-
-        // formData.append('fullName', fullName)
-        // formData.append('email', 'aaaaaa')
-        // formData.append('phone', phone)
-        // formData.append('body', message)
-        // formData.append('website', website)
-       
-        // console.log(formData)
-        // var request = new XMLHttpRequest();
-        // request.open("POST", azureFncUrl);
-        // request.send(formData);
-
-        const formData = {
+    function axiosPost() {
+        axios.post(azureFncUrl, {
             fullName: fullName,
             email: email,
             phone: phone,
             body: message,
             website: website
-        }
-
-        axios({
-            method: 'post',
-            url: azureFncUrl,
-            data: {
-                formData
-            }
-        }).then(data => console.log(data)).catch(err => console.log(err))
+        }).then(function (response) {
+            console.log(response);
+        }).catch(function (error) {
+            console.log(error);
+        })
     }
 
     submitBtn.addEventListener('click', () => {
