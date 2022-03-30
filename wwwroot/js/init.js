@@ -5569,7 +5569,7 @@ function initEmail() {
         formData.append('website', website);
         (0, axios_1.default)({
             method: "post",
-            url: "myurl",
+            url: azureFncUrl,
             data: formData,
             headers: { "Content-Type": "multipart/form-data" },
         })

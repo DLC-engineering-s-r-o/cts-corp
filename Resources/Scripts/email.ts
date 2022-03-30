@@ -71,7 +71,7 @@ export function initEmail() {
 
         axios({
             method: "post",
-            url: "myurl",
+            url: azureFncUrl,
             data: formData,
             headers: { "Content-Type": "multipart/form-data" },
           })
