@@ -46,17 +46,17 @@ export function initEmail() {
 
     function postEmailData() {
         let xhr = new XMLHttpRequest()
-        let data = {
-            fullName: fullName,
-            email: email,
-            phone: phone,
-            body: message,
-            website: website
-        }
+        let formData = new FormData()
 
+        formData.append('fullName', fullName)
+        formData.append('email', email)
+        formData.append('phone', phone)
+        formData.append('body', message)
+        formData.append('website', website)
+          
         xhr.open("POST", azureFncUrl, true)
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
-        xhr.send(JSON.stringify(data))
+        xhr.send(formData)
     }
 
 
