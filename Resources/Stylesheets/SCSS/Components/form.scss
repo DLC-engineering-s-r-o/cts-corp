@@ -42,4 +42,10 @@
       resize: vertical;
     }
   }
+  &__validation{
+    display: none;
+    font-size: medium;
+    line-height: 1.5;
+    color: $color-success;
+  }
 }

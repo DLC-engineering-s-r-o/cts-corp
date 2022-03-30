@@ -584,6 +584,12 @@ small {
     max-height: 14rem;
     resize: vertical; }
 
+.form__validation {
+  display: none;
+  font-size: medium;
+  line-height: 1.5;
+  color: #34bc34; }
+
 .contact {
   --gap-section: 7rem;
   position: relative;

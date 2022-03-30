@@ -8,7 +8,7 @@ export function initEmail() {
     const mailEl = document.getElementById('email') as HTMLInputElement
     const messageEl = document.getElementById('msg') as HTMLTextAreaElement
     const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement
-    const formValidation = document.getElementById('formValidation') as HTMLParagraphElement
+    const formValidation = document.getElementById('formValidation') as HTMLDivElement
 
     const azureFncUrl = 'https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail'
 
@@ -65,7 +65,7 @@ export function initEmail() {
             headers: { "Content-Type": "multipart/form-data" },
           })
             .then(response => {
-            showSuccess()
+             showSuccess()
               console.log(response);
             })
             .catch(response => {
