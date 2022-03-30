@@ -8,6 +8,7 @@ export function initEmail() {
     const mailEl = document.getElementById('email') as HTMLInputElement
     const messageEl = document.getElementById('msg') as HTMLTextAreaElement
     const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement
+    const formValidation = document.getElementById('formValidation') as HTMLParagraphElement
 
     const azureFncUrl = 'https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail'
 
@@ -23,6 +24,10 @@ export function initEmail() {
         }
         console.log("%cYou have entered an invalid email address!", 'color:red;')
         return false
+    }
+
+    function showSuccess(){
+        formValidation.style.display = 'block'
     }
 
     function setEmailContent() {
@@ -44,22 +49,6 @@ export function initEmail() {
         return fullName + phone + email + message
     }
 
-    function postEmailData() {
-        let xhr = new XMLHttpRequest()
-        let formData = new FormData()
-
-        formData.append('fullName', fullName)
-        formData.append('email', email)
-        formData.append('phone', phone)
-        formData.append('body', message)
-        formData.append('website', website)
-
-        xhr.open("POST", azureFncUrl, true)
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
-        xhr.send(formData)
-    }
-
-
     function axiosPost() {
         let formData = new FormData()
 
@@ -75,12 +64,12 @@ export function initEmail() {
             data: formData,
             headers: { "Content-Type": "multipart/form-data" },
           })
-            .then(function (response) {
-              //handle success
+            .then(response => {
+            showSuccess()
               console.log(response);
             })
-            .catch(function (response) {
-              //handle error
+            .catch(response => {
+
               console.log(response);
             });
     }
