@@ -528,6 +528,9 @@ small {
   letter-spacing: 1.5px;
   color: white; }
 
+a[href*="mailto"]:hover, a[href*="tel"]:hover {
+  text-decoration: underline; }
+
 .logo {
   max-width: 8rem; }
   .logo > svg {

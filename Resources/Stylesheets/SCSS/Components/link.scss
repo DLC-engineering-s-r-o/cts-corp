@@ -6,3 +6,7 @@
     letter-spacing: 1.5px;
     color: $color-white;
 }
+
+a[href*="mailto"]:hover, a[href*="tel"]:hover{
+    text-decoration: underline;
+}
