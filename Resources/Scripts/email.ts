@@ -30,6 +30,14 @@ export function initEmail() {
         formValidation.style.display = 'block'
     }
 
+    function setDisabled(el){
+        el.setAttribute('disabled', '')
+    }
+
+    function setEnabled(el){
+        el.removeAttribute('disabled')
+    }
+
     function setEmailContent() {
         if (fullNameEl.value) {
             fullName = fullNameEl.value
@@ -66,10 +74,11 @@ export function initEmail() {
           })
             .then(response => {
              showSuccess()
+             setEnabled(submitBtn)
               console.log(response);
             })
             .catch(response => {
-
+              setEnabled(submitBtn)
               console.log(response);
             });
     }
@@ -78,11 +87,10 @@ export function initEmail() {
         setEmailContent()
 
         if (fullName != '' && email != '' && message != '') {
-            axiosPost()
+            setDisabled(submitBtn)
+            axiosPost()      
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
     })
-
-
 }

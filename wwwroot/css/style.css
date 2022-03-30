@@ -10,6 +10,7 @@
   --color-primary--darken: #f47f1f;
   --color-secondary: #424243;
   --color-box-shadow: rgba(0, 0, 0, 0.17);
+  --color-disabled: gray;
   --trans-time: 0.25s;
   --trans-fnc: ease-in-out;
   --gap-xxl: 3.2rem;
@@ -412,7 +413,8 @@ small {
   --btn-bg-color: var(--color-black);
   --btn-border-color: var(--color-black);
   --btn-trans-y: 0;
-  --shadow-alpha:.17;
+  --btn-cursor: pointer;
+  --shadow-alpha:.15;
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -434,15 +436,22 @@ small {
   text-transform: uppercase;
   transform: translateY(var(--btn-trans-y));
   transition: transform var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease-in-out;
-  cursor: pointer; }
+  cursor: var(--btn-cursor); }
   .button:hover {
-    --btn-trans-y: -5%; }
+    --btn-trans-y: -5%;
+    --shadow-alpha: .3; }
     @media only screen and (max-width: 768px) {
       .button:hover {
         --btn-trans-y: 0; } }
   .button--secondary {
     --btn-color: var(--color-black);
     --btn-bg-color: var(--color-trans); }
+  .button[disabled] {
+    --btn-bg-color: var(--color-disabled);
+    --btn-cursor: not-allowed; }
+    .button[disabled]:hover {
+      --shadow-alpha:.15;
+      --btn-trans-y: 0; }
 
 .burger {
   width: 50px;
