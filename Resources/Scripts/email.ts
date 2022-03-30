@@ -25,6 +25,17 @@ export function initEmail() {
         return false
     }
 
+    function ajaxRequest() {
+        const xtr = new XMLHttpRequest()
+        const url = azureFncUrl
+        xtr.open("POST", url)
+        xtr.send()
+
+        xtr.onreadystatechange = (e) => {
+            console.log(xtr.responseText)
+        }
+    }
+
     function setEmailContent() {
         if (fullNameEl.value) {
             fullName = fullNameEl.value
@@ -53,7 +64,7 @@ export function initEmail() {
         formData.append('phone', phone)
         formData.append('body', message)
         formData.append('website', website)
-          
+
         xhr.open("POST", azureFncUrl, true)
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
         xhr.send(formData)
@@ -81,6 +92,7 @@ export function initEmail() {
 
         if (fullName != '' && email != '' && message != '') {
             postEmailData()
+            // ajaxRequest()
             // axiosPost()
         }
 

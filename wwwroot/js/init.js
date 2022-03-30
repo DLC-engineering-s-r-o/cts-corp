@@ -5533,6 +5533,15 @@ function initEmail() {
         console.log("%cYou have entered an invalid email address!", 'color:red;');
         return false;
     }
+    function ajaxRequest() {
+        const xtr = new XMLHttpRequest();
+        const url = azureFncUrl;
+        xtr.open("POST", url);
+        xtr.send();
+        xtr.onreadystatechange = (e) => {
+            console.log(xtr.responseText);
+        };
+    }
     function setEmailContent() {
         if (fullNameEl.value) {
             fullName = fullNameEl.value;
@@ -5579,6 +5588,7 @@ function initEmail() {
         setEmailContent();
         if (fullName != '' && email != '' && message != '') {
             postEmailData();
+            // ajaxRequest()
             // axiosPost()
         }
         else
