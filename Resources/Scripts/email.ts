@@ -39,13 +39,6 @@ export function initEmail() {
         el.removeAttribute('disabled')
     }
 
-    function clearForm(){
-        fullName = ''
-        email = ''
-        phone = ''
-        message = ''
-    }
-
     function setEmailContent() {
         if (fullNameEl.value) {
             fullName = fullNameEl.value
