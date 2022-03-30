@@ -69,23 +69,26 @@ export function initEmail() {
         formData.append('body', message)
         formData.append('website', website)
 
-        axios.post(azureFncUrl, {
+        axios({
+            method: "post",
+            url: "myurl",
             data: formData,
             headers: { "Content-Type": "multipart/form-data" },
-        }).catch(function (error) {
-            if (error.response) {
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-            }
-        });
+          })
+            .then(function (response) {
+              //handle success
+              console.log(response);
+            })
+            .catch(function (response) {
+              //handle error
+              console.log(response);
+            });
     }
 
     submitBtn.addEventListener('click', () => {
         setEmailContent()
 
         if (fullName != '' && email != '' && message != '') {
-            // postEmailData()
             axiosPost()
         }
 
