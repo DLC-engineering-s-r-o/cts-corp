@@ -38,6 +38,13 @@ export function initEmail() {
         el.removeAttribute('disabled')
     }
 
+    function clearForm(){
+        fullName = ''
+        email = ''
+        phone = ''
+        message = ''
+    }
+
     function setEmailContent() {
         if (fullNameEl.value) {
             fullName = fullNameEl.value
@@ -88,7 +95,8 @@ export function initEmail() {
 
         if (fullName != '' && email != '' && message != '') {
             setDisabled(submitBtn)
-            axiosPost()      
+            axiosPost()  
+            clearForm()    
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
