@@ -442,7 +442,8 @@ small {
     --shadow-alpha: .3; }
     @media only screen and (max-width: 768px) {
       .button:hover {
-        --btn-trans-y: 0; } }
+        --btn-trans-y: 0;
+        --shadow-alpha:.15; } }
   .button--secondary {
     --btn-color: var(--color-black);
     --btn-bg-color: var(--color-trans); }

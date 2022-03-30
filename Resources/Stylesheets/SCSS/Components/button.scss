@@ -32,6 +32,7 @@
     --shadow-alpha: .3;
     @include res-max-tablet{
       --btn-trans-y: 0;
+      --shadow-alpha:.15;
     }
   }
 
