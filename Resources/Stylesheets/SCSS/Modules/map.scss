@@ -14,14 +14,14 @@
     display: none;
   }
 
-  div[aria-label="Map"] div[style*="z-index: 1;"] div[class] {
+  div[aria-label*=Map] div[style*="z-index: 1;"] div[class] {
     position: relative;
     font-size: medium !important;
     font-weight: 500;
     color: $color-white !important;
   }
 
-  div[aria-label="Map"] div[style*="z-index: 1;"] div[class]:before {
+  div[aria-label*=Map] div[style*="z-index: 1;"] div[class]:before {
     @include center-item;
     display: block;
     content: "";
@@ -38,7 +38,7 @@
     z-index: -1;
   }
 
-  div[aria-label="Map"]
+  div[aria-label*=Map]
     div[style*="z-index: 1;"]
     div[style*="color: rgb(0, 0, 0);"] {
      transform: translateX(-5%) translateY(-25%);
