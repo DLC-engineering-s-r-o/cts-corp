@@ -39,6 +39,8 @@ const loader = new Loader({
 
 export function initMap() {
 
+    document.body.classList.add('map-init')
+    
     loader.load().then(() => {
 
         const infoWindow = new google.maps.InfoWindow({

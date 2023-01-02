@@ -12,7 +12,7 @@
     "@types/googlemaps": "^3.43.3",
     "autoprefixer": "^10.4.4",
     "axios": "^0.26.1",
-    "browser-sync": "^2.27.9",
+    "browser-sync": "^2.27.11",
     "clean-css-cli": "^5.5.2",
     "node-sass": "^7.0.1",
     "postcss": "^8.4.7",

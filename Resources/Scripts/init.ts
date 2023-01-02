@@ -11,3 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
   setCurentYear()
   initEmail()
 })
+
+document.addEventListener('scroll', () => {
+  if (!document.body.classList.contains('map-init')){
+    initMap()
+  }
+  else return
+});
