@@ -33,14 +33,29 @@
   }
 
   &__title {
+    grid-column: 1 / -1;
+
+    h2 {
+      margin-bottom: $gap-l;
+    }
+
+    p {
+      color: var(--color-secondary);
+    }
+  }
+
+  &__info {
     @include res-min-tablet {
+      margin-top: 6rem;
       margin-left: 4rem;
       transform: translate(0, 0);
     }
     @include res-min-desktop-s {
+      margin-top: 3rem;
       margin-left: 6rem;
     }
     @include res-min-desktop-l {
+      margin-top: 0;
       margin-left: 8rem;
     }
 
@@ -51,6 +66,48 @@
     a {
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+
+  &__team {
+    --col-count: 1;
+    margin-top: 3rem;
+    @include flex-set(def, row, wrap, $gap-xl, flex-start, flex-start);
+
+    @include res-max-tablet {
+      justify-content: center;
+      gap: $gap-l;
+    }
+
+    &__card {    
+      > div {
+        @include flex-set(def, column, wrap, $gap, flex-start, flex-start);
+      }
+  
+      p {
+        font-family: var(--font-title);
+        font-size: 1.5rem;
+      }
+  
+      i {
+        margin-bottom: var(--gap);
+        font-family: var(--font-text);
+        font-size: 1rem;
+        color: var(--color-secondary);
+      }
+  
+      svg {
+        fill: var(--color-primary);
+      }
+  
+      a {
+        margin-left: var(--gap);
+        font-family: var(--font-text);
+        font-size: 0.875rem;
+        color: var(--color-secondary);
+        text-decoration: none;
+        word-break: break-word;
       }
     }
   }
