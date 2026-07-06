@@ -11,7 +11,7 @@ export function initEmail() {
     const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement
     const formValidation = document.getElementById('formValidation') as HTMLDivElement
 
-    const azureFncUrl = 'https://dlcafsendgrid20220328153355.azurewebsites.net/api/SendEmail'
+    const azureFncUrl = 'https://dlc-af-email-evhxdyezesf5gxcv.westeurope-01.azurewebsites.net/api/SendEmail'
 
     let fullName = ''
     let email = ''
