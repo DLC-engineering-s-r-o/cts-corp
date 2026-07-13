@@ -31,6 +31,10 @@ export function initEmail() {
         formValidation.style.display = 'block'
     }
 
+    function hideSuccess(){
+        formValidation.style.display = 'none'
+    }
+
     function setDisabled(el){
         el.setAttribute('disabled', '')
     }
@@ -76,6 +80,7 @@ export function initEmail() {
             .then(response => {
              showSuccess()
              setEnabled(submitBtn)
+             contactForm.reset()
               console.log(response);
             })
             .catch(response => {
@@ -84,13 +89,14 @@ export function initEmail() {
             });
     }
 
-    submitBtn.addEventListener('click', () => {
+    submitBtn.addEventListener('click', (event) => {
+        event.preventDefault()
+        hideSuccess()
         setEmailContent()
 
         if (fullName != '' && email != '' && message != '') {
             setDisabled(submitBtn)
-            axiosPost()  
-            contactForm.reset()
+            axiosPost()
         }
 
         else console.log('%cPlease fill in the required fields!', 'color:red;')
